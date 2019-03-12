@@ -261,7 +261,14 @@ ___
     $ perldoc -f print
 
 - `print`について調べる場合には, perldocコマンドを利用します.
-- 先に登場した[perldoc.jp](http://perldoc.jp/)でも確認が可能です.
+- 先に登場した[perldoc.jp](http://perldoc.jp/)でも確認が可能.
+
+___
+## perldocとドキュメント
+    $ perldoc Term::ANSIColor
+
+- モジュールについて調べる場合にも, perldocコマンドを利用します.
+- 先に登場した[perldoc.jp](http://perldoc.jp/)でも確認が可能.
 
 ___
 ## 練習問題 (1)
