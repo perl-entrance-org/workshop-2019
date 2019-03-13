@@ -755,10 +755,10 @@ ___
   - 各会場の講師が書いた, 練習問題の解答例はこちらで公開しています
   - ※講義終了後に随時追加していきます
 
-- [2017-answer](https://github.com/perl-entrance-org/workshop-2017/tree/master/2nd/answer)
+- [2018-answer](https://github.com/perl-entrance-org/workshop-2018/tree/master/2nd/answer)
   - 昨年分の解答例はこちらで公開しています
 
-- [2016-answer](https://github.com/perl-entrance-org/workshop-2016/tree/master/2nd/answer)
+- [2017-answer](https://github.com/perl-entrance-org/workshop-2017/tree/master/2nd/answer)
   - 一昨年分の解答例はこちらで公開しています
 
 ___
