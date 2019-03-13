@@ -175,7 +175,7 @@ ___
 ## PerlとCGI
 - 一時期, ｢PerlでWebサービスを作るならCGI｣という時代がありましたが, 今はそうではありません.
 - 最近は, PSGI(Perl Web Server Gateway Interface)という仕様に対応したWAF(Web Application Framework)を使っての開発が増えています.
-    - 2018年現在, Perlの代表的かつ新規採用されやすいWAFとしては, MojoliciousやAmon2などがあります.
+    - 2019年現在, Perlの代表的かつ新規採用されやすいWAFとしては, MojoliciousやAmon2などがあります.
 - Perl入学式は｢モダンなPerlを教える｣という方針を取っていますので, CGIについては触れません.
 
 ---
