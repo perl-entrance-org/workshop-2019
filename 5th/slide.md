@@ -72,7 +72,7 @@ ___
 ___
 ## Mojoliciousの資料
 - 本家
-    - [mojolicio.us](http://mojolicio.us/)
+    - [mojolicio.us](https://mojolicious.org/)
 - 日本語訳
     - [Mojoliciousドキュメント 日本語訳](https://github.com/yuki-kimoto/mojolicious-guides-japanese/wiki)
 
@@ -158,7 +158,7 @@ ___
 - ここでは、``Mojolicious::Plugin::PODRenderer``を使用しています。
 - ``http://127.0.0.1:3000/perldoc``にアクセスすると``Mojolicious``のPODを読むことができます。
 - ［参考資料］
-    - [Mojolicious::Plugin::PODRendererが便利 - Qiita](http://qiita.com/mozquito/items/1eabbb8ac7b1e516492f)
+    - [Mojolicious::Plugin::PODRendererが便利 - Qiita](https://qiita.com/mozquito/items/1eabbb8ac7b1e516492f)
 
 ___
 ## コード解説（Line 7 - 10）
@@ -295,7 +295,7 @@ ___
 ___
 ## テンプレートの中の特殊記号
 
-    % if ($num1 == 1 ) { 
+    % if ($num1 == 1 ) {
     %= 'hoge';
         <% if ($num2 == 1 ) { %>
             <%= $hoge %>

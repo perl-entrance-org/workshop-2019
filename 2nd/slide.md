@@ -294,7 +294,7 @@ ___
 - 演算の順序は, `()`を付けることで変更することができます
   - 通常の数学と同じく, Perlも足し算･引き算より掛け算･割り算の優先順位が高いです
   - しかし, 2行目では`()`を付けることで足し算を先に計算させています
-- 演算の優先順位と結合方向(演算の向き)はperldocの[perlop](http://perldoc.jp/docs/perl/5.22.1/perlop.pod#Symbolic32Unary32Operators)の項に詳細が記載されています
+- 演算の優先順位と結合方向(演算の向き)はperldocの[perlop](https://perldoc.jp/docs/perl/5.22.1/perlop.pod#Symbolic32Unary32Operators)の項に詳細が記載されています
 
 ___
 
@@ -693,10 +693,10 @@ ___
 
     # 1. 要素内のスラッシュをバックスラッシュでエスケープする
     #   => 読みにくく感じるかもしれない
-    qw/ http:\/\/www.perl-entrance.org http:\/\/www.yahoo.com /
+    qw/ http:\/\/www.perl-entrance.org https:\/\/www.yahoo.com /
     # 2. デリミタを変える
     #   => ちょっと読みやすいかもしれない
-    qw! http://www.perl-entrance.org http://www.yahoo.com !
+    qw! http://www.perl-entrance.org https://www.yahoo.com !
 
 ___
 ## 配列の関数（1）
