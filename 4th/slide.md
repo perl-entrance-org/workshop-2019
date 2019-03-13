@@ -28,8 +28,8 @@ ___
 ---
 # リファレンスの復習
 
-- [前回の復習問題](https://github.com/perl-entrance-org/workshop-2017/blob/master/3rd/practice.md)の｢2. score.pl｣の｢2-1. 点数の合計｣, ｢2-2. 言語ごとの平均｣の問題を解きながら, リファレンスを復習してみましょう.
-- [こちら](https://github.com/perl-entrance-org/workshop-2017/blob/master/3rd/code/score.pl)にサンプルデータがあります.
+- [前回の復習問題](https://github.com/perl-entrance-org/workshop-2019/blob/master/3rd/practice.md)の｢2. score.pl｣の｢2-1. 点数の合計｣, ｢2-2. 言語ごとの平均｣の問題を解きながら, リファレンスを復習してみましょう.
+- [こちら](https://github.com/perl-entrance-org/workshop-2019/blob/master/3rd/code/score.pl)にサンプルデータがあります.
 
 ---
 # サブルーチン
@@ -606,10 +606,10 @@ ___
 ___
 ## メタ文字(1) 使い方
 
-	my $str1 = '2012年7月22日';
+	my $str1 = '2019年7月22日';
 	if($str1 =~ /(\d+)年(\d+)月(\d+)日/) {
 		print "$1/$2/$3";
-		# "2012/7/22"と表示される.
+		# "2019/7/22"と表示される.
 	}
 	my $str2 = "この    文章  は\n 読みにく\nい    で  \t    す\n";
 	$str2 =~ s/\s+//g;
@@ -749,7 +749,7 @@ ___
 
 ---
 # 復習問題
-- <https://github.com/perl-entrance-org/workshop-2018/blob/master/4th/practice.md>
+- <https://github.com/perl-entrance-org/workshop-2019/blob/master/4th/practice.md>
   - 今回の内容を復習できる問題集です。
   - 不明点があれば、気軽にサポーターに質問してください。
 
