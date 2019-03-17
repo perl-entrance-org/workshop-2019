@@ -64,6 +64,22 @@ $ perl -MMojolicious -e 'print "$Mojolicious::VERSION\n"'
 ```
 
 ___
+## Perlとモジュールの世界
+
+cpanmを利用することで、Mojoliciousの他にも数多くのモジュールを利用することができます。
+気になったモジュールがあれば
+
+```
+$ ./cpanm -n モジュール名
+```
+
+でインストールして使ってみましょう！
+
+モジュールの検索は[metacpan](https://metacpan.org/)や[GitHub](https://github.co.jp/)を利用します。
+
+※ やりたいこと Perl でGoogle検索するのもおすすめです
+
+___
 ## Mojolicious とは？
 - Perl の Web アプリケーションフレームワーク（WAF）です。
 - MVCフレームワークの、Modelを除いた（ViewとControllerの）機能を持っています。
