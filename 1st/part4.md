@@ -69,25 +69,24 @@ ___
 
 ___
 ## 構文チェック
-
 - perlでは `perl -wc hoge.pl`と `wc`オプションを付けることでPerlの文法に合っているかどうかのチェックが可能です
 
+    ```
     $perl -wc foo.pl
     foo.pl syntax OK
+    ```
 
 ___
 ## エラー文
-
-
     #!/usr/bin/env perl
     use strict;
     use warnings;
 
-    my $hoge = "Hello"  #ここの部分にセミコロンがない
+    my $hoge = "Hello"  # "hello"の後にセミコロンがない
 
     print "$hoge\n";
 
-- よくありがちなエラーとして「セミコロン`;`を忘れる」というものがあります
+- よくありがちなエラーとして、行末の「セミコロン `;` を忘れる」というものがあります
 - 先程のシンタックスチェックや，お約束の3行を書いた場合は次のようなエラーがでます
 
 ```
@@ -95,7 +94,7 @@ ___
     Execution of foo.pl aborted due to compilation errors.
 ```
 
-- この場合8行目のprintの周辺でシンタックスエラーが発生しているという意味になります
+- この場合、8行目のprintの周辺でシンタックスエラーが発生しているという意味になります
 
 ___
 ## 練習問題 (scalar\_practice.pl)
