@@ -80,6 +80,22 @@ $ ./cpanm -n モジュール名
 ※ やりたいこと Perl でGoogle検索するのもおすすめです
 
 ___
+## Perlとモジュールの世界
+
+また、「・・・有用？」というようなモジュールもあります。これらはAcme（アクメ）モジュールと言われるジョークモジュール群です。
+
+- [`Acme::FizzBuzz`](https://metacpan.org/release/Acme-FizzBuzz)
+- [`Acme::MadokaMagica`](https://metacpan.org/pod/Acme::MadokaMagica)
+- [`Acme::Nyaa`](https://metacpan.org/pod/Acme::Nyaa)
+- [`Acme::SuddenlyDeath`](https://metacpan.org/pod/Acme::SuddenlyDeath)
+
+このように、Perlのモジュールの世界は懐が広いのが特徴です。
+
+※ [第19回　Acmeで広がるPerlの世界―CPANは愉快なジョークモジュールの宝庫（1）](http://gihyo.jp/dev/serial/01/perl-hackers-hub/001901)
+
+※ [ACME大全 2018年版](https://donzoko.booth.pm/items/962395)
+
+___
 ## Mojolicious とは？
 - Perl の Web アプリケーションフレームワーク（WAF）です。
 - MVCフレームワークの、Modelを除いた（ViewとControllerの）機能を持っています。
