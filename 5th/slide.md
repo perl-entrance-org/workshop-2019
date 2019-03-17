@@ -77,7 +77,7 @@ $ ./cpanm -n モジュール名
 
 モジュールの検索は[metacpan](https://metacpan.org/)や[GitHub](https://github.co.jp/)を利用します。
 
-※ やりたいこと Perl でGoogle検索するのもおすすめです
+「やりたいこと Perl」 でGoogle検索するのもおすすめです
 
 ___
 ## Perlとモジュールの世界
@@ -104,7 +104,7 @@ ___
 ___
 ## Mojoliciousの資料
 - 本家
-    - [mojolicio.us](https://mojolicious.org/)
+    - [Mojolicious - Perl real-time web framework](https://mojolicious.org/)
 - 日本語訳
     - [Mojoliciousドキュメント 日本語訳](https://github.com/yuki-kimoto/mojolicious-guides-japanese/wiki)
 
