@@ -52,8 +52,15 @@ $ chmod +x cpanm
 $ ./cpanm -l ~/extlib local::lib
 $ perl -I ~/extlib/lib/perl5 -Mlocal::lib=~/extlib | tee -a ~/.bash_profile
 $ exec $SHELL -l
-$ ./cpanm -n Mojolicious
+$ ./cpanm Mojolicious
 ```
+
+インストールに躓いたり, エラーが出た時は・・・？
+
+- サポーターを呼ぶ
+- [公式Slack](https://perl-entrance.slack.com/messages/general/)でエラーメッセージを貼り付けて聞いてみる
+  - [Slack参加フォーム](https://docs.google.com/forms/d/e/1FAIpQLScbWyg-cgcqilW7-BpKagRm2ldBhvwRBNr2N5eg3LHOK13FGw/viewform)
+
 ___
 ## インストールに成功したかのチェック
 
@@ -70,7 +77,7 @@ cpanmを利用することで、Mojoliciousの他にも数多くのモジュー�
 気になったモジュールがあれば
 
 ```
-$ ./cpanm -n モジュール名
+$ ./cpanm モジュール名
 ```
 
 でインストールして使ってみましょう！
