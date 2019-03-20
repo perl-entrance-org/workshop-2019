@@ -126,7 +126,7 @@ body {
   width: 90%;
   margin: 20px auto;
   text-align: left;
-  font-size: 0.95em;
+  font-size: 0.80em;
   font-family: monospace;
   line-height: 1.2em;
   word-wrap: break-word;
@@ -142,9 +142,6 @@ body {
   max-height: 400px;
   word-wrap: normal;
   background: #3F3F3F;
-  color: #DCDCDC; }
-
-.reveal pre code span[class^="hljs-"] {
   color: #DCDCDC; }
 
 .reveal table {
