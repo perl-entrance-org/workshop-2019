@@ -28,7 +28,7 @@ ___
 
 ___
 ## モジュールのインストールについて
-  第1回目で Term::ANSIColor モジュールを使いましたが、それは全ての Perl に最初から入っているモジュールでした。
+  第3回目で`Data::Dumper` モジュールを使いましたが、それは全ての Perl に最初から入っているモジュールでした。
   これから使っていく Mojolicious は外部から追加しなくてはならないモジュールです。
   モジュールのインストール方法は様々な方法がありますが、この講義では local::lib と cpanm を使って入れることにします。
 
@@ -52,8 +52,15 @@ $ chmod +x cpanm
 $ ./cpanm -l ~/extlib local::lib
 $ perl -I ~/extlib/lib/perl5 -Mlocal::lib=~/extlib | tee -a ~/.bash_profile
 $ exec $SHELL -l
-$ ./cpanm -n Mojolicious
+$ ./cpanm Mojolicious
 ```
+
+インストールに躓いたり, エラーが出た時は・・・？
+
+- サポーターを呼ぶ
+- [公式Slack](https://perl-entrance.slack.com/messages/general/)でエラーメッセージを貼り付けて聞いてみる
+  - [Slack参加フォーム](https://docs.google.com/forms/d/e/1FAIpQLScbWyg-cgcqilW7-BpKagRm2ldBhvwRBNr2N5eg3LHOK13FGw/viewform)
+
 ___
 ## インストールに成功したかのチェック
 
@@ -64,6 +71,38 @@ $ perl -MMojolicious -e 'print "$Mojolicious::VERSION\n"'
 ```
 
 ___
+## Perlとモジュールの世界
+
+cpanmを利用することで、Mojoliciousの他にも数多くのモジュールを利用することができます。
+気になったモジュールがあれば
+
+```
+$ ./cpanm モジュール名
+```
+
+でインストールして使ってみましょう！
+
+モジュールの検索は[metacpan](https://metacpan.org/)や[GitHub](https://github.co.jp/)を利用します。
+
+「やりたいこと Perl」 でGoogle検索するのもおすすめです
+
+___
+## Perlとモジュールの世界
+
+また、「・・・有用？」というようなモジュールもあります。これらはAcme（アクメ）モジュールと言われるジョークモジュール群です。
+
+- [`Acme::FizzBuzz`](https://metacpan.org/release/Acme-FizzBuzz)
+- [`Acme::MadokaMagica`](https://metacpan.org/pod/Acme::MadokaMagica)
+- [`Acme::Nyaa`](https://metacpan.org/pod/Acme::Nyaa)
+- [`Acme::SuddenlyDeath`](https://metacpan.org/pod/Acme::SuddenlyDeath)
+
+このように、Perlのモジュールの世界は懐が広いのが特徴です。
+
+※ [第19回　Acmeで広がるPerlの世界―CPANは愉快なジョークモジュールの宝庫（1）](http://gihyo.jp/dev/serial/01/perl-hackers-hub/001901)
+
+※ [ACME大全 2018年版](https://donzoko.booth.pm/items/962395)
+
+___
 ## Mojolicious とは？
 - Perl の Web アプリケーションフレームワーク（WAF）です。
 - MVCフレームワークの、Modelを除いた（ViewとControllerの）機能を持っています。
@@ -72,7 +111,7 @@ ___
 ___
 ## Mojoliciousの資料
 - 本家
-    - [mojolicio.us](https://mojolicious.org/)
+    - [Mojolicious - Perl real-time web framework](https://mojolicious.org/)
 - 日本語訳
     - [Mojoliciousドキュメント 日本語訳](https://github.com/yuki-kimoto/mojolicious-guides-japanese/wiki)
 
