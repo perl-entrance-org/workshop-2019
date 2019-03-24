@@ -727,48 +727,215 @@ ___
 > ()部はsironekotoro追加
 > <div style="text-align: right;">参考:[どうしてプログラマに・・・プログラムが書けないのか?](http://www.aoky.net/articles/jeff_atwood/why_cant_programmers_program.htm)</div>
 
+
+---
+# 配列の関数
+
 ___
-## 配列の関数（1）
-配列には便利な関数があります。「関数」とは, ある働きをもつ「機能」のことだと思ってください。ここではその一部を紹介します。
+## 配列の関数 join, split
+**関数** とは, ある働きをもつ機能のことです
+
+いままで変数の中身を表示してきた `print` も関数です
+
+まずは2つ紹介します
+
+- join
 
 - split
-- join
 
 ___
 ## join
 join は分割された文字列をくっつけて, 1つの文字列にします。
 
-    my @words = qw( I Love Perl. ); # qwショートカット
-    my $poem  = join '_', @words;
-    print $poem;  # => 'I_Love_Perl.'
+```perl
+    my @words = qw( I Love Perl. );    # qwショートカットで配列を作る
+    my $poem = join '_', @words;       # 第1引数 _ , 第2引数 @words
+    print $poem;                       # 'I_Love_Perl.'
+```
 
-- join が受け取る第1引数 (上の例ではアンダースコア) は, リストの要素をくっつける糊のような役割を果たします。
-- 第2引数には, 対象の配列を渡します。
+- `join` が受け取る第1引数 (上の例では _ アンダースコア) は, 配列の要素をくっつける糊のような役割を果たします。
+
+- 第2引数には, 対象の配列を渡します
+
+> プログラムに渡される情報, 値などを **引数** と言います
+> <div style="text-align: right;">(第2回 冒頭)</div>
 
 ___
 ## split
 split は指定したパターンに従って文字列を分割します。
+```perl
+    my $poem = 'I_Love_Perl.';
+    my @words = split /_/, $poem;    # ('I', 'Love', 'Perl.')
+    print "@words\n";
+```
 
-    my $poem  = 'I Love Perl.';
-    my @words = split / /, $poem; #=> ('I', 'Love', 'Perl.')
+`split` が受け取る第1引数 (上の例ではアンダースコア) は, 文字列を分割する区切りのような役割を果たします
 
-- 引数として与えた文字列を,  // でくくった文字 (上の例では半角スペース) で分割して配列に格納します。
-- // は正規表現リテラルと呼ばれるものです。正規表現については次回以降に詳しく説明します。
+第2引数には, 対象の文字列を渡します
+
+`/ /` は正規表現リテラルと呼ばれるものです.
+
+正規表現については第3回で詳しく説明します
 
 ___
 ## 練習問題 (1/2)
-- 次の処理をする `join.pl` を作りましょう。
-    1. `("0120", "123", "XXX")` という配列を作ってください。
-    2. 1の配列をjoin関数で連結してください。
-       電話番号っぽいので, ハイフン ('-') でくっつけてみましょう。
+次の処理をする `join.pl` を作りましょう。
+
+1. `("0120", "123", "XXX")` という配列を作ってください
+
+2. 作成した配列をjoin関数を利用して `-` で連結して表示してください.
 
 ___
 ## 練習問題 (2/2)
-- 次の処理をする `split.pl` を作りましょう。
-    1. "There's more than one way to do it." という文字列を作り, split関数で" "（半角スペース）ごとに分割して配列 `@array` に格納し, 出力してください。
-    2. 好きな文字列を作り, 好きな要素で区切って配列 `@array2` に格納し, 出力してください。
-        - 日本語や数字を混ぜてもよいでしょう。
-        - わからないところがあれば, サポーターに聞いてみましょう！
+次の処理をする `split.pl` を作りましょう。
+
+- "There's more than one way to do it." という文字列を作り, split関数で `" "`（半角スペース）ごとに分割して配列 `@array` に格納し, 出力してください。
+
+- 好きな文字列を作り, 好きな要素で区切って配列 `@array2` に格納し, 出力してください. 日本語や数字を混ぜてもよいでしょう。
+
+___
+## 配列の関数 push, pop, unshift, shift
+さきほど、皆さんは配列の基本を勉強しました。
+
+配列の用途は主に2つです
+
+- 名簿など、要素の **単純な集まり** として表現したい場合
+
+- ランキングなど、要素間の **順序** 関係を表現したい場合
+
+これらの用途においては、要素の順番の並べ替えや、要素の追加, 取り出しが必要になります
+
+___
+## 要素の追加と削除
+
+- 要素の追加
+    - push
+    - unshift
+
+- 要素の取り出し
+    - pop
+    - shift
+
+___
+## 追加と取り出しの関係
+
+|       |**追加**|**取り出し**|
+|-------|-------|-----------|
+|**末尾**|push   |pop        |
+|**先頭**|unshift|shift      |
+
+___
+## push / pop
+```perl
+    my @array = ( 'Alice', 'Bob' );
+    push @array, 'Chris';    # 末尾に要素 Chris を追加する
+    print "@array\n";        # Alice Bob Chris
+
+    my $element = pop @array;# 末尾の要素 Chris を取り出す
+    print "@array\n";        # Alice Bob
+    print "$element\n";      # Chris
+```
+
+- 配列の **末尾に要素を追加** するときには `push` を利用します
+
+- 配列の **末尾から要素を取り出す** ときには `pop` を利用します
+
+___
+## unshift / shift
+```perl
+    my @array = ( 'Alice', 'Bob' );
+    unshift @array, 'Chris';    # 先頭に要素 Chris を追加する
+    print "@array\n";           # Chris Alice Bob
+
+    my $element = shift @array; # 先頭の要素 Chris を取り出す
+    print "@array\n";           # Alice Bob
+    print "$element\n";         # Chris
+```
+
+- 配列の **先頭に要素を追加** するときには `unshift` を利用します
+
+- 配列の **末尾から要素取り出す** ときには `shift` を利用します
+
+___
+## 練習問題 (1/2)
+次の処理をする `array_pop_shift.pl` を作りましょう。
+
+1. ('Alice', 'Bob', 'Chris') という配列 `@array` を作ってください
+
+1. 配列 `@array` から 'Chris' を取り出し、出力してください
+
+1. 配列 `@array` から 'Alice' を取り出し、出力してください
+
+___
+## 練習問題 (2/2)
+次の処理をする `array_push_unshift.pl` を作りましょう。
+
+1. ('Alice', 'Bob', 'Chris') という配列 `@array` を作ってください。
+
+1. 配列 `@array` の末尾に `Diana` を追加し、 ('Alice', 'Bob', 'Chris', 'Diana') という配列を作ってください。
+
+1. 配列 `@array` の最初に `Eve` を追加し、 ('Eve', 'Alice', 'Bob', 'Chris', 'Diana') という配列を作ってください。
+
+1. 配列をfor文で出力してみましょう。
+
+___
+## 配列の関数 reverse
+reverse はリストを逆順に並べ替えて、そのリストを返します。
+```perl
+    my @lang     = qw(perl php ruby python java go);
+    my @reversed = reverse @lang;
+    print "@reversed";    # go java python ruby php perl
+```
+
+___
+## 配列の関数 reverse
+連番を逆順で配列に格納したいとき, qwショートカットと組み合わせると便利です
+```perl
+    my @array = reverse( 1 .. 5 );
+
+    print "@array\n";    # 5 4 3 2 1
+```
+
+___
+## 配列の関数 sort
+sort は配列をルール順に並べ替えて、その配列を返します。
+
+`sort`のみ, あるいは `sort { $a cmp $b } @array` と書くと, 「文字列」として昇順に（`a`から`z`へ）ソートします
+```perl
+    my @lang        = qw(perl php ruby python java go);
+    my @sorted_lang = sort @lang;
+    print "@sorted_lang\n";    # go java perl php python ruby
+
+    my @num = ( 5, 200, 40, 3, 1 );
+    my @sorted_num = sort @num;
+    print "@sorted_num\n";     # 1 200 3 40 5
+```
+
+___
+## 配列の関数 sort
+「数値」として昇順（小さい順）にソートするときには以下のようになります
+
+```perl
+    my @num = ( 5, 200, 40, 3, 1 );
+    my @sorted = sort { $a <=> $b } @num;
+    print "@sorted\n"    # 1 3 5 40 200
+```
+
+変数 `$a` と `$b` はsortで使うために予約されているので, **sort以外で使わないようにしましょう**
+
+___
+## 配列の関数 sort
+「数値」として降順（大きい順）にソートする場合、以下の2つの書き方ができます。
+
+```perl
+    my @num = ( 5, 200, 40, 3, 1 );
+    my @sorted1 = sort { $b <=> $a } @num;
+    print "@sorted1\n";    # 200, 40, 5, 3, 1
+
+    my @sorted2 = reverse sort { $a <=> $b } @num;
+    print "@sorted2\n";    # 200, 40, 5, 3, 1
+```
+
 
 ___
 ## 復習問題
@@ -831,132 +998,6 @@ ___
 - forループでもwhileループでも同じ処理は書けますが, それぞれ適している・好まれるケースがあります
     - forループは配列全てに対して処理を行う時など, 繰り返す回数が決まっている場合に好まれる書き方です
     - whileループは繰り返す回数は決まっていないが, 特定の条件が真の間ずっと処理を繰り返したいときに好まれる書き方です
-
-
-
----
-# 配列の関数（2）
-
-___
-## そもそも配列とは
-前回、皆さんは配列の基本を勉強しました。
-
-でも、そもそも配列ってどんなときに使うものでしょう？
-
-___
-## 配列の用途
-- 要素間の順序関係を表現したい場合 (例: 待ち行列)
-- 要素の単純な集まりとして表現したい場合 (例: 集合)
-
-こうした操作をしたいとき、配列は役に立ちます
-
-___
-## 配列を扱う
-配列を自在に操るためには、配列の要素を自由に
-
-- 追加
-- 取り出し
-
-できる必要があります。
-
-___
-## 要素の追加
-- push
-- unshift
-
-___
-## 要素の取り出し
-- pop
-- shift
-
-___
-## 追加と取り出しの関係
-- push / pop
-- unshift / shift
-
-___
-## push / pop
-
-    my @array = ('Alice', 'Bob');
-    push @array, 'Chris';     #=> ('Alice', 'Bob', 'Chris')
-    my $element = pop @array; #=> ('Alice', 'Bob')
-    print $element;           #=> "Chris"
-
-<h3>push</h3>
-`[a][b][c] <=[d]` 末尾に要素を追加する
-<h3>pop</h3>
-`[a][b] =>[c]` 末尾の要素を取り出す
-
-___
-## unshift / shift
-
-    my @array = ('Alice', 'Bob');
-    unshift @array, 'Chris';    #=> ('Chris', 'Alice', 'Bob')
-    my $element = shift @array; #=> ('Alice', 'Bob')
-    print $element;             #=> "Chris"
-
-<h3>unshift</h3>
-`[d]=> [a][b][c]` 先頭に要素を追加する
-<h3>shift</h3>
-`[a]<= [b][c]` 先頭の要素を取り出す
-
-___
-## 練習問題 (1/2)
-
-- 次の処理をする `array_pop_shift.pl` を作りましょう。
-    1. ('Alice', 'Bob', 'Chris') という配列を作ってください。
-    2. 1の配列から 'Chris' を取り出し、出力してください。
-    3. 2の配列から 'Alice' を取り出し、出力してください。
-
-___
-## 練習問題 (2/2)
-- 次の処理をする `array_push_unshift.pl` を作りましょう。
-    1. ('Alice', 'Bob', 'Chris') という配列を作ってください。
-    2. 1の配列の末尾に `Diana` を追加し、 ('Alice', 'Bob', 'Chris', 'Diana') という配列を作ってください。
-    3. 2の処理に続けて、配列の最初に `Eve` を追加し、 ('Eve', 'Alice', 'Bob', 'Chris', 'Diana') という配列を作ってください。
-    4. 3の配列をfor文で出力してみましょう。
-
-___
-## reverse
-reverse はリストを逆順に並べ替えて、そのリストを返します。
-
-    my @lang = qw(perl php ruby python java go);
-    my @reversed = reverse @lang;
-    print "@reversed"; #=> go java python ruby php perl
-
-___
-## reverse
-連番を逆順で配列に格納したいときにも便利です。
-
-    my @array = reverse ( 1 .. 5 ); #=> ( 5, 4, 3, 2, 1 )
-
-___
-## sort
-sort はリストをルール順に並べ替えて、そのリストを返します。
-`sort`のみ, あるいは `sort { $a cmp $b } @array` と書くと, 「文字列」として昇順に（`a`から`z`へ）ソートします
-
-    my @lang = qw(perl php ruby python java go);
-    my @sorted_lang = sort @lang; #=> go java perl php python ruby
-
-    my @num = ( 5, 200, 40, 3, 1 );
-    my @sorted_num = sort @num; #=> (1, 200, 3, 40, 5)
-
-___
-## sort
-`sort { $a <=> $b } @array`と書くと, 「数値」として昇順（小さい順）にソートします
-
-    my @num = ( 5, 200, 40, 3, 1 );
-    my @sorted = sort {$a <=> $b} @num; #=> (1, 3, 5, 40, 200)
-
-変数`$a`と`$b`はsortで使うために予約されているので, **sort以外で使わないようにしましょう**
-
-___
-## sort
-「数値」として降順（大きい順）にソートする場合、以下の2つの書き方ができます。
-
-    my @num = ( 5, 200, 40, 3, 1 );
-    my @sorted1 = sort {$b <=> $a} @num; #=> (200, 40, 5, 3, 1)
-    my @sorted2 = reverse sort {$a <=> $b} @num; #=> (200, 40, 5, 3, 1)
 
 ---
 # ハッシュ
