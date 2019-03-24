@@ -1071,6 +1071,131 @@ ___
 
 1. key である `name`, `age`, `food` を使って、それぞれの value を出力してください
 
+---
+# ハッシュの操作
+
+___
+## ハッシュの操作 keys, values, delete, exists
+ハッシュを便利に扱うための関数について説明します。
+
+- keys
+
+- values
+
+- delete
+
+- exists
+
+___
+## keys
+```perl
+    my %hash = (
+        name        => 'Alice',
+        job         => 'Programmer',
+        affiliation => 'PerlEntrance',
+    );
+    my @keys = keys %hash;
+    print "@keys\n";    # name job affiliation （順不同）
+```
+
+`keys` 関数は、ハッシュの key を配列にして返します
+
+ただし、この時 key は **順不同** で返ってきます. ハッシュに書かれた順番で返ってくるとは限りません
+
+同じ順番で受け取りたい場合は, `sort` 関数を使って並び替えましょう
+
+___
+## values
+```perl
+    my %hash = (
+        name        => 'Alice',
+        job         => 'Programmer',
+        affiliation => 'PerlEntrance',
+    );
+    my @values = values %hash;
+    print "@values\n";    # Alice Programmer PerlEntrance （順不同）
+```
+
+`values` 関数は, ハッシュの value を配列にして返します
+
+`value` も **順不同** で返ります
+
+___
+## delete
+```perl
+    my %hash = (
+        name        => 'Alice',
+        job         => 'Programmer',
+        affiliation => 'PerlEntrance',
+    );
+    delete $hash{affiliation};
+
+    print "$hash{affiliation}\n"    # 「おまじない」記載時エラーになる
+```
+
+`delete` 関数は、指定したハッシュの key と、それに対応する value を削除します
+
+___
+## exists
+```perl
+    my %hash = (
+        name        => 'Alice',
+        job         => 'Programmer',
+        affiliation => 'PerlEntrance',
+    );
+    if ( exists $hash{job} )  { print "exists\n" }    # exists
+    if ( exists $hash{team} ) { print "exists\n" }    # 何も出てこない
+```
+
+`exists` 関数は, 指定したハッシュの key が存在するか確認します
+
+存在すれば `1` を返し, 存在しなければ `'　'`(空文字)を返します
+
+___
+## ハッシュの key 指定について
+```perl
+    my %hash = (
+        name        => 'Alice',
+        job         => 'Programmer',
+        affiliation => 'PerlEntrance',
+    );
+    my $key = 'job';
+    print $hash{$key};    # Programmer
+```
+
+ハッシュの key は文字列が入ったスカラー変数でも指定可能です。
+
+- `{foo}` であれば foo という文字列が key 名
+
+- `{$foo}` であればスカラー変数 `$foo` に代入された文字列が key 名となります。
+
+___
+## ハッシュの key 指定について
+```perl
+    my %hash = (
+        name        => 'Alice',
+        job         => 'Programmer',
+        affiliation => 'PerlEntrance',
+    );
+
+    for my $key ( keys %hash ) {
+        my $value = $hash{$key};
+        print "$key => $value\n";
+    }
+```
+
+`keys` 関数と組み合わせると、keyとvalueのペアをfor文で一つずつ処理することができます。
+
+___
+## 練習問題
+次の処理をする `hash_func.pl` を作りましょう。
+
+1. `keys` 関数を使って, `hash_profile.pl` で作ったハッシュのkeyをすべて出力してください
+
+1. `delete` 関数を使って, 1で使ったハッシュから年齢( `age` )の要素を削除してください
+
+1. `exists` 関数を使って、`name`, `age`, `food` の各要素が存在するか確認してください.
+   存在している場合は `name is exist.`, 存在しない場合は `name is not exist.` と表示してください
 
 ___
 ## 復習問題
@@ -1134,108 +1259,3 @@ ___
     - forループは配列全てに対して処理を行う時など, 繰り返す回数が決まっている場合に好まれる書き方です
     - whileループは繰り返す回数は決まっていないが, 特定の条件が真の間ずっと処理を繰り返したいときに好まれる書き方です
 
-
----
-## ハッシュの便利な関数たち
-ハッシュを便利に扱うための関数について説明します。
-
-- keys
-- values
-- delete
-- exists
-
-___
-## keys
-
-    my %hash = (
-        name        => 'Alice',
-        job         => 'Programmer',
-        affiliation => 'PerlEntrance'
-    );
-    my @keys = keys %hash;
-    print "@keys\n";    #=> "name job affiliation"
-
-keys関数は、ハッシュの key を配列にして返します。
-
-- ただし、この時 key は順不同です。（※とても重要）
-- つまり、ハッシュに書かれた順番で返ってくるとは限りません。
-- よって、同じ順番で受け取りたい場合は、`sort`関数を使って並び替えましょう。
-
-___
-## values
-
-    my %hash = (
-        name        => 'Alice',
-        job         => 'Programmer',
-        affiliation => 'PerlEntrance'
-    );
-    my @values = values %hash;
-    print "@values\n"; #=> "Alice Programmer PerlEntrance"
-
-values関数は、ハッシュの value を配列にして返します。
-
-- value も順不同で返ります。
-
-___
-## delete
-
-    my %hash = (
-        name        => 'Alice',
-        job         => 'Programmer',
-        affiliation => 'PerlEntrance'
-    );
-    delete $hash{affiliation};
-
-    # この時、%hash は以下のようになっています
-    # %hash = ( name => 'Alice', job => 'Programmer' );
-
-delete関数は、指定したハッシュの key と、それに対応する value を削除します。
-
-___
-## exists
-
-    my %hash = (
-        name        => 'Alice',
-        job         => 'Programmer',
-        affiliation => 'PerlEntrance'
-    );
-    if (exists $hash{job})  { print "exists" } #=> 'exists'
-    if (exists $hash{team}) { print "exists" } # 何も出てこない
-
-exists関数は、指定したハッシュの key が存在するか確認します。
-
-___
-## ハッシュの key 指定について
-    my %hash = (
-        name        => 'Alice',
-        job         => 'Programmer',
-        affiliation => 'PerlEntrance'
-    );
-    my $key = 'job';
-    print $hash{$key}; #=> 'Programmer'
-
-ハッシュの key は文字列が入ったスカラー変数でも指定可能です。
-
-- {foo} であれば foo という文字列が key 名、{$foo} であればスカラー変数 `$foo` に代入された文字列が key 名となります。
-
-___
-## ハッシュの key 指定について
-    my %hash = (
-        name        => 'Alice',
-        job         => 'Programmer',
-        affiliation => 'PerlEntrance'
-    );
-    for my $key ( keys %hash ) {
-        my $value = $hash{$key};
-        print "$key => $value\n";
-    }
-
-keys関数と組み合わせると、keyとvalueのペアをfor文で一つずつ処理することができます。
-
-___
-## 練習問題
-
-- 次の処理をする `hash_func.pl` を作りましょう。
-    1. keys関数を使って、`hash_profile.pl` で作ったハッシュのkeyをすべて出力してください。
-    2. delete関数を使って、1で使ったハッシュから年齢(age)の要素を削除してください。
-    3. exists関数を使って、年齢の要素が存在するか確認してください。存在している場合は "Age is exist." 、存在しない場合は "Age is not exist." と表示するようにしてみましょう。
