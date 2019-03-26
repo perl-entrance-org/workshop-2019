@@ -39,7 +39,7 @@ ___
 - 繰り返し（ for文 ）
 - 配列の操作( join, split, push, pop, shift, unshift, reverse, sort )
 - ハッシュ
-- ハッシュの操作（ keys, values, delete, exsts ）
+- ハッシュの操作（ keys, delete, exsts ）
 
 ---
 # 前回の復習
@@ -316,38 +316,36 @@ ___
 ___
 ## 数値 と 文字列 の比較を混合させるアンチパターン
 ```perl
-    if ( '51ichiro' == 51 ) {   # 悪い条件式
-        print "OK\n";
-    }
+print "eq で評価すると、";
+if ( '51.0' eq 51 ) {
+    print "文字列'51.0' と 数値 51 は等しい\n";
+}
+else {
+    print "文字列'51.0' と 数値 51 は等しくない\n"; # こちらが表示される
+}
 ```
 
-    Argument "51ichiro" isn't numeric in numeric eq (==) # 警告がでる
+`eq` は文字列を比較するときに使う比較演算子です
 
-警告こそ出るものの, Perlは処理を継続します
-
-1. 文字列 `'51ichiro'` の先頭に `51` という数値がある
-
-1. Perlは `==` の演算子の左辺は数字 `51` として処理を実行する
-
-1. そのため, この比較は真となり,  `OK` という文字列が出力される
-
-文字列を `==` で比較することは意図しない結果を招きます. 数値と文字列の比較をしてはいけません
+このため、条件式の左辺・右辺は文字列として **異なる** と判断されます
 
 ___
 ## 数値 と 文字列 の比較を混合させるアンチパターン
 ```perl
-    if ( '51' eq 51 ) {
-        print "OK\n";
-    }
+print "== で評価すると、";
+if ( '51.0' == 51 ) {
+    print "文字列'51.0' と 数値 51 は等しい\n"; # こちらが表示される
+}
+else {
+    print "文字列'51.0' と 数値 51 は == 等しくない\n";
+}
 ```
 
-先の例とは逆の場合です
+条件式の比較演算子を `eq` から `==` に変更すると, 先ほどとは逆の結果となります.
 
-文字列の比較演算子で数値を比較しようとした場合, 警告は出ません
+`==` は数値を比較するときに使う比較演算子です
 
-Perlは自動的に数値を文字列として解釈して, `eq` 演算子の右辺は文字列 `'51'` として扱われます
-
-そのため, この比較は「真」となり, `OK` という文字列が出力されます
+このため、条件式の左辺・右辺は数値として **等しい** と判断されます
 
 ___
 ## 複数の条件分岐
@@ -355,16 +353,16 @@ ___
     my $foo = 1;
 
     if ( $foo == 1 ) {
-        print '$foo is One';
+        print '$foo is One' . "\n";
     }
     elsif ( $foo == 2 ) {
-        print '$foo is Two';
+        print '$foo is Two' . "\n";
     }
     elsif ( $foo == 3 ) {
-        print '$foo is Three';
+        print '$foo is Three' . "\n";
     }
     else {
-        print '$foo is not even One, even Two, even Three';
+        print '$foo is not even One, even Two, even Three' . "\n";
     }
 ```
 - `elsif`を使うことで, 分岐条件を増やすことができます
@@ -434,7 +432,7 @@ ___
     my $medium = 20;
     my $large  = 30;
 
-    if ( $small < $medium < $medium < $large ) {
+    if ( $small < $medium < $large ) {    # 間違った条件式！
         print "小さい順に並んでます\n";
     }
 ```
@@ -1075,12 +1073,10 @@ ___
 # ハッシュの操作
 
 ___
-## ハッシュの操作 keys, values, delete, exists
+## ハッシュの操作 keys, delete, exists
 ハッシュを便利に扱うための関数について説明します。
 
 - keys
-
-- values
 
 - delete
 
@@ -1104,21 +1100,7 @@ ___
 
 同じ順番で受け取りたい場合は, `sort` 関数を使って並び替えましょう
 
-___
-## values
-```perl
-    my %hash = (
-        name        => 'Alice',
-        job         => 'Programmer',
-        affiliation => 'PerlEntrance',
-    );
-    my @values = values %hash;
-    print "@values\n";    # Alice Programmer PerlEntrance （順不同）
-```
-
-`values` 関数は, ハッシュの value を配列にして返します
-
-`value` も **順不同** で返ります
+値のみをを順不同で受け取る `values` 関数もありますが, ここでは説明しません
 
 ___
 ## delete
@@ -1262,6 +1244,6 @@ ___
 
 - 正規表現
 
-- 第1回〜第3回までのまとめ
+- 第1回〜第2回までのまとめ
 
 - リファレンスがないとできないこと
