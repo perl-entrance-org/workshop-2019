@@ -122,13 +122,13 @@
 
     - 下記のハッシュを作成する
 
-        `%saitama_cities = (urawa => '486538', omiya => '457298', yono  => '83620');`
+        `%saitama_cities = (urawa => 486538, omiya => 457298, yono  => 83620 );`
 
     - 以下の操作を順番に行う
 
-        1. スカラー変数 `$saitama_poplation` に `urawa`, `omiya`, `yono` の値の合計を格納する
+        1. スカラー変数 `$saitama_population` に `urawa`, `omiya`, `yono` の値の合計を格納する
 
-        1. ハッシュ `%saitama_cities` に key 'saitama' と, それに対応する value として `$saitama_poplation` を追加する
+        1. ハッシュ `%saitama_cities` に key 'saitama' と, それに対応する value として `$saitama_population` を追加する
 
         1. ハッシュ `%saitama_cities` から key `urawa`, `omiya`, `yono` を削除する
 
