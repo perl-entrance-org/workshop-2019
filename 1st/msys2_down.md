@@ -12,7 +12,7 @@ ___
 次のコマンドを実行して設定スクリプトをダウンロードします.
 
 ```
-$ wget https://appslideshare.tugougaii.siteimage/replace-repo.bash
+$ wget https://appslideshare.tugougaii.site/appimages/msys2/replace-repo.bash
 ```
 
 ### md5チェックサム
@@ -96,7 +96,7 @@ ___
 次のコマンドを実行して設定ファイルの一時的な書き換えを行います.通常この作業は不要です.
 
 ```
-$ bash replace-repo.bash <IP Address:Port>
+$ bash replace-repo.bash "<IP Address:Port>"
 ```
 
 <img src="image/replace-repo1.png" align='right' style='width: 30%'>
