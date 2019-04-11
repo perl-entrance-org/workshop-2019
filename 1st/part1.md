@@ -148,6 +148,7 @@ ___
 - msys2でPerlの開発環境を構築する際,約1GBのHDD容量を必要とします．
 - Cドライブの容量が心配な方は,必要に応じてDドライブ,USBメモリ等にインストールするとよいでしょう.
 - メモリ（RAM）はWindows自体がストレスなく動く環境であれば特に問題ありません.
+- 一部のアンチウイルスソフトで誤検知を確認しています. アンチウイルスソフトはWindows Defenderを推奨します.
 
 ___
 ## Windowsの32bit/64bitの判別法
@@ -165,7 +166,7 @@ ___
 ___
 ## msys2のインストール（１）
 ### ダウンロードしたmsys2をインストールします
-ダウンロードした`exe`ファイルをダブルクリックして開くと, インストールが始まります.
+ダウンロードした`exe`ファイルをダブルクリックして開くと, インストールが始まります.正常に終わらない場合は、右クリックして「管理者として実行」してください.
 「MSYS2 xxbitのセットアップ」と表示されるので, 「次へ」を押します.
 <img src="image/0.png" align='right' style='width: 30%'>
 
@@ -220,110 +221,9 @@ ___
 ～Windowsユーザ向け Perlのインストール～
 </center>
 
+
 ___
 ## msys2のセットアップ（１）
-### msys2のリポジトリを利用しない場合の設定
-
-この作業はmsys2のリポジトリを直接利用しない場合にのみ実施します.通常この作業は不要です.
-
-次のコマンドを実行して設定スクリプトをダウンロードします.
-
-```
-$ wget https://appslideshare.tugougaii.siteimage/replace-repo.bash
-```
-
-### md5チェックサム
-
-```
-$ md5sum replace-repo.bash
-3a1a08095faf49138d283d2557d710a1 *replace-repo.bash
-```
-
-___
-## msys2のセットアップ（２）
-### msys2のリポジトリを利用しない場合の設定
-
-この作業はmsys2のリポジトリを直接利用しない場合でwgetが利用できない場合にのみ実施します.通常この作業は不要です.
-
-以下のスクリプトをファイル名 `replace-repo.bash` で保存します.
-
-```
-#!/bin/bash
-rhost=$1
-keyfile1="/var/tmp/mirrorlist.msys"
-keyfile2="/etc/pacman.d/mirrorlist.msys"
-
-if [ "${rhost}x" = "x" ]; then
-  echo "[!] empty argument."
-  exit
-fi
-
-ret=`echo $rhost | egrep "^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}:?[0-9]{1,5}$" | wc -l`
-
-if [ "$ret" -eq 1 ]; then
-  echo "[*] operation start."
-else
-  echo "[!] invalid argument."
-  exit
-fi
-
-if [ -f $keyfile1 ]; then
-  # restore the pacman configuration files
-  mv /var/tmp/mirrorlist.* /etc/pacman.d/
-  if [ -f $keyfile2 -a ! -f $keyfile1 ]; then
-    echo "[+] restore operation is successful."
-  else
-    echo "[!] restore operation is fail."
-  fi
-  echo '########' $keyfile2 '########'
-  cat $keyfile2
-else
-  echo "[+] backup operation is start."
-  # backup the pacman configuration files
-  cp -p /etc/pacman.d/mirror* /var/tmp
-  if [ -f $keyfile2 -a -f $keyfile1 ]; then
-    echo "[+] backup operation is successful."
-  else
-    echo "[!] backup operation is fail."
-    exit
-  fi
-
-  echo "[+] replace configuration operation is start."
-
-  # change the configuration for msys
-  sed -i.bak -e "/^Server/d" -e "/^\#\# msys2.org/a Server = http:\/\/${rhost}\/x86_64" /etc/pacman.d/mirrorlist.msys
-  ret=`grep "$1" $keyfile2 | wc -l`
-  if [ $ret -eq 1 ]; then
-    echo "[+] replace operation is successful."
-  else
-    echo "[!] replace operation is fail."
-  fi
-  echo '########' $keyfile2 '########'
-  cat $keyfile2
-fi
-exit
-```
-
-
-
-___
-## msys2のセットアップ（３）
-### msys2のリポジトリを利用しない場合の設定
-
-次のコマンドを実行して設定ファイルの一時的な書き換えを行います.通常この作業は不要です.
-
-```
-$ bash replace-repo.bash <IP Address:Port>
-```
-
-<img src="image/replace-repo1.png" align='right' style='width: 30%'>
-
-`<IP Address:Port>` の部分は, 別途お伝えします.
-
-
-
-___
-## msys2のセットアップ（４）
 
 ### パッケージマネージャを利用する
 
@@ -331,12 +231,22 @@ ___
 - 利用するソフトウェアを最新で安全な状態に保つためには, パッケージマネージャが管理している情報の更新が不可欠です
 - msys2ではpacmanというパッケージマネージャが利用されています
 
+___
+## msys2のセットアップ（２）
+
+### コマンド入力時の注意点
+
+これ以降, 下記のように入力コマンドを示す記載が頻繁に例示されます. すべての個所で共通となりますが, 先頭の「$」はプロンプト（コマンドが入力ができる状態であること）を意味するため、コマンドの一部ではありません。プロンプトは、入力しないようにしてください.
+
+```
+# データベース情報のアップデート
+$ pacman -Sy
+```
 
 ___
-## msys2のセットアップ（５）
+## msys2のセットアップ（３）
 
 ### パッケージマネージャを利用する
-
 
 次のコマンドを実行してpacmanが管理しているデータベースを更新しましょう.
 
@@ -348,7 +258,7 @@ $ pacman -Sy
 <img src="image/7.png" align='right' style='width: 30%'>
 
 ___
-## msys2のセットアップ（６）
+## msys2のセットアップ（４）
 
 ### msys2にperlをインストールする
 
@@ -356,7 +266,7 @@ ___
 - さっそくperlをインストールしてみましょう
 
 ___
-## msys2のセットアップ（７）
+## msys2のセットアップ（５）
 
 ### msys2にperlをインストールする
 
@@ -370,7 +280,7 @@ $ yes "" | pacman -S perl perl-CPAN msys2-devel make libcrypt-devel
 <img src="image/8.png" align='right' style='width: 30%'>
 
 ___
-## msys2のセットアップ（８）
+## msys2のセットアップ（６）
 
 ### インストールが完了したら
 
@@ -378,20 +288,6 @@ ___
 - 右上の×ボタンをおしてウィンドウを閉じます
 - その後, 再度msys2を起動してください
 
-
-___
-## msys2のセットアップ（９）
-### リポジトリデータのリストア
-
-リポジトリの設定を変更した場合は, 次のコマンドを実行して設定ファイルをデフォルトの動作に戻します.
-
-```
-$ bash replace-repo.bash <IP Address:Port>
-```
-
-<img src="image/replace-repo2.png" align='right' style='width: 30%'>
-
-変更時と同じコマンドを実行します.
 
 ---
 # perlの動作確認
@@ -446,6 +342,8 @@ ___
 msys2に限らずほとんど全てのソフトウェアは様々な理由でアップデートされます.
 msys2では, 次の通りpacmanの機能を利用することで, インストールされているソフトウェアを最新にすることができます.
 定期的に実行しておくようにしましょう.
+
+以下のコマンドを実行するとmsys2にインストールされているソフトウェアがアップデートされます。ただし、アップデートは多少時間がかかるため、**ここでは実行せずに家で実行する** ようにしてください。
 
 ```
 # ソフトウェアのアップデート
