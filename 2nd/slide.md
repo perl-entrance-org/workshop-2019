@@ -782,9 +782,9 @@ ___
 ### join
 `join` はリストや配列の要素を連結して、スカラー値にする関数です。
 ```perl
-my @words = qw( I Love Perl. );    # qwショートカットで配列を作る
-my $poem = join '_', @words;       # 第1引数 _ , 第2引数 @words
-print $poem;                       # 'I_Love_Perl.'
+my @words = ( 'I', 'Love', 'Perl.' );   # 配列を作る
+my $poem = join '_', @words;            # 第1引数 _ , 第2引数 @words
+print $poem;                            # 'I_Love_Perl.'
 ```
 
 - `join` が受け取る第1引数 (上の例では _ アンダースコア) は、リストや配列の要素をくっつける糊のような役割を果たします。
@@ -942,7 +942,7 @@ sort は配列をルール順に並べ替えて、その配列を返します。
 
 `sort`のみ、あるいは `sort { $a cmp $b } @array` と書くと、「文字列」として昇順に（ `a` から `z` へ）並べ替えます。
 ```perl
-my @lang        = qw(perl php ruby python java go);
+my @lang        = ('perl', 'php', 'ruby', 'python', 'java', 'go');
 my @sorted_lang = sort @lang;
 print "@sorted_lang\n";    # go java perl php python ruby
 
