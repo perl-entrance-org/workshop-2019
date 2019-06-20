@@ -482,7 +482,7 @@ my @animal = ( [ 'shiba', 'bull' ], [ 'mike', 'kuro' ] );    # 完成
 
 ___
 ## 配列リファレンスを使う
-作成したデータ構造から、特定のデータ「bull」を取り出します。
+作成したデータ構造から、特定のデータ「bull」を表示します。
 ```
     [animal]
        ├──┬─ shiba
@@ -535,9 +535,9 @@ ___
 
 1. 上記のデータ構造を表す`@animal`を作ってください。
 
-1. その中から`eagle`を取り出してください。
+1. `@animal`の中にある`eagle`を表示してください。
 
-1. 余裕があれば, 他の要素も取り出してみましょう。
+1. 余裕があれば, 他の要素も表示してみましょう。
 
 ---
 # ハッシュリファレンス
@@ -706,23 +706,22 @@ ___
 ## 練習問題（hash_ref_for.pl）
 以下のコードを実行するとエラーが出ます。エディタにコピペしたうえで**for文の{ }ブロック内を修正し**、プログラムを完成させてください。
 ```
-1 is Jan
+Jan is 1
 ```
-と12ヶ月分表示されれば正解です
+と12ヶ月分表示されれば正解です。余裕のある人は`1st month`, `2nd month` などの序数を正しく追加しましょう。
 
 ```perl
 # お約束の3行は省略してますが、必ず書くこと
-
 my @month_name = (
     'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
 );
 my $month_hash_ref = {
-    Jan => 1, Feb =>  2 ,Mar =>  3 ,Apr =>  4, May => 5, Jun =>  6 ,
-    Jul =>  7 ,Aug =>  8,Sep => 9, Oct => 10 ,Nov => 11 ,Dec => 12,
+    Jan => 1, Feb => 2, Mar => 3, Apr => 4, May => 5, Jun => 6,
+    Jul => 7, Aug => 8, Sep => 9, Oct => 10, Nov => 11, Dec => 12,
 };
 for my $name (@month_name){
-    print %month_hash_ref{$name} . ' is ' . $name . "\n"
+    print $name . ' is ' . %month_hash_ref{$name} . "th month\n";
 }
 ```
 
@@ -763,12 +762,12 @@ my %animal = ( dog => $dog_ref, );
 ```
 無名ハッシュを使って、一度にまとめて書くこともできます。
 ```perl
-my %animal = ( dog_key => { name => 'Taro', color => 'brown' } );
+my %animal = ( dog => { name => 'Taro', color => 'brown' } );
 ```
 
 ___
 ## ハッシュリファレンスを使う
-作成したデータ構造から、特定のデータ `Taro`　を取り出してみます。
+作成したデータ構造から、特定のデータ `Taro`　を表示してみます。
 ```
 animal
    └ dog
@@ -783,8 +782,8 @@ animal
     => name という key だ
 
 1. これらの情報から `Taro` が格納されているのは以下となる
-    - `${$animal{dog_key}}{name}`
-    - `$animal{dog_key}->{name}`
+    - `${$animal{dog}}{name}`
+    - `$animal{dog}->{name}`
 
 ___
 ## ハッシュリファレンスを使う
@@ -792,17 +791,17 @@ ___
 
 ```perl
 # 無名ハッシュで一気にデータ構造を構築
-my %animal = ( dog_key => { name => 'Taro', color => 'brown' } );
+my %animal = ( dog => { name => 'Taro', color => 'brown' } );
 
-print ${$animal{dog_key}}{name} , "\n";   # Taro
-print $animal{dog_key}->{name} , "\n";    # Taro アロー記法
+print ${$animal{dog}}{name} , "\n";   # Taro
+print $animal{dog}->{name} , "\n";    # Taro アロー記法
 ```
 
 配列リファレンスと同様に、アローが添字に挟まれる場合にはアロー記法の省略が可能です。
 ```perl
-my %animal = ( dog_key => { name => 'Taro', color => 'brown' } );
+my %animal = ( dog => { name => 'Taro', color => 'brown' } );
 
-print $animal{dog_key}{name} , "\n";    # Taro
+print $animal{dog}{name} , "\n";    # Taro
 ```
 
 ___
@@ -822,9 +821,9 @@ ___
 
 1. 上記のデータ構造を表す`%animal`を作ってください。
 
-1. その中から`white`を取り出してください。
+1. `%animal`の中にある`white`を表示してください。
 
-1. 余裕があれば, 他の要素も取り出してみましょう。
+1. 余裕があれば, 他の要素も表示してみましょう。
 
 ---
 # 便利モジュール
@@ -832,7 +831,7 @@ ___
 ___
 ## 便利モジュール
 ### リファレンスの中身を全部見たい
-データ構造の中身を出力したいとき、ここまではその要素の一部だけを取り出してきました。
+データ構造の中身を出力したいとき、ここまではその要素の一部だけを表示きました。
 
 しかし、中身を一度にすべて見たい場合はどうすればいいでしょうか？
 
@@ -883,11 +882,11 @@ Perlには`Data::Dumper`の他にも有用なモジュールが標準で数多�
 - `Encode`
     - 日本語などの「マルチバイト文字」入出力に必須となるモジュール。絵文字も利用可能。
 - `JSON::PP`
-    - インターネットでの情報のやり取りに利用される「JSON形式」データの作成・解読。
+    - インターネットでの情報のやり取りに利用される「JSON形式」データの作成・解読。(Perl 5.14以降)
 - `List::Util`
     - リスト(配列)でよく利用される最小, 最大, 合計など、よく利用する関数を提供。
 - `HTTP::Tiny`
-    - 必要最小限の機能を持つWebクライアント。
+    - 必要最小限の機能を持つWebクライアント。(Perl 5.14以降)
 
 ___
 ## 練習問題(`region_ref.pl`)
@@ -925,7 +924,9 @@ ___
 
 1. Data::Dumperでデータ構造を表示してください
 
-1. 時間の余裕のある人は、Data::Dumper を使わずに %japan 内のデータを全て表示してみましょう
+1. 時間の余裕のある人は、Data::Dumper を使わずに `%japan` 内のデータを全て表示してみましょう
+
+1. さらに時間の余裕がある人は`splice`関数について調べてみましょう
 
 ---
 # HTML入学式
