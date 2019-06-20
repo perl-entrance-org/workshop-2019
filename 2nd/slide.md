@@ -135,9 +135,9 @@ ___
 ## スカラー変数
 ### スカラー変数・・・その前に「コメント」
 ```perl
-    print "Hello World!";   # -- ここがコメント部 --
+print "Hello World!";   # -- ここがコメント部 --
 
-    # print "Hello! Perl Entrance!"; 行頭に # があるため、printは実行されない
+# print "Hello! Perl Entrance!"; 行頭に # があるため、printは実行されない
 ```
 
 - 各プログラム言語にはスクリプトやプログラムをわかりやすくするために、コメントを入れる仕組みがあります。
@@ -153,9 +153,9 @@ ___
 ### スカラー変数を利用する
 
 ```perl
-    my $foo;    # 変数を宣言する
-    $foo = 1;          # 右辺の 1 を左辺の $foo に入れる
-    print "$foo\n";    # 1
+my $foo;    # 変数を宣言する
+$foo = 1;   # 右辺の 1 を左辺の $foo に入れる
+print "$foo\n";
 ```
 
 - 変数を初めて使うときは、先頭に `my` をつけます。変数が利用できるようにすることを「**変数を宣言**する」といいます。
@@ -168,13 +168,13 @@ ___
 ## スカラー変数
 ### スカラー変数を利用する
 ```perl
-    my $foo;    # 変数を宣言する
-    $foo = 1;          # 右辺の 1 を左辺の $foo に入れる
-    print "$foo\n";    # 1
+my $foo;    # 変数を宣言する
+$foo = 1;          # 右辺の 1 を左辺の $foo に入れる
+print "$foo\n";    # 1
 
-    $foo = "Hello World";   # 宣言済みなので my は不要
-                            # 右辺の "Hello World" が 左辺の $foo に入る
-    print "$foo\n";         # Hello World
+$foo = "Hello World";   # 宣言済みなので my は不要
+                        # 右辺の "Hello World" が 左辺の $foo に入る
+print "$foo\n";         # Hello World
 ```
 
 - 宣言した変数を2回目以降に使うときは、 `my` は不要です。`my` は変数を宣言する最初のみ必要です。
@@ -185,9 +185,9 @@ ___
 ## スカラー変数
 ### 仮の変数名（メタ構文変数）
 ```perl
-    my $foo;
-    my $bar = 1;
-    $bar = "Hello World";
+my $foo;
+my $bar = 1;
+$bar = "Hello World";
 ```
 - プログラム言語の参考書には以下の単語が変数名として利用されることがあります。
 
@@ -206,11 +206,11 @@ ___
 ## スカラー変数
 ### クォーテーションによる表示の違い
 ```perl
-    my $foo = 1;
+my $foo = 1;
 
-    print "$foo\n"; # ダブルクォーテーションで囲うと「1」が表示される
+print "$foo\n"; # ダブルクォーテーションで囲うと「1」が表示される
 
-    print '$foo\n'; # シングルクォーテーションで囲うと「$foo\n」が表示される
+print '$foo\n'; # シングルクォーテーションで囲うと「$foo\n」が表示される
 ```
 
 -  `print` を使うことで変数を表示することができます。
@@ -230,28 +230,28 @@ ___
 perlでは `perl -wc hoge.pl`と `wc`オプションを付けることで、スクリプトを実行する前に、Perlの文法に合っているかどうかのチェックが可能です。
 
 ```bash
-    $perl -wc foo.pl
+$perl -wc foo.pl
 
-    foo.pl syntax OK    # この表示が出れば、文法上の問題はない
+foo.pl syntax OK    # この表示が出れば、文法上の問題はない
 ```
 
 ___
 ## スカラー変数
 ### エラーメッセージ
 ```perl
-    #!/usr/bin/env perl
-    use strict;
-    use warnings;
+#!/usr/bin/env perl
+use strict;
+use warnings;
 
-    my $hoge = "Hello"  # "hello"の後にセミコロンがない
-    print "$hoge\n";
+my $hoge = "Hello"  # "hello"の後にセミコロンがない
+print "$hoge\n";
 ```
 - よくありがちなエラーとして、行末の「セミコロン `;` を忘れる」というものがあります。
 - 先程のシンタックスチェックや、お約束の3行を書いた場合は次のようなエラーがでます。
 
-```
-    syntax error at foo.pl line 7, near "print"
-    Execution of foo.pl aborted due to compilation errors.
+```perl
+syntax error at foo.pl line 7, near "print"
+Execution of foo.pl aborted due to compilation errors.
 ```
 
 - この場合、7行目のprintの周辺でシンタックスエラーが発生しているという意味になります
@@ -279,7 +279,7 @@ ___
     - `seminar_name` この勉強会の名前
     - `date` 今日の日付
     - `venue_name` 会場名
-    - `next_yapc_pref` 次回のYAPCの場所
+    - `pre_yapc_pref` 前回のYAPCの場所
 
 - 「お約束」の3行を忘れずに！
 
@@ -335,14 +335,14 @@ my $bar = 2;
 my $result;
 
 # べき乗 **
-$result = $foo ** $bar;   # 4 の 2乗 を $result に代入する
-print "$foo ** $bar = ";   # 式の表示だけ。改行はしない。
-print "$result\n";        # 上の式に続けて $result を表示する
+$result = $foo**$bar;       # 4 の 2乗 を $result に代入する
+print "$foo ** $bar = ";    # 式の表示だけ。改行はしない。
+print "$result\n";          # 上の式に続けて $result を表示する
 
 # 剰余 %
-$result = $foo % $bar;    # 4 を 2 で割った余りを $result に代入する
-print "$foo % $bar = ";   # 表示だけ。改行はしない。
-print "$result\n";        # 上の式に続けて $result を表示する
+$result = $foo % $bar;     # 4 を 2 で割った余りを $result に代入する
+print "$foo % $bar = ";    # 表示だけ。改行はしない。
+print "$result\n";         # 上の式に続けて $result を表示する
 ```
 
 ___
@@ -351,7 +351,7 @@ ___
 <ruby>**剰余**<rt>じょうよ</rt><ruby>は、初めて聞く言葉かもしれません。利用例を解説します。
 
 ```perl
-    print 100 % 7;    # 100 / 7 の余りである 2
+print 100 % 7;    # 100 / 7 の余りである 2
 ```
 
 例えば「今日の100日後の曜日」を求めるとき、100日分カレンダーを辿るのは大変です。
@@ -366,11 +366,11 @@ ___
 ## 四則演算と文字列連結
 ### 代入演算子の性質
 ```perl
-    my $foo = 4;
+my $foo = 4;
 
-    $foo = $foo * 3;  # 右辺の計算結果( 4 * 3 )が、左辺の $foo に代入される
+$foo = $foo * 3;  # 右辺の計算結果( 4 * 3 )が、左辺の $foo に代入される
 
-    print "$foo\n";   # 12
+print "$foo\n";   # 12
 ```
 - 代入演算子 `=` は、算数のイコールとは性質が異なります。
 
@@ -385,18 +385,18 @@ ___
 ### 省略記法
 代入演算子（ `=` ）を利用して、変数の中身を書き換える処理は多いため、専用の記法が用意されています。
 ```perl
-    my $fuga = 100;
-    my $hoge = 50;
+my $fuga = 100;
+my $hoge = 50;
 
-    $fuga += 1;    # $fuga = $fuga + 1;と同じ
-    print "$fuga\n";    # 101
-    $fuga -= 1;         # $fuga = $fuga - 1;と同じ
-    print "$fuga\n";    # 100
+$fuga += 1;         # $fuga = $fuga + 1;と同じ
+print "$fuga\n";    # 101
+$fuga -= 1;         # $fuga = $fuga - 1;と同じ
+print "$fuga\n";    # 100
 
-    $fuga *= 2;         # $fuga = $fuga * 2;と同じ
-    print "$fuga\n";    # 200
-    $fuga /= $hoge;     # $fuga = $fuga / $hoge と同じ
-    print "$fuga\n";    # 4
+$fuga *= 2;         # $fuga = $fuga * 2;と同じ
+print "$fuga\n";    # 200
+$fuga /= $hoge;     # $fuga = $fuga / $hoge と同じ
+print "$fuga\n";    # 4
 ```
 
 ___
@@ -404,19 +404,19 @@ ___
 ### インクリメント
 1 ずつ加算することを「インクリメント」といいます。この処理も多用するので、専用の記法が用意されています。
 ```perl
-    my $foo = 4;
+my $foo = 4;
 
-    $foo = $foo + 1;# 代入演算子を利用
-    print "$foo\n"; # 5
+$foo = $foo + 1;# 代入演算子を利用
+print "$foo\n"; # 5
 
-    $foo += 1;      # 省略記法
-    print "$foo\n"; # 6
+$foo += 1;      # 省略記法
+print "$foo\n"; # 6
 
-    ++$foo;         # 前置インクリメント
-    print "$foo\n"; # 7
+++$foo;         # 前置インクリメント
+print "$foo\n"; # 7
 
-    $foo++;         # 後置インクリメント
-    print "$foo\n"; # 8
+$foo++;         # 後置インクリメント
+print "$foo\n"; # 8
 ```
 
 前置と後置の違いは[こちら](https://tutorial.perlzemi.com/blog/20180224151948.html)を参照
@@ -425,11 +425,11 @@ ___
 ## 四則演算と文字列連結
 ### 演算の順番
 ```perl
-    my $foo = 2 + 4 * 3;
-    print "$foo\n";    # 14
+my $foo = 2 + 4 * 3;
+print "$foo\n";    # 14
 
-    my $bar = ( 2 + 4 ) * 3;
-    print "$bar\n";    # 18
+my $bar = ( 2 + 4 ) * 3;
+print "$bar\n";    # 18
 ```
 - 演算の順序は、 `( )` を付けることで変更することができます。
 
@@ -441,15 +441,15 @@ ___
 ## 四則演算と文字列連結
 ### 文字列連結
 ```perl
-    my $foo = 'hoge';
-    my $bar = 123;
+my $foo = 'hoge';
+my $bar = 123;
 
-    print "$foo$bar\n";         # hoge123
+print "$foo$bar\n";         # hoge123
 
-    print $foo . $bar . "\n";   # hoge123
+print $foo . $bar . "\n";   # hoge123
 
-    my $buz = $foo . $bar;
-    print $buz . "\n";          # hoge123
+my $buz = $foo . $bar;
+print $buz . "\n";          # hoge123
 ```
 
 - `.` (ドット)で文字列や変数を連結することができます。
@@ -460,10 +460,11 @@ ___
 ## 四則演算と文字列連結
 ### 数値演算と文字列連結の混合
 数値演算と文字列連結を混ぜた場合の「アンチパターン（良くない例）」を示します。
-
-    my $now = 2019;
-    my $last_showa = 1988;
-    print "今年は平成" . $now - $last_showa . "年です\n"; # -1988年です
+```perl
+my $now        = 2019;
+my $last_showa = 1988;
+print "今年は平成" . $now - $last_showa . "年です\n"; # -1988年です
+```
 「-1988年です」と、おかしな結果になります。これは演算子の優先順位が `.` と `-` で同じであり, 左結合のため, 左から演算されるためです.
 
 1. まず 「`今年は平成`」（文字） と 「`2018`」（数字） が文字連結されます。（結果：「今年は平成2018」）
@@ -475,15 +476,15 @@ ___
 ### 数値演算と文字列連結は分ける
 文字と数値計算を明確に分けてから、 計算してから連結するのが確実です.
 ```perl
-    my $now = 2019;
-    my $last_showa = 1988;
+my $now = 2019;
+my $last_showa = 1988;
 
-    print "今年は平成" . ( $now - $last_showa ) . "年です\n";
-    # 今年は平成31年です
+print "今年は平成" . ( $now - $last_showa ) . "年です\n";
+# 今年は平成31年です
 
-    my $heisei = $now - $last_showa;
-    print "今年は平成" . $heisei . "年です\n";
-    # 今年は平成31年です
+my $heisei = $now - $last_showa;
+print "今年は平成" . $heisei . "年です\n";
+# 今年は平成31年です
 ```
 - 1番目のprint文のように、`( )`で演算の順序を変更することで、正しい結果になります。
 
@@ -544,9 +545,9 @@ ___
 ## 標準入力
 ### Perlで標準入力を受け取る
 ```perl
-    my $str = <STDIN>;  # 標準入力から文字列を受け取り、変数 $str に代入する
-    chomp $str;         # $strの中の末尾の改行を削除する
-    print $str;         # $strを表示する
+my $str = <STDIN>;  # 標準入力から文字列を受け取り、変数 $str に代入する
+chomp $str;         # $strの中の末尾の改行を削除する
+print $str;         # $strを表示する
 ```
 
 - `Perl` では、この「標準入力」をスクリプトの中で `<STDIN>` と表現します。
@@ -563,13 +564,13 @@ ___
 ## 標準入力
 ### Perlで標準入力を受け取る
 ```perl
-    print 'input Season > ';    # 入力を促すメッセージ
+print 'input Season > ';    # 入力を促すメッセージ
 
-    my $season = <STDIN>;   # 標準入力 <STDIN> で入力されたものを $season に入れる
+my $season = <STDIN>;   # 標準入力 <STDIN> で入力されたものを $season に入れる
 
-    chomp $season;   # $season に格納された入力から、末尾の改行を削除する
+chomp $season;   # $season に格納された入力から、末尾の改行を削除する
 
-    print "Alice loves $season\n";    # 変数を表示して改行する
+print "Alice loves $season\n";    # 変数を表示して改行する
 ```
 
 - このコードを実行して、 `<STDIN>` がどのような働きをするか見てみましょう。
@@ -579,10 +580,12 @@ ___
 ___
 ## 標準入力
 ### 練習問題 (hello\_stdin.pl)
-    Your Name?> Taro
-    Hello Taro!
-    Your OS?> macOS
-    macOS is useful OS!
+```bash
+Your Name?> Taro
+Hello Taro!
+Your OS?> macOS
+macOS is useful OS!
+```
 - "Your Name?> " と画面に表示して名前の入力を求め、入力された名前の左側に Hello、右側に "!" を付けて表示するスクリプト `hello_stdin.pl` を作成しよう。
 
 - さらに続けて "Your OS?> " と画面に表示して使用中の OS の入力を求め、入力されたOS名の右側に "is useful OS!" を付けて表示させるようにもしてみましょう。
@@ -590,10 +593,10 @@ ___
 ___
 ## 標準入力
 ### 練習問題 (calc.pl)
-    1 + 2 = 3
-    1 - 2 = -1
-    1 * 2 = 2
-    1 / 2 = 0.5
+1 + 2 = 3
+1 - 2 = -1
+1 * 2 = 2
+1 / 2 = 0.5
 - 標準入力`<STDIN>`から0以外の整数を2つ読み込み、 それらを四則演算(`+`, `-`, `*`, `/`)した結果を上の例のように表示するスクリプト `calc.pl`を作成しよう.
 
 ---
@@ -789,14 +792,14 @@ ___
 ### 文字列を使った条件分岐
 条件式に注目してください。
 ```perl
-    my $foo = 'hello';
+my $foo = 'hello';
 
-    if ( $foo eq 'hello' ) {
-        print "OK\n";   # こちらが表示される
-    }
-    else {
-        print "NG\n";
-    }
+if ( $foo eq 'hello' ) {
+    print "OK\n";   # こちらが表示される
+}
+else {
+    print "NG\n";
+}
 ```
 
 文字列を比較しているので、 `==` ではなく `eq`を用いています
@@ -804,10 +807,10 @@ ___
 ___
 ## 練習問題(question\_word.pl)
 ```perl
-    #!/usr/bin/env perl
-    use strict;
-    use warnings;
-    my $answer = 'perl';    # 好きな文字を入力しておく
+#!/usr/bin/env perl
+use strict;
+use warnings;
+my $answer = 'perl';    # 好きな文字を入力しておく
 ```
 
 簡単な文字当てゲーム `question_word.pl`を作成しよう。
@@ -862,7 +865,7 @@ ___
 my $foo = 1;
 
 if ( $foo == 1 ) {
-    print '$foo is One' . "\n";
+    print '$foo is One' . "\n"; # これが表示される
 }
 elsif ( $foo == 2 ) {
     print '$foo is Two' . "\n";
@@ -901,10 +904,10 @@ ___
 my $foo = 10;
 
 if ( $foo > 0 && $foo % 2 == 0 ) {  # $fooが 0 より大きい かつ 2 で割り切れる
-    print "&&: OK\n";    # こちらが表示される
+    print "&& : OK\n";    # こちらが表示される
 }
 else{
-    print "&&: NG\n"
+    print "&& : NG\n"
 }
 ```
 
@@ -920,10 +923,10 @@ ___
 my $foo = 10;
 
 if ( $foo > 0 || $foo % 2 == 1 ) {  # $fooが 0 より大きい または 2 で割り切れない
-    print "||: OK\n";     # こちらが表示される
+    print "|| : OK\n";     # こちらが表示される
 }
 else{
-    print "&&: NG\n"
+    print "&& : NG\n"
 }
 ```
 
@@ -1032,7 +1035,7 @@ ___
 ```perl
 my @array = ( 1, "foo", 3 );
 
-print "@array\n";    # 1 foo 3
+print "@array" . "\n";    # 1 foo 3
 ```
 
 配列はスカラー変数と同じく `" "` ダブルクォーテーションで囲むことで変数展開が可能です。
@@ -1044,7 +1047,7 @@ ___
 ```perl
 my @array = ( 1, "foo", 3 );
 
-print "$array[0]\n";    # 1
+print "$array[0] . "\n";    # 1
 ```
 
 配列 `@array` の最初の要素は `$array[0]` となります。
@@ -1081,7 +1084,7 @@ ___
 my @array = ( 1, "foo", 3 );
 my $i = 1;
 
-print "$array[$i]\n";    # foo
+print "$array[$i]" . "\n";    # foo
 ```
 
 ___
@@ -1092,7 +1095,7 @@ ___
 my @array = ( 1, "foo", 3 );
 $array[0] = "bar";    # 先頭の要素に文字列 "bar" を代入する
 
-print "@array";       # bar foo 3
+print "@array" . "\n";       # bar foo 3
 ```
 
 配列に新たな要素を代入する際は、取り出すときと同様に添字を使って要素を指定します。
@@ -1102,8 +1105,7 @@ print "@array";       # bar foo 3
 ```perl
 my @array_one_two = ( 1, 2 );
 my @array_numbers = ( @array_one_two, 3 );
-print "@array_numbers";    # 1 2 3
-
+print "@array_numbers" . "\n";    # 1 2 3
 ```
 
 ___
@@ -1143,7 +1145,7 @@ ___
 連続する数字を配列に格納するときは **範囲演算子** `..` が便利です。
 ```perl
 my @array1 = ( 1 .. 5 );
-print "@array1";    # 1 2 3 4 5
+print "@array1" . "\n";    # 1 2 3 4 5
 ```
 
 - `1 .. 5` と書くことで、1 から 5 までの連続する値を配列に代入できます。
@@ -1164,7 +1166,7 @@ ___
 my @array = ( 1, "foo", 3 );
 
 for my $element (@array) {
-    print "$element\n";
+    print "$element\n";  # 1 foo 3 がそれぞれ改行されて表示される
 }
 ```
 
@@ -1252,9 +1254,9 @@ ___
 ### join
 `join` はリストや配列の要素を連結して、スカラー値にする関数です。
 ```perl
-my @words = ( 'I', 'Love', 'Perl.' );   # 配列を作る
-my $poem = join '_', @words;            # 第1引数 _ , 第2引数 @words
-print $poem;                            # 'I_Love_Perl.'
+my @words = ( 'I', 'Love', 'Perl.' );    # 配列を作る
+my $poem  = join '_', @words;            # 第1引数 _ , 第2引数 @words
+print $poem . "\n";                      # I_Love_Perl.
 ```
 
 - `join` が受け取る第1引数 (上の例では _ アンダースコア) は、リストや配列の要素をくっつける糊のような役割を果たします。
@@ -1266,9 +1268,9 @@ ___
 ### split
 `split` は指定したパターンに従ってスカラー値や文字列を分割し、リストにします。
 ```perl
-my $poem = 'I_Love_Perl.';
+my $poem  = 'I_Love_Perl.';
 my @words = split /_/, $poem;
-print "@words\n";             # ('I', 'Love', 'Perl.')
+print "@words\n";    # ('I', 'Love', 'Perl.')
 ```
 
 - `split` が受け取る第1引数 (上の例ではアンダースコア) は、文字列を分割する区切りのような役割を果たします。
@@ -1334,11 +1336,11 @@ push / pop は配列の末尾の値を操作する関数です。
 ```perl
 my @array = ( 'Alice', 'Bob' );
 push @array, 'Chris';    # 末尾に要素 Chris を追加する
-print "@array\n";        # Alice Bob Chris
+print "@array" . "\n";   # Alice Bob Chris
 
-my $element = pop @array;# 末尾の要素 Chris を取り出す
-print "@array\n";        # Alice Bob
-print "$element\n";      # Chris
+my $element = pop @array;    # 末尾の要素 Chris を取り出す
+print "@array" . "\n";       # Alice Bob
+print "$element" . "\n";     # Chris
 ```
 
 - 配列の **末尾に要素を追加** するときには `push` を利用します。
@@ -1352,11 +1354,11 @@ unshift / shift は配列の先頭の値を操作する関数です。
 ```perl
 my @array = ( 'Alice', 'Bob' );
 unshift @array, 'Chris';    # 先頭に要素 Chris を追加する
-print "@array\n";           # Chris Alice Bob
+print "@array" . "\n";      # Chris Alice Bob
 
 my $element = shift @array; # 先頭の要素 Chris を取り出す
-print "@array\n";           # Alice Bob
-print "$element\n";         # Chris
+print "@array" . "\n";      # Alice Bob
+print "$element" . "\n";    # Chris
 ```
 
 - 配列の **先頭に要素を追加** するときには `unshift` を利用します。
@@ -1392,7 +1394,7 @@ reverse はリストを逆順に並べ替えて、そのリストを返す関数
 ```perl
 my @lang     = ( 'perl', 'php', 'ruby', 'python', 'java', 'go');
 my @reversed = reverse @lang;
-print "@reversed";    # go java python ruby php perl
+print "@reversed" . "\n";    # go java python ruby php perl
 ```
 
 ___
@@ -1402,7 +1404,7 @@ ___
 ```perl
 my @array = reverse( 1 .. 5 );
 
-print "@array\n";    # 5 4 3 2 1
+print "@array" . "\n";    # 5 4 3 2 1
 ```
 
 ___
@@ -1412,13 +1414,13 @@ sort は配列をルール順に並べ替えて、その配列を返します。
 
 `sort`のみ、あるいは `sort { $a cmp $b } @array` と書くと、「文字列」として昇順に（ `a` から `z` へ）並べ替えます。
 ```perl
-my @lang        = ('perl', 'php', 'ruby', 'python', 'java', 'go');
+my @lang        = ( 'perl', 'php', 'ruby', 'python', 'java', 'go' );
 my @sorted_lang = sort @lang;
-print "@sorted_lang\n";    # go java perl php python ruby
+print "@sorted_lang" . "\n";    # go java perl php python ruby
 
-my @num = ( 5, 200, 40, 3, 1 );
+my @num        = ( 5, 200, 40, 3, 1 );
 my @sorted_num = sort @num;
-print "@sorted_num\n";     # 1 200 3 40 5
+print "@sorted_num" . "\n";     # 1 200 3 40 5
 ```
 
 ___
@@ -1429,7 +1431,7 @@ ___
 my @num = ( 5, 200, 40, 3, 1 );
 my @sorted = sort { $a <=> $b } @num;
 
-print "@sorted\n"    # 1 3 5 40 200
+print "@sorted" . "\n";    # 1 3 5 40 200
 ```
 
 変数 `$a` と `$b` はsortで使うために予約されているので、 **sort以外で使わないようにしましょう**。
@@ -1442,14 +1444,14 @@ ___
 ```perl
 my @num = ( 5, 200, 40, 3, 1 );
 my @sorted1 = sort { $b <=> $a } @num;
-print "@sorted1\n";    # 200, 40, 5, 3, 1
+print "@sorted1" . "\n";    # 200, 40, 5, 3, 1
 ```
 
 - sortした結果をreverseで逆順にする方法
 ```
 my @num = ( 5, 200, 40, 3, 1 );
 my @sorted2 = reverse sort { $a <=> $b } @num;
-print "@sorted2\n";    # 200, 40, 5, 3, 1
+print "@sorted2" . "\n";    # 200, 40, 5, 3, 1
 ```
 
 ___
