@@ -23,8 +23,8 @@ my %tv_channel = (
 # ハッシュからキーを取り出す
 my @channnel = keys %tv_channel;
 
+# ハッシュからkeysで取り出したままだと順不同で格納されている
 # 取り出したキーを数字でソートする
-# ハッシュからkeysで取り出したものは順不同なので注意
 my @sorted_channnel = sort { $a <=> $b } @channnel;
 
 # ソートされたキーfor文で取り出し、ハッシュのkeyと
