@@ -928,9 +928,6 @@ ___
 
 1. さらに時間の余裕がある人は`splice`関数について調べてみましょう
 
----
-# HTML入学式
-https://bitbucket.org/snippets/sironekotoro/aenE4b/html
 
 ---
 ## 復習問題
@@ -945,6 +942,12 @@ https://bitbucket.org/snippets/sironekotoro/aenE4b/html
 - 不明点もslackで是非質問してください.
 
 - 最終回の第5回の参加もお待ちしております!
+
+---
+## HTML入学式
+次回はWebアプリを作成しますが、その際に知っておくと良い内容をまとめました。
+
+- <https://github.com/perl-entrance-org/workshop-2019/blob/master/4th/html_entrance.md>
 
 ---
 # 次回予告
