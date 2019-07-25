@@ -343,13 +343,15 @@ ___
 ## 練習問題(deref_array_1.pl)
 以下のコードを実行するとエラーが出ます。エディタにコピペしたうえで修正し、プログラムを完成させてください。
 ```perl
-# お約束の3行は省略してますが、必ず書くこと
+#!/usr/bin/env perl
+use strict;
+use warnings;
 
 my @array = ( 1 .. 100 );           # 1から100までの数字が格納された配列を用意する
 my $array_ref   =  @array;          # 配列リファレンスを作成する
 my @deref_array = @{$array_ref};    # 配列リファレンスをデリファレンスする
 
-print "@deref_array\n";             # 1から100までの数字が表示される
+print "@deref_array\n";             # 1から100までの数字が表示されると正解
 ```
 
 ___
@@ -357,13 +359,15 @@ ___
 以下のコードを実行するとエラーが出ます。エディタにコピペしたうえで**if文の条件式を修正し**、プログラムを完成させてください。
 
 ```perl
-# お約束の3行は省略してますが、必ず書くこと
+#!/usr/bin/env perl
+use strict;
+use warnings;
 
 my @array = ( 'A' .. 'Z' ); # A から Z までの文字が格納された配列を用意する
 my $array_ref = \@array;    # 配列リファレンスを作成する
 
-if ( @{$array_ref[10]} eq 'K' ) {
-    print "配列の先頭から10番目の要素はKです"; # この行が実行される
+if ( $array_ref[10] eq 'K' ) {
+    print "配列の先頭から10番目の要素はKです"; # この行が実行されると正解
 }
 ```
 
@@ -452,7 +456,7 @@ ___
        ├────┬─ shiba
        │    └─ bull
        └────┬─ mike
-            └─ somali
+            └─ kuro
 ```
 
 animal という集合の中に 犬の集合（shiba, bull） と 猫の集合（mike, kuro） が入っている図とみてください。
@@ -469,7 +473,7 @@ ___
 my @dog     = ( 'shiba', 'bull' );    # 配列@dogを作る
 my $dog_ref = \@dog;                  # @dogをリファレンスにする
 
-my $cat_ref = [ 'mike', 'somali' ];   # 無名配列をつかって猫の配列リファレンスをつくる
+my $cat_ref = [ 'mike', 'kuro' ];   # 無名配列をつかって猫の配列リファレンスをつくる
 
 my @animal  = ( $dog_ref, $cat_ref ); # @animal の要素に入れて完成
 ```
@@ -488,7 +492,7 @@ ___
        ├──┬─ shiba
        │  └─ bull
        └──┬─ mike
-          └─ somali
+          └─ kuro
 ```
 1. 配列 `@animal` のどこに 犬の集合が入っているかを確認する<br>
     => `@animal` の 最初の要素に入っている。これは `$animal[0]` となる。<br>
@@ -634,11 +638,6 @@ ___
 ___
 ## 練習問題(hash_ref.pl)
 以下のコードを実行するとエラーが出ます。エディタにコピペしたうえでプログラムを完成させてください。
-```
-Larry
-Perl
-```
-と表示されれば正解です。
 ```perl
 # お約束の3行は省略してますが、必ず書くこと
 
@@ -647,6 +646,12 @@ my $hash_ref = \%hash;
 
 print $hash_ref{name} . "\n";    # Larry と表示される
 print $hash_ref{lang} . "\n";    # Perl と表示される
+```
+
+以下のように表示されれば正解です。まだアロー記法はつかわないこと！（この次にやります）
+```
+Larry
+Perl
 ```
 
 
@@ -826,6 +831,54 @@ ___
 1. 余裕があれば, 他の要素も表示してみましょう。
 
 ---
+# リファレンスの操作
+
+___
+## リファレンスの操作
+### リファレンスへの追加/削除は・・・？
+リファレンスのままでは、追加/削除はできません。リファレンスはあくまで、データを指し示すスカラー値だからです。
+
+しかし、デリファレンスすることで、これまでに習った配列操作関数やハッシュ操作関数を利用することができます。
+
+___
+## リファレンスの操作
+### 配列リファレンスへの操作例
+
+```perl
+my $array_ref = [ 'foo', 'bar', 'baz' ];    # 無名配列を作成
+print "@{$array_ref}" . "\n"; # foo bar baz
+
+push @{$array_ref}, 'piyo';   # デリファレンスして piyo を末尾に追加
+print "@{$array_ref}" . "\n"; # foo bar baz piyo
+
+shift @{$array_ref};          # デリファレンスして foo を取り出し
+print "@{$array_ref}" . "\n"; # bar baz piyo
+```
+
+___
+## リファレンスの操作
+### ハッシュリファレンスへの操作例
+```
+my $hash_ref = {
+    name => 'Larry',
+    lang => 'Perl',
+};
+
+${$hash_ref}{univ} = 'SPU';      # デリファレンスして追加
+print $hash_ref->{univ} . "\n";  # SPU （Seattle Pacific University）
+
+my @keys = keys %{$hash_ref};    # デリファレンスしてkeyを取得
+print "@keys" . "\n";            # name lang univ （順不同）
+
+delete ${$hash_ref}{univ};       # デリファレンスしてunivを削除
+if ( exists ${$hash_ref}{univ} ){# デリファレンスしてunivが存在するか確認
+    print "univ is exists\n"
+}else{
+    print "univ is not exists\n"
+}
+```
+
+---
 # 便利モジュール
 
 ___
@@ -918,9 +971,9 @@ ___
 
 1. 作成したデータの `okinawa` に `piyo`を追加してください
 
-1. 作成したデータの `hokkaido` に `chitose`を追加し, `sapporo`を削除してください
+1. 作成したデータの `hokkaido` に `chitose`を追加し, `sapporo`を取り除いてください（今までに習った配列操作関数 push,pop,shift,unshift を利用しましょう。`sapporo`の位置に注目）
 
-1. 作成したデータの `fukuoka` を削除してください
+1. 作成したデータの `fukuoka` を取り除いてください
 
 1. Data::Dumperでデータ構造を表示してください
 
