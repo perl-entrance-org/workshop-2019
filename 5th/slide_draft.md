@@ -12,7 +12,7 @@ ___
     - 写真はPerl普及団体の [JPA ( Japan Perl Association )](https://japan.perlassociation.org/)への活動報告に利用します
 
 ___
-## 講師紹介
+## 講師紹介リファレンス
 
 - 講師・サポーター紹介
 
@@ -361,21 +361,21 @@ ___
 ---
 ## Webアプリ、その前に
 ### アプリとは？
-<q>
+<blockquote>
     ワープロや表計算などといった、コンピュータを「応用」する目的に応じた、コンピュータ・プログラムである。
     <div style="text-align: right;">wikipedia([アプリケーションソフトウェア](https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2))</div>
-</q>
+</blockquote>
 
 ___
 ## Webアプリ、その前に
 ### Webアプリとは？
-<q>
+<blockquote>
     **インターネット（もしくはイントラネット）などのネットワークを介して使用するアプリケーションソフトウェアである。**<br><br>
     多くの場合、これらのアプリケーションは、Webブラウザ上で動作するプログラミング言語（たとえばJavaScript）によるプログラムと<br><br>
     <strong>Webサーバ側のプログラム</strong><br><br>
     が協調することによって動作し、ユーザはそれをWebブラウザ上で使用する。
     <div style="text-align: right;">wikipedia([ウェブアプリケーション](https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3))</div>
-</q>
+</blockquote>
 
 ___
 ## Webアプリ、その前に
@@ -424,7 +424,7 @@ ___
 
 第4回目で`Data::Dumper` モジュールを使いましたが、それは Perl に最初から入っている**組み込みモジュール**でした。
 
-これから学習してく Mojolicious は**外部から追加しなくてはならないモジュール**です。
+これから学習していく Mojolicious は**外部から追加しなくてはならないモジュール**です。
 
 モジュールのインストール方法は様々な方法がありますが、この講義では local::lib と cpanm を使って入れることにします。
 
@@ -438,7 +438,7 @@ local::lib を使うことで、システム全体への影響を抑えること
 ___
 ## Mojolicious の準備
 ### cpanm (cpan minus)
-Perlのモジュールの多くは<ruby>[meta::cpan](https://metacpan.org/)<rt>メタ シーパン</rt></ruby>で公開されています。
+Perlのモジュールの多くは<ruby>[MetaCPAN](https://metacpan.org/)<rt>メタ シーパン</rt></ruby>で公開されています。
 
 このサイトや、GitHubからターミナルでモジュールをインストールすることができるモジュールが <ruby>cpanm<rt>シーパンエム</rt></ruby> です。
 
@@ -523,6 +523,18 @@ $ ./cpanm モジュール名
 ___
 ## Mojolicious の準備
 ### モジュールで広がる世界
+Perlの有用なモジュールは数多くあるので、全ては紹介できません。ごくごく一部を紹介します。
+
+- [`Archive::Zip`](https://metacpan.org/pod/Archive::Zip)
+- [`Furl`](https://metacpan.org/pod/Furl)
+- [`WWW::Mechanieze`](https://metacpan.org/pod/WWW::Mechanize)
+- [`Web::Query`](https://metacpan.org/pod/Web::Query)
+- [`DBI`](https://metacpan.org/pod/DBI)
+- [`ojo`](https://metacpan.org/pod/ojo)
+
+___
+## Mojolicious の準備
+### モジュールで広がる世界
 また、「・・・有用？」というようなモジュールもあります。これらは<ruby>Acme<rt>アクメ</rt></ruby>モジュールと言われるジョークモジュール群です。
 
 - [`Acme::FizzBuzz`](https://metacpan.org/release/Acme-FizzBuzz)
@@ -543,10 +555,10 @@ ___
 ### WAF
 **Web アプリケーションフレームワーク（<ruby>WAF<rt>ワフ</rt></ruby>）** とは、Webサービスを作る際の必須機能や定型の処理を、まとめて提供する仕組みのことです。
 
-<q>
+<blockquote>
   framework 「枠組み」「骨組み」「構造」などと和訳できる英単語
   <div style="text-align: right;">wikipedia([フレームワーク](https://ja.wikipedia.org/wiki/%E9%9B%BB%E5%AD%90%E6%8E%B2%E7%A4%BA%E6%9D%BF))</div>
-</q>
+</blockquote>
 
 ___
 ## Mojoliciousとは
@@ -620,10 +632,9 @@ Mojoliciousをインストールすると、`mojo` というコマンドが使�
 $ mojo generate lite_app hello_mojo.pl
 ```
 - `mojo generate lite_app`
-    - `Mojolicious::Lite` を利用した小規模アプリ用のひな形を作成する
-
+    - `Mojolicious::Lite` を利用した小規模アプリ用のひな形を作成するコマンド。
 - `hello_mojo.pl`
-    - 作成するファイル名
+    - 引数。作成するファイル名。
 
 現在のディレクトリに `hello_mojo.pl` というファイルが作成されていれば成功です。このファイルは雛形であり、このファイルに手を加えてWebアプリケーションを作成していきます。
 
@@ -632,9 +643,9 @@ ___
 ### 開発用サーバ morbo
 Mojoliciousをインストールすると、 <ruby>`morbo`<rt>モーボ</rt></ruby> というコマンドも使えるようになります。
 
-`morbo` は開発用の**Webサーバ**です。この morbo コマンドで mojolicious を起動し、ブラウザで表示を確認しつつ、修正やデバッグをしてWebアプリを作成していきます。
+`morbo` は開発用の**Webアプリケーションサーバ**です。この morbo コマンドで mojolicious を起動し、ブラウザで表示を確認しつつ、修正やデバッグをしてWebアプリを作成していきます。
 
-インターネット上では主に <ruby>Apache<rt>アパッチ</rt></ruby> や <ruby>nginx<rt>エンジンエックス</rt></ruby> といったWebサーバが利用されています。
+インターネット上では主に <ruby>Apache<rt>アパッチ</rt></ruby> や <ruby>nginx<rt>エンジンエックス</rt></ruby> といったWebサーバと、 Webアプリケーションサーバが連携してWebサービスを提供しています。
 
 ___
 ## Mojolicious::Lite
@@ -677,7 +688,7 @@ ___
 
 コード全体はこちらからも確認できます。
 
-<a href="https://github.com/sironekotoro/hello_mojo_2019/commit/253065a313a25ef9c52c49ccf5d20b36ffd8c5c8?diff=unified" target="_blank">hello_mojo.pl</a>
+<a href="https://github.com/sironekotoro/hello_mojo_2019/commit/253065a313a25ef9c52c49ccf5d20b36ffd8c5c8?diff=unified" target="_blank">[GitHub] hello_mojo.pl</a>
 ___
 ## Mojolicious::Lite
 ### コード解説（Line 1 - 2）
@@ -699,7 +710,7 @@ use warnings;       # お約束
 use utf8;           # スクリプトの中でマルチバイト文字（日本語など）を使う時に書く
 use feature ':5.10';# Perl バージョン5.10で用意された関数を利用可能にする
 ```
-`use Mojolicious::Lite;` と書くことは、上記のように書くのと同じです。
+`use Mojolicious::Lite;` と書くことで、上記の記述を含むことになります。
 
 ___
 ## Mojolicious::Lite
@@ -724,7 +735,9 @@ get '/' => sub { 省略 };
 ```
 見慣れない書き方ですが、これは、先に説明した `get` という関数に、2つの引数を渡しているものです。
 
-1つ目の引数が `'/'` という文字列、2つ目の引数がコードリファレンスです。
+1つ目の引数が `'/'` という文字列、2つ目の引数がコードリファレンス（サブルーチンリファレンス）です。
+
+コードリファレンス（サブルーチンリファレンス）は `sub` から始まっていますが、先に学習したサブルーチンではありません。**サブルーチンのリファレンス**です。**1点重要な違いとして末尾にセミコロンが必要**です。
 
 このように書くことで、GET メソッドで `/` にアクセスした時、 `sub { ... }` に書かれている処理が行われます。
 
@@ -825,8 +838,7 @@ ___
   <body> 省略 </body>
 </html>
 ```
-ここでは主にHTMLタグについて解説します。
-- `<!DOCTYPE html>` HTMLのバージョン5(HTML5)で書かれていることをブラウザに伝えるHTMLのマークアップです。
+- `<!DOCTYPE html>` HTMLのバージョン5(HTML5)で書かれていることをブラウザに伝えるHTMLのマークアップ宣言です。
 - `<html>...</html>` このタグの内部にHTMLを記述します。
 - `<head>...</head>` このタグの内部にHTMLのヘッダー情報を記述します。
   - `<title></title>` このタグの内部にページタイトルを記述します
@@ -864,13 +876,13 @@ $ morbo hello_mojo.pl
 
 先に作成した `hello_mojo.pl` のファイルを編集していきます。
 
-<a href="https://github.com/sironekotoro/hello_mojo_2019/commit/253065a313a25ef9c52c49ccf5d20b36ffd8c5c8?diff=unified" target="_blank">hello_mojo.pl</a>
+<a href="https://github.com/sironekotoro/hello_mojo_2019/commit/253065a313a25ef9c52c49ccf5d20b36ffd8c5c8?diff=unified" target="_blank">[GitHub] hello_mojo.pl</a>
 
 ___
 ## Mojolicious 入門
 ### Controller -> view
 まず、Controllerで変数を設定して、それをView（テンプレート）に渡してみましょう。
-<a href="https://github.com/sironekotoro/hello_mojo_2019/compare/253065a313a25ef9c52c49ccf5d20b36ffd8c5c8..511a3aa2f123384bebfb99f05f135f65444a4fb2?diff=split" target="_blank">hello_mojo.pl</a>
+<a href="https://github.com/sironekotoro/hello_mojo_2019/compare/253065a313a25ef9c52c49ccf5d20b36ffd8c5c8..511a3aa2f123384bebfb99f05f135f65444a4fb2?diff=split" target="_blank">[GitHub] hello_mojo.pl</a>
 ```perl
 get '/' => sub {
   my $c = shift;
@@ -890,7 +902,7 @@ ___
 Controllerで設定した変数を、View（テンプレート）で、表示してみます。
 Welcome〜 の行の下に、 ` <%= $greeting %>` と1行追加してください。
 
-<a href="https://github.com/sironekotoro/hello_mojo_2019/compare/511a3aa2f123384bebfb99f05f135f65444a4fb2..41383ecba6ce91b9e0c2fb18198fadfd147e00b0" target="_blank">hello_mojo.pl</a>
+<a href="https://github.com/sironekotoro/hello_mojo_2019/compare/511a3aa2f123384bebfb99f05f135f65444a4fb2..41383ecba6ce91b9e0c2fb18198fadfd147e00b0" target="_blank">[GitHub] hello_mojo.pl</a>
 ```perl
 <h1>Welcome to the Mojolicious real-time web framework!</h1>
 <%= $greeting %>    # この行を追加
@@ -914,14 +926,14 @@ $ morbo mojo_prof.pl
 
 作成した `mojo_prof.pl` を編集していきます。
 
-<a href="https://github.com/sironekotoro/mojo_prof_2019/commit/df438373846508b652496a7b838d3ea229b2ea0d?diff=unified" target="_blank">mojo_prof.pl</a>
+<a href="https://github.com/sironekotoro/mojo_prof_2019/commit/df438373846508b652496a7b838d3ea229b2ea0d?diff=unified" target="_blank">[GitHub] mojo_prof.pl</a>
 
 ___
 ## Mojolicious 入門
 ### ページの増やし方 Controller
 まず、コントローラ部にルーターを追加します。
 
-<a href="https://github.com/sironekotoro/mojo_prof_2019/compare/df438373846508b652496a7b838d3ea229b2ea0d..784fce3a18078eb2b18e094654aca0a747cff9ab" target="_blank">mojo_prof.pl</a>
+<a href="https://github.com/sironekotoro/mojo_prof_2019/compare/df438373846508b652496a7b838d3ea229b2ea0d..784fce3a18078eb2b18e094654aca0a747cff9ab" target="_blank">[GitHub] mojo_prof.pl</a>
 
 ```
 get '/' => sub {
@@ -955,9 +967,7 @@ ___
 ### ページの増やし方 View
 では、ページのアドレスごとに表示される内容を変更します。引き続き、`mojo_prof.pl`を編集します。今度はViewのテンプレート部に追加します。
 
-Welcome のメッセージ下にある4行をコピペして追加します。なお、`<!-- コメント -->` はテンプレート（HTML部分）にコメントを書くときの記法です。
-
-<a href="https://github.com/sironekotoro/mojo_prof_2019/compare/784fce3a18078eb2b18e094654aca0a747cff9ab..2c1d3fe828eebdf3ad1a7689ef9c6778e15fb868" target="_blank">mojo_prof.pl</a>
+Welcome のメッセージ下にある4行をコピペして追加します。なお、`<!-- コメント -->` はテンプレート（HTML部分）にコメントを書くときの記法です。<a href="https://github.com/sironekotoro/mojo_prof_2019/compare/784fce3a18078eb2b18e094654aca0a747cff9ab..2c1d3fe828eebdf3ad1a7689ef9c6778e15fb868" target="_blank">[GitHub] mojo_prof.pl</a>
 
 ```perl
 <h1>Welcome to the Mojolicious real-time web framework!</h1>
@@ -975,7 +985,7 @@ ___
 ### ページの増やし方 View
 view の用意ができたので、コントローラ部の renderメソッドを変更します。
 
-<a href="https://github.com/sironekotoro/mojo_prof_2019/compare/2c1d3fe828eebdf3ad1a7689ef9c6778e15fb868..4f760bbd3a7cd0d75d403a9bd460328b3abfc639" target="_blank">mojo_prof.pl</a>
+<a href="https://github.com/sironekotoro/mojo_prof_2019/compare/2c1d3fe828eebdf3ad1a7689ef9c6778e15fb868..4f760bbd3a7cd0d75d403a9bd460328b3abfc639" target="_blank">[GitHub] mojo_prof.pl</a>
 
 ```perl
   $c->render(template => 'index');
@@ -1004,7 +1014,7 @@ ___
 ## 練習問題
 先ほど作成したプロフィールページを充実させましょう。以下のページからコードをコピペして利用してもokです。
 
-<a href="https://github.com/sironekotoro/mojo_prof_2019/blob/559711cd91afe1fefc1f887f672f554f1c116489/mojo_prof.pl" target="_blank">mojo_prof.pl</a>
+<a href="https://github.com/sironekotoro/mojo_prof_2019/blob/559711cd91afe1fefc1f887f672f554f1c116489/mojo_prof.pl" target="_blank">[GitHub] mojo_prof.pl</a>
 
 ```html
 @@ profile.html.ep
@@ -1030,7 +1040,7 @@ if文やfor文のような、Perlの制御構文をテンプレート内で記�
 
 さっそく練習用の雛形を作って実行してみましょう。
 
-<a href="https://github.com/sironekotoro/mojo_fizzbuzz_2019/commit/49a3e4543880b650e940a9b46cc7bc824205c392?diff=unified" target="_blank">mojo_fizzbuzz.pl</a>
+<a href="https://github.com/sironekotoro/mojo_fizzbuzz_2019/commit/49a3e4543880b650e940a9b46cc7bc824205c392?diff=unified" target="_blank">[GitHub] mojo_fizzbuzz.pl</a>
 
 ```bash
 $ mojo generate lite_app mojo_fizzbuzz.pl
@@ -1045,7 +1055,7 @@ ___
 ### テンプレートでfor文
 今回はテンプレートの活用なので、テンプレート部の「Welcome 〜 」の下の行から書いていきます。
 
-<a href="https://github.com/sironekotoro/mojo_fizzbuzz_2019/compare/49a3e4543880b650e940a9b46cc7bc824205c392..87e70fa8e8be80e52ec5ee433a38b91d686917fb?diff=split" target="_blank">mojo_fizzbuzz.pl</a>
+<a href="https://github.com/sironekotoro/mojo_fizzbuzz_2019/compare/49a3e4543880b650e940a9b46cc7bc824205c392..87e70fa8e8be80e52ec5ee433a38b91d686917fb?diff=split" target="_blank">[GitHub] mojo_fizzbuzz.pl</a>
 
 ```perl
 <h1>Welcome to the Mojolicious real-time web framework!</h1>
@@ -1055,12 +1065,12 @@ ___
 <% } %>
 ```
 
-書き終えたら、ブラウザをリロードして、 1 から 100 まで表示されていれば成功です。
+書き終えたら、ブラウザをリロードしてください。1 から 100 までの数字が表示されていれば成功です。
 
 ___
 ## テンプレートの活用
 ### テンプレートでfor文
-では解説します
+では解説します。
 ```perl
 <% for my $num (1 .. 100){ %>
   <%= $num %>
@@ -1108,7 +1118,7 @@ ___
 ### テンプレートでif文
 引き続き、fizzbuzz.plを編集していきます。
 
-<a href="https://github.com/sironekotoro/mojo_fizzbuzz_2019/compare/87e70fa8e8be80e52ec5ee433a38b91d686917fb..298b579c546ee1741a812f99f9dfa0e8328796d0" target="_blank">mojo_fizzbuzz.pl</a>
+<a href="https://github.com/sironekotoro/mojo_fizzbuzz_2019/compare/87e70fa8e8be80e52ec5ee433a38b91d686917fb..298b579c546ee1741a812f99f9dfa0e8328796d0" target="_blank">[GitHub] mojo_fizzbuzz.pl</a>
 
 ```perl
 <% for my $num (1 .. 100){ %>
@@ -1165,7 +1175,7 @@ ___
 
 ___
 ## 練習問題
-fizzbuzz を完成させましょう。 <a href="https://github.com/sironekotoro/mojo_fizzbuzz_2019/blob/master/mojo_fizzbuzz.pl" target="_blank">mojo_fizzbuzz.pl</a>
+fizzbuzz を完成させましょう。 <a href="https://github.com/sironekotoro/mojo_fizzbuzz_2019/blob/master/mojo_fizzbuzz.pl" target="_blank">[GitHub] mojo_fizzbuzz.pl</a>
 
 - fizzbuzzのルール
     - 1 から 100 までの数をカウントしていく
@@ -1188,9 +1198,9 @@ ___
 
 これから作るのは、Webアプリの基本形ともいえる **BBS、掲示板** です。
 
-<q>
+<blockquote>
   電子掲示板（でんしけいじばん、BBS、英語: Bulletin Board System）とは、コンピュータネットワークを使用した環境で、記事を書き込んだり、閲覧したり、コメント（レス）を付けられるようにした仕組みのことである。<div style="text-align: right;">[wikipedia 電子掲示板](https://ja.wikipedia.org/wiki/%E9%9B%BB%E5%AD%90%E6%8E%B2%E7%A4%BA%E6%9D%BF)</div>
-</q>
+</blockquote>
 
 ___
 ## 簡易 BBS の作成
@@ -1199,7 +1209,7 @@ ___
 
 1. ページが表示できる
 
-1. ページに情報を送信できる
+1. ページを経由して情報を送信できる
 
 1. 送信した内容に応じて、ページ内の情報やサービスが変わる
 
@@ -1239,7 +1249,7 @@ ___
 ## 簡易 BBS の作成
 ### 雛形をつくる
 
-<a href="https://github.com/sironekotoro/mojo_bbs_2019/commit/0a3c0e311589ab92d1a0fd4dcd93882c4cb84449?diff=unified" target="_blank">mojo_bbs.pl</a>
+<a href="https://github.com/sironekotoro/mojo_bbs_2019/commit/0a3c0e311589ab92d1a0fd4dcd93882c4cb84449?diff=unified" target="_blank">[GitHub] mojo_bbs.pl</a>
 
 ```bash
 $ mojo generate lite_app mojo_bbs.pl
@@ -1252,7 +1262,7 @@ $ morbo mojo_bbs.pl
 ___
 ## 簡易 BBS の作成
 ### テンプレート表示の変更
-まず、indexテンプレートを変更します。 <a href="https://github.com/sironekotoro/mojo_bbs_2019/compare/0a3c0e311589ab92d1a0fd4dcd93882c4cb84449..412ca588f6277bf61bbda43a53e0002579854383" target="_blank">mojo_bbs.pl</a>
+まず、indexテンプレートを変更します。 <a href="https://github.com/sironekotoro/mojo_bbs_2019/compare/0a3c0e311589ab92d1a0fd4dcd93882c4cb84449..412ca588f6277bf61bbda43a53e0002579854383" target="_blank">[GitHub] mojo_bbs.pl</a>
 
 変更前
 ```perl
@@ -1278,7 +1288,7 @@ ___
 
 `<h1>掲示板です</h1>` の下に、4行追加します。
 
-<a href="https://github.com/sironekotoro/mojo_bbs_2019/compare/412ca588f6277bf61bbda43a53e0002579854383..e8f706a7f5aed771475334106ac85dbb8ef271d1" target="_blank">mojo_bbs.pl</a>
+<a href="https://github.com/sironekotoro/mojo_bbs_2019/compare/412ca588f6277bf61bbda43a53e0002579854383..e8f706a7f5aed771475334106ac85dbb8ef271d1" target="_blank">[GitHub] mojo_bbs.pl</a>
 
 ```html
 <h1>掲示板です</h1>
@@ -1315,7 +1325,7 @@ http://localhost:3000/?body=hogehoge
 - `body` は テンプレートの `form` タグの `name`
 - `hogehoge` は入力内容
 
-この `?body=hogehoge` の部分を**クエリ文字列、クエリストリング**といいます。
+この `?body=hogehoge` の部分を**クエリ文字列、クエリストリング(query string)**といいます。
 
 ___
 ## 簡易 BBS の作成
@@ -1347,7 +1357,7 @@ ___
 確認してみましょう。Controllerに、以下のようなデバッグ情報を追加して保存します。
 
 <a href="https://github.com/sironekotoro/mojo_bbs_2019
-/compare/e8f706a7f5aed771475334106ac85dbb8ef271d1..f9585aa962880c5534b884183f9bdbc3247008cf" target="_blank">mojo_bbs.pl</a>
+/compare/e8f706a7f5aed771475334106ac85dbb8ef271d1..f9585aa962880c5534b884183f9bdbc3247008cf" target="_blank">[GitHub] mojo_bbs.pl</a>
 
 ```perl
 get '/' => sub {
@@ -1399,7 +1409,7 @@ ___
 
 Controllrer から View に渡す方法は hello_mojo.pl や mojo_prof.pl で実践済みの `stash` を使います。
 <a href="https://github.com/sironekotoro/mojo_bbs_2019
-/compare/f9585aa962880c5534b884183f9bdbc3247008cf..28a7ef8fe80d9bf84e2c32dfe1fad78b803cd3e8" target="_blank">mojo_bbs.pl</a>
+/compare/f9585aa962880c5534b884183f9bdbc3247008cf..28a7ef8fe80d9bf84e2c32dfe1fad78b803cd3e8" target="_blank">[GitHub] mojo_bbs.pl</a>
 
 ```perl
 get '/' => sub {
@@ -1414,12 +1424,12 @@ get '/' => sub {
 ___
 ## 簡易 BBS の作成
 ### Controller -> view
-コントローラから受け取った情報を表示します。
+Controllrer から受け取った情報を表示します。
 
 formタグの下に、以下を追加します。
 
 <a href="https://github.com/sironekotoro/mojo_bbs_2019
-/compare/28a7ef8fe80d9bf84e2c32dfe1fad78b803cd3e8..e5c184cb4c7682142027fdd09e9ddc26fedf91cd" target="_blank">mojo_bbs.pl</a>
+/compare/28a7ef8fe80d9bf84e2c32dfe1fad78b803cd3e8..e5c184cb4c7682142027fdd09e9ddc26fedf91cd" target="_blank">[GitHub] mojo_bbs.pl</a>
 
 ```html
 <p><%= $kakikomi %></p>
@@ -1435,9 +1445,9 @@ ___
 ### 記事を蓄える
 さて、ここまでで投稿した内容をページに表示することができるようになりました。
 
-しかし、投稿したものは上書きされてしまい残りません。
+しかし、再度投稿すると、上書きされてしまいます。
 
-ここで、過去に投稿した記事がページに表示されるように変更します。
+過去に投稿した記事がページに表示されるように変更します。
 
 ___
 ## 簡易 BBS の作成
@@ -1452,7 +1462,7 @@ ___
 
 なお、配列はWebアプリケーションが停止・再起動した時点でデータが消えてしまいます。現実的ではないですが、無駄というわけではありません。
 
-実際には、データベースから抜き出したデータを配列に格納し、Viewに渡す、という用途が多いです。
+実際には、データベースから抜き出したデータを配列に格納し、Viewに渡す、という用途が多いです。応用が効く方法です。
 
 ___
 ## 簡易 BBS の作成
@@ -1460,7 +1470,7 @@ ___
 まず、投稿を保存する配列を用意する必要があります。
 
 <a href="https://github.com/sironekotoro/mojo_bbs_2019
-/compare/e5c184cb4c7682142027fdd09e9ddc26fedf91cd..45f223f70d6a88f86ecf43732380682a47882710" target="_blank">mojo_bbs.pl</a>
+/compare/e5c184cb4c7682142027fdd09e9ddc26fedf91cd..45f223f70d6a88f86ecf43732380682a47882710" target="_blank">[GitHub] mojo_bbs.pl</a>
 
 ```perl
 use Mojolicious::Lite;
@@ -1471,7 +1481,7 @@ get '/' => sub {
 ```
 配列は `get` のコードリファレンスの外で宣言します。なぜでしょう？
 
-コードリファレンスの中で `my @entries` とすると、 `get` でアクセスの都度、配列が初期化されてしまい、投稿を貯めることができません。
+コードリファレンスの中で `my @entries` とすると、 `get` でアクセスの都度、配列が初期化されてしまい、投稿を貯めることができなくなるためです。
 
 ___
 ## 簡易 BBS の作成
@@ -1479,7 +1489,7 @@ ___
 コントローラーの部分を変更します。
 
 <a href="https://github.com/sironekotoro/mojo_bbs_2019
-/compare/45f223f70d6a88f86ecf43732380682a47882710..bacf90c29a92e8a4de97b809dec3f40b5c67fba1" target="_blank">mojo_bbs.pl</a>
+/compare/45f223f70d6a88f86ecf43732380682a47882710..bacf90c29a92e8a4de97b809dec3f40b5c67fba1" target="_blank">[GitHub] mojo_bbs.pl</a>
 
 ```perl
 get '/' => sub {
@@ -1498,7 +1508,7 @@ get '/' => sub {
 ___
 ## 簡易 BBS の作成
 ### 貯めた投稿を表示する
-以下がcontrollerから受け取ったスカラー変数が表示されているテンプレートの部分です。
+コントローラから受け取ったスカラー変数を、テンプレート部で表示しています。
 ```perl
 <p><%= $kakikomi %></p>
 ```
@@ -1511,8 +1521,8 @@ ___
 ___
 ## 簡易 BBS の作成
 ### 貯めた投稿を表示する
-この配列リファレンスをデリファレンスします。そして配列といえば for 文です。`<p>`タグで囲まれたところを変更します。 <a href="https://github.com/sironekotoro/mojo_bbs_2019
-/compare/bacf90c29a92e8a4de97b809dec3f40b5c67fba1..6a14d7a02f766ede4e18939e62cedeac105b48a9" target="_blank">mojo_bbs.pl</a>
+この配列リファレンスをデリファレンスします。配列といえば for 文です。`<p>`タグで囲まれたところを変更します。 <a href="https://github.com/sironekotoro/mojo_bbs_2019
+/compare/bacf90c29a92e8a4de97b809dec3f40b5c67fba1..6a14d7a02f766ede4e18939e62cedeac105b48a9" target="_blank">[GitHub] mojo_bbs.pl</a>
 
 変更前
 ```perl
@@ -1527,7 +1537,6 @@ ___
 <% } %>
 </p>
 ```
-
 これで、投稿が配列に溜まり続け、また、その投稿が表示されるようになりました。
 
 ___
@@ -1538,7 +1547,7 @@ ___
 
 - 名前/メールアドレスを入力/表示できるようにする
 
-- メールアドレスが｢age｣であれば、記事を `push` ではなく `unshift` する
+- メールアドレスが｢age｣であれば、記事を `push` ではなく `unshift` する（一番上に表示される）
 
 - テンプレートを整理して、見た目を綺麗にする
 
@@ -1571,7 +1580,7 @@ ___
   - CSS, スタイルシートフレームワーク
 - インタラクティブなサイト作り
   - JavaScript、Javascriptフレームワーク
-- Webサーバの運用管理
+- WebサーバとWebアプリケーションサーバの運用管理
   - Apache, nginx, plack, starman
 - データベースの運用管理
   - MySQL, PostgreSQL, SQLite, Oracle
@@ -1597,7 +1606,8 @@ ___
 ## 全5回、お疲れ様でした！
 
 ---
-# 落ち穂拾い 1: HTTP の基礎
+# 落ち穂拾い 1
+## HTTP の基礎
 
 ___
 ## HTTP の基礎
@@ -1651,11 +1661,12 @@ GET / POST で通信を行なっているのはパソコンで動いているブ
 
 Android や iPhone などのスマホのアプリも、インターネットにあるサーバの情報を GET / POST でやりとりしています。
 
-スマホのアプリがつながるインターネット側では Perl をはじめ、node.js(Javascript) , Ruby, Python, C や Javaが動いています。
+そして、スマホのアプリがつながるインターネット側では、 Perl をはじめ、node.js ( Javascript ) , Ruby, Python, C や Java などのプログラムが動いています。
 
 
 ---
-# 落ち穂拾い 2: 続・簡易 BBS の作成
+# 落ち穂拾い 2
+## 続・簡易 BBS の作成
 
 ___
 ## 続・簡易 BBS の作成
@@ -1700,9 +1711,9 @@ ___
 
 また、「表示」と「投稿」で機能を分けた設計にしていきます。
 
-ここまでのコードは本編の終了時のコードを元に編集していきます。ただし、ファイル名は新規に `mojo_post_bbs.pl` とします。ファイルをコピーするなどして対応するか、以下のgithubからコードをコピーしてください。
+ここまでのコードは本編の終了時のコードを元に編集していきます。ただし、ファイル名は新規に `mojo_post_bbs.pl` とします。ファイルをコピーするなどして対応するか、以下のリンクからコードをコピぺしてください。
 
-<a href="https://github.com/sironekotoro/mojo_post_bbs_2019/commit/5ee90ddd03fbfc55478022627f32631ec55b93a8?diff=unified" target="_blank">mojo_post_bbs.pl</a>
+<a href="https://github.com/sironekotoro/mojo_post_bbs_2019/commit/5ee90ddd03fbfc55478022627f32631ec55b93a8?diff=unified" target="_blank">[GitHub] mojo_post_bbs.pl</a>
 
 ___
 ## 続・簡易 BBS の作成
@@ -1710,7 +1721,7 @@ ___
 まず、テンプレート部にある、既存のフォーム内のボタンを以下のように変更します。
 
 <a href="https://github.com/sironekotoro/mojo_post_bbs_2019
-/compare/5ee90ddd03fbfc55478022627f32631ec55b93a8..12adfc68a12148ec964f5f2e99eea5133eee8ed6" target="_blank">mojo_post_bbs.pl</a>
+/compare/5ee90ddd03fbfc55478022627f32631ec55b93a8..12adfc68a12148ec964f5f2e99eea5133eee8ed6" target="_blank">[GitHub] mojo_post_bbs.pl</a>
 
 ```html
 <form action="/" method="get">
@@ -1729,7 +1740,7 @@ ___
 1. `<form>` タグ内のボタンの文字列をPOSTにしている
 
 <a href="https://github.com/sironekotoro/mojo_post_bbs_2019
-/compare/12adfc68a12148ec964f5f2e99eea5133eee8ed6..d4366f736a199bec58f03cdcdd5113dbc9bd5084" target="_blank">mojo_post_bbs.pl</a>
+/compare/12adfc68a12148ec964f5f2e99eea5133eee8ed6..d4366f736a199bec58f03cdcdd5113dbc9bd5084" target="_blank">[GitHub] mojo_post_bbs.pl</a>
 
 ```html
     <input type="submit" value="GETで投稿する">
@@ -1754,7 +1765,7 @@ ___
 ## 続・簡易 BBS の作成
 ### POSTメソッドをコントローラで受け取る
 POSTを受け付けるコントローラを追加します。 <a href="https://github.com/sironekotoro/mojo_post_bbs_2019
-/compare/d4366f736a199bec58f03cdcdd5113dbc9bd5084..579cdaf21cad7708fa07ec5e3871f79c3f97a67d" target="_blank">mojo_post_bbs.pl</a>
+/compare/d4366f736a199bec58f03cdcdd5113dbc9bd5084..579cdaf21cad7708fa07ec5e3871f79c3f97a67d" target="_blank">[GitHub] mojo_post_bbs.pl</a>
 ```perl
   $c->render('index');
 };
@@ -1812,7 +1823,7 @@ ___
 > GET  : （主に）サーバからデータを取得する
 
 <a href="https://github.com/sironekotoro/mojo_post_bbs_2019
-/compare/579cdaf21cad7708fa07ec5e3871f79c3f97a67d..0bf3ef36e67ee4981dcebdd33889cd54bc5cdf05" target="_blank">mojo_post_bbs.pl</a>
+/compare/579cdaf21cad7708fa07ec5e3871f79c3f97a67d..0bf3ef36e67ee4981dcebdd33889cd54bc5cdf05" target="_blank">[GitHub] mojo_post_bbs.pl</a>
 
 ```perl
 get '/' => sub {
@@ -1841,8 +1852,8 @@ ___
 ___
 ## 続・簡易 BBS の作成
 ### POSTはデータの送信だけ
-postメソッドを見ると、以下の二つの機能が原則から外れています。これらはデータの表示のための機能でPOSTの原則から離れています。これをコメントアウトします。 <a href="https://github.com/sironekotoro/mojo_post_bbs_2019
-/compare/0bf3ef36e67ee4981dcebdd33889cd54bc5cdf05..bbd33f0a04a05127c6933803e7afde67ff9465de" target="_blank">mojo_post_bbs.pl</a>
+postメソッドを見ると、以下の二つの機能が原則から外れています。これらはデータの取得と表示のための機能で、POSTの原則である「データの送信」から離れています。これをコメントアウトします。 <a href="https://github.com/sironekotoro/mojo_post_bbs_2019
+/compare/0bf3ef36e67ee4981dcebdd33889cd54bc5cdf05..bbd33f0a04a05127c6933803e7afde67ff9465de" target="_blank">[GitHub] mojo_post_bbs.pl</a>
 
 1. テンプレートに投稿（配列リファレンス）を渡すための `stash`
 
@@ -1872,8 +1883,8 @@ ___
 ### redirect_to
 postメソッドの処理の最後に、 `get '/'` へ処理を遷移させる `redirect_to` メソッドを追加します。
 
-このように書くことで、コントローラ内の `get '/'`に処理が移ります。 <a href="https://github.com/sironekotoro/mojo_post_bbs_2019
-/compare/bbd33f0a04a05127c6933803e7afde67ff9465de..79f9b729ae58af006ac3c715fd95402afc00b1e2" target="_blank">mojo_post_bbs.pl</a>
+このように書くことで、postの処理が終わった後にコントローラ内の `get '/'`へと処理が移ります。 <a href="https://github.com/sironekotoro/mojo_post_bbs_2019
+/compare/bbd33f0a04a05127c6933803e7afde67ff9465de..79f9b729ae58af006ac3c715fd95402afc00b1e2" target="_blank">[GitHub] mojo_post_bbs.pl</a>
 
 ```perl
 post '/post' => sub {
@@ -1903,7 +1914,7 @@ ___
 ## 続・簡易 BBS の作成
 ### GETメソッドのformを削る
 POSTがデータの投稿の処理を行うので、GETから投稿の処理を削除します。 <a href="https://github.com/sironekotoro/mojo_post_bbs_2019
-/compare/bbd33f0a04a05127c6933803e7afde67ff9465de..930b530a8a76948ff1b4e4a6c95a18d39d198c7e" target="_blank">mojo_post_bbs.pl</a>
+/compare/bbd33f0a04a05127c6933803e7afde67ff9465de..930b530a8a76948ff1b4e4a6c95a18d39d198c7e" target="_blank">[GitHub] mojo_post_bbs.pl</a>
 
 テンプレート内にある、GETメソッドで送信しているformタグを削除します。
 ```html
@@ -1924,3 +1935,4 @@ ___
 
 また、投稿時にURLが変わらないことも確認しましょう。
 
+これでおしまいです。お疲れ様でした！
