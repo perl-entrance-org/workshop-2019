@@ -891,7 +891,7 @@ get '/' => sub {
 };
 ```
 
-コントローラ部で `$c->stash( greeting => 'Hello Mojo' );` と書くことで、テンプレート内でスカラー変数 `$greeting`
+コントローラー部で `$c->stash( greeting => 'Hello Mojo' );` と書くことで、テンプレート内でスカラー変数 `$greeting`
 （中身は文字列'Hello Mojo'）を利用することが可能になります。
 
 `stash`メソッドの引数がハッシュ形式であることにも注目です。
@@ -931,7 +931,7 @@ $ morbo mojo_prof.pl
 ___
 ## Mojolicious 入門
 ### ページの増やし方 Controller
-まず、コントローラ部にルーターを追加します。
+まず、コントローラー部にルーターを追加します。
 
 <a href="https://github.com/sironekotoro/mojo_prof_2019/compare/df438373846508b652496a7b838d3ea229b2ea0d..784fce3a18078eb2b18e094654aca0a747cff9ab" target="_blank">[GitHub] mojo_prof.pl</a>
 
@@ -983,7 +983,7 @@ Welcome のメッセージ下にある4行をコピペして追加します。�
 ___
 ## Mojolicious 入門
 ### ページの増やし方 View
-view の用意ができたので、コントローラ部の renderメソッドを変更します。
+view の用意ができたので、コントローラー部の renderメソッドを変更します。
 
 <a href="https://github.com/sironekotoro/mojo_prof_2019/compare/2c1d3fe828eebdf3ad1a7689ef9c6778e15fb868..4f760bbd3a7cd0d75d403a9bd460328b3abfc639" target="_blank">[GitHub] mojo_prof.pl</a>
 
@@ -1186,7 +1186,7 @@ fizzbuzz を完成させましょう。 <a href="https://github.com/sironekotoro
 
 - 時間が余った人向け課題
   - `<br>` で改行したり、 `<font color ='blue'>` や `<font color ='red'>` などで結果に応じた色をつけてみる
-  - テンプレート部ではなく、コントローラ部に fizzbuzz を書いてテンプレート経由で表示する
+  - テンプレート部ではなく、コントローラー部に fizzbuzz を書いてテンプレート経由で表示する
 
 ---
 # 簡易 BBS の作成
@@ -1376,7 +1376,7 @@ get '/' => sub {
 ___
 ## 簡易 BBS の作成
 ### View -> Controller
-先ほどコントローラ部に追加した4行のうち、デバッグ用の表示部分を除いた肝心の部分はこの1行です。
+先ほどコントローラー部に追加した4行のうち、デバッグ用の表示部分を除いた肝心の部分はこの1行です。
 
 Mojolicious の get メソッド内にある $c の `param` メソッドです。
 
@@ -1390,7 +1390,7 @@ ___
 ## 簡易 BBS の作成
 ### View -> Controllerの流れ
 
-このような流れでテンプレート部のフォームの内容をコントローラが受け取ります。
+このような流れでテンプレート部のフォームの内容をコントローラーが受け取ります。
 
 1. Viewで表示されたフォームに入力
 
@@ -1405,9 +1405,9 @@ ___
 ___
 ## 簡易 BBS の作成
 ### Controller -> viewの流れ
-受け取った内容をviewに反映させるため、さらに Controllrer に追加します。
+受け取った内容をviewに反映させるため、さらに Controller に追加します。
 
-Controllrer から View に渡す方法は hello_mojo.pl や mojo_prof.pl で実践済みの `stash` を使います。
+Controller から View に渡す方法は hello_mojo.pl や mojo_prof.pl で実践済みの `stash` を使います。
 <a href="https://github.com/sironekotoro/mojo_bbs_2019
 /compare/f9585aa962880c5534b884183f9bdbc3247008cf..28a7ef8fe80d9bf84e2c32dfe1fad78b803cd3e8" target="_blank">[GitHub] mojo_bbs.pl</a>
 
@@ -1424,7 +1424,7 @@ get '/' => sub {
 ___
 ## 簡易 BBS の作成
 ### Controller -> view
-Controllrer から受け取った情報を表示します。
+Controller から受け取った情報を表示します。
 
 formタグの下に、以下を追加します。
 
@@ -1508,7 +1508,7 @@ get '/' => sub {
 ___
 ## 簡易 BBS の作成
 ### 貯めた投稿を表示する
-コントローラから受け取ったスカラー変数を、テンプレート部で表示しています。
+コントローラーから受け取ったスカラー変数を、テンプレート部で表示しています。
 ```perl
 <p><%= $kakikomi %></p>
 ```
@@ -1516,7 +1516,7 @@ ___
 
 これは配列リファレンスを print した時と同じです。
 
-コントローラ部からテンプレートへ配列リファレンスが引き渡されていることがわかります。
+コントローラー部からテンプレートへ配列リファレンスが引き渡されていることがわかります。
 
 ___
 ## 簡易 BBS の作成
@@ -1759,12 +1759,12 @@ ___
 
 しかし、POSTの入力欄に入れて「POSTで投稿」ボタンを押しても、エラーが出ます。
 
-これは、テンプレートにある入力フォームがPOSTメソッドで情報を送っても、その情報を受け取るコントローラがないためです。
+これは、テンプレートにある入力フォームがPOSTメソッドで情報を送っても、その情報を受け取るコントローラーがないためです。
 
 ___
 ## 続・簡易 BBS の作成
-### POSTメソッドをコントローラで受け取る
-POSTを受け付けるコントローラを追加します。 <a href="https://github.com/sironekotoro/mojo_post_bbs_2019
+### POSTメソッドをコントローラーで受け取る
+POSTを受け付けるコントローラーを追加します。 <a href="https://github.com/sironekotoro/mojo_post_bbs_2019
 /compare/d4366f736a199bec58f03cdcdd5113dbc9bd5084..579cdaf21cad7708fa07ec5e3871f79c3f97a67d" target="_blank">[GitHub] mojo_post_bbs.pl</a>
 ```perl
   $c->render('index');
@@ -1778,7 +1778,7 @@ post '/post' => sub {              # getではなく、post 。また第一引�
   $c->render('index');
 };
 ```
-追加したコントローラのメソッドが `get` ではなく、 `post` であり、postメソッドの第一引数が `/post` となっています。それ以外は `get` メソッドと同じです。
+追加したコントローラーのメソッドが `get` ではなく、 `post` であり、postメソッドの第一引数が `/post` となっています。それ以外は `get` メソッドと同じです。
 
 ___
 ## 続・簡易 BBS の作成
@@ -1792,7 +1792,7 @@ ___
 ### GETとPOSTの機能に応じたコード作り
 ここからは、さらなる「落ち穂拾い」です。
 
-コントローラ部のgetメソッドとpostメソッドを比較すると、異なっているのはそれぞれのコードリファレンスの最初だけです。
+コントローラー部のgetメソッドとpostメソッドを比較すると、異なっているのはそれぞれのコードリファレンスの最初だけです。
 
 ```perl
 get '/' => sub {
@@ -1818,7 +1818,7 @@ ___
 ___
 ## 続・簡易 BBS の作成
 ### GETはデータの取得だけ
-コントローラ部にあるgetメソッドから、投稿データを受け取り配列に保存する部分をコメントアウトします。
+コントローラー部にあるgetメソッドから、投稿データを受け取り配列に保存する部分をコメントアウトします。
 
 > GET  : （主に）サーバからデータを取得する
 
@@ -1883,7 +1883,7 @@ ___
 ### redirect_to
 postメソッドの処理の最後に、 `get '/'` へ処理を遷移させる `redirect_to` メソッドを追加します。
 
-このように書くことで、postの処理が終わった後にコントローラ内の `get '/'`へと処理が移ります。 <a href="https://github.com/sironekotoro/mojo_post_bbs_2019
+このように書くことで、postの処理が終わった後にコントローラー内の `get '/'`へと処理が移ります。 <a href="https://github.com/sironekotoro/mojo_post_bbs_2019
 /compare/bbd33f0a04a05127c6933803e7afde67ff9465de..79f9b729ae58af006ac3c715fd95402afc00b1e2" target="_blank">[GitHub] mojo_post_bbs.pl</a>
 
 ```perl
@@ -1903,8 +1903,8 @@ ___
 
 1. getでページが表示される
 1. postの入力欄に何かを入力し、「POSTで投稿」ボタンを押す
-1. フォームがコントローラにpostメソッドで情報を送る
-1. 投稿内容をコントローラのpostメソッドが受け取る
+1. フォームがコントローラーにpostメソッドで情報を送る
+1. 投稿内容をコントローラーのpostメソッドが受け取る
 1. postメソッドが投稿を配列 `@entries` に追加する
 1. 処理をgetメソッドに移す
 1. getメソッドは `@entries` を配列リファレンスにして、stashメソッドに格納する
@@ -1924,7 +1924,7 @@ POSTがデータの投稿の処理を行うので、GETから投稿の処理を�
 </form>
 ```
 
-ほかにも、コントローラ部にあるコメントアウトした行もついでに削除します。
+ほかにも、コントローラー部にあるコメントアウトした行もついでに削除します。
 
 ここで保存してブラウザをリロードすると、フォームが一つになっているはずです。
 
