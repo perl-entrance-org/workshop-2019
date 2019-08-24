@@ -1015,7 +1015,7 @@ ___
 
 ___
 ## 練習問題
-先ほど作成したプロフィールページを充実させましょう。以下のページからコードをコピペして利用してもokです。
+先ほど作成した<a href="http://localhost:3000/profile" target="_blank">`http://localhost:3000/profile`</a>を充実させましょう。以下のページからコードをコピペして利用してもokです。
 
 <a href="https://github.com/sironekotoro/mojo_prof_2019/blob/559711cd91afe1fefc1f887f672f554f1c116489/mojo_prof.pl" target="_blank">[GitHub] mojo_prof.pl</a>
 
