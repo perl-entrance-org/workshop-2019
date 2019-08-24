@@ -548,7 +548,7 @@ ___
 このように、Perlのモジュールの世界は懐が広いのが特徴です。ぜひ下記の参考リンクも見てみてください。
 
 - [第19回　Acmeで広がるPerlの世界―CPANは愉快なジョークモジュールの宝庫（1）](http://gihyo.jp/dev/serial/01/perl-hackers-hub/001901)
-- [ACME大全 2018年版](https://donzoko.booth.pm/items/962395)
+- [ACME大全 2019年版](https://booth.pm/ja/items/1499431)
 
 ---
 # Mojoliciousとは
