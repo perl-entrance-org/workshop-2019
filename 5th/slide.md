@@ -956,14 +956,14 @@ ___
 ### ページの増やし方 Controller
 ここまで入力したら、ブラウザをリロード（再読み込み）してから以下のアドレスにアクセスしてみてください。
 
-- `http://localhost:3000`
-- `http://localhost:3000/profile`
+- <a href="http://localhost:3000" target="_blank">`http://localhost:3000`</a>
+- <a href="http://localhost:3000/profile" target="_blank">`http://localhost:3000/profile`</a>
 
 同じページが表示されていれば成功です。
 
 また、ルーターを追加していない適当なアドレスを入力して、エラーが出ることを確認してみましょう。
 
-- `http://localhost:3000/hogehoge`
+- <a href="http://localhost:3000/profile" target="_blank">`http://localhost:3000/hogehoge`</a>
 
 ___
 ## Mojolicious 入門
