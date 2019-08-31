@@ -919,7 +919,7 @@ ___
 ### ページの増やし方
 つぎに、ページの増やし方です。新たにひな形を作って実践していきます。
 ```bash
-$ mojo generate lite_app profile.pl
+$ mojo generate lite_app mojo_prof.pl
 
 $ morbo mojo_prof.pl
 ```
