@@ -396,7 +396,7 @@ ___
 ___
 ## Webアプリ、その前に
 ### これまでのスクリプトの動き（イラスト）
-![これまでのスクリプトの動き](image/perl_entrance_2019_5th_01.png "サンプル")
+![これまでのスクリプトの動き](https://raw.githubusercontent.com/perl-entrance-org/workshop-2019/master/5th/image/perl_entrance_2019_5th_01.png "サンプル")
 
 ___
 ## Webアプリ、その前に
@@ -411,7 +411,7 @@ ___
 ___
 ## Webアプリ、その前に
 ### 今回作成するWebアプリの動き（イラスト）
-![これまでのスクリプトの動き](image/perl_entrance_2019_5th_02.png "サンプル")
+![これまでのスクリプトの動き](https://raw.githubusercontent.com/perl-entrance-org/workshop-2019/master/5th/image/perl_entrance_2019_5th_02.png "サンプル")
 
 
 ---
@@ -590,7 +590,7 @@ WAFでは、機能のまとまりごとに処理を分けて開発を行って�
 ___
 ## Mojoliciousとは
 ### MVCモデル（イラスト）
-![MVCモデル](image/perl_entrance_2019_5th_03.png "MVCモデル")
+![MVCモデル](https://raw.githubusercontent.com/perl-entrance-org/workshop-2019/master/5th/image/perl_entrance_2019_5th_03.png "MVCモデル")
 
 ___
 ## Mojoliciousとは
@@ -602,7 +602,7 @@ Mojoliciousは**MVCモデル**のうち、Modelを除いた「View」と「Contr
 ___
 ## Mojoliciousとは
 ### MVCモデル（イラスト）
-![MojoliciousではModelを作りこむ必要がある](image/perl_entrance_2019_5th_04.png "MojoliciousではModelを作りこむ必要がある")
+![MojoliciousではModelを作りこむ必要がある](https://raw.githubusercontent.com/perl-entrance-org/workshop-2019/master/5th/image/perl_entrance_2019_5th_04.png "MojoliciousではModelを作りこむ必要がある")
 
 
 ---
@@ -861,7 +861,7 @@ HTMLタグの内側に書かれているものについての解説です。
 ___
 ## Mojolicious::Lite
 ### コード解説（イラスト）
-![hello_mojoコード解説](image/perl_entrance_2019_5th_05.png "hello_mojoコード解説")
+![hello_mojoコード解説](https://raw.githubusercontent.com/perl-entrance-org/workshop-2019/master/5th/image/perl_entrance_2019_5th_05.png "hello_mojoコード解説")
 
 ---
 # Mojolicious 入門
@@ -1341,7 +1341,7 @@ MVCモデルを思い出しましょう。
 ___
 ## 簡易 BBS の作成
 ### ここでMVCモデルを思い出す（イラスト）
-![MojoliciousではModelを作りこむ必要がある](image/perl_entrance_2019_5th_04.png "MojoliciousではModelを作りこむ必要がある")
+![MojoliciousではModelを作りこむ必要がある](https://raw.githubusercontent.com/perl-entrance-org/workshop-2019/master/5th/image/perl_entrance_2019_5th_04.png "MojoliciousではModelを作りこむ必要がある")
 
 ___
 ## 簡易 BBS の作成
