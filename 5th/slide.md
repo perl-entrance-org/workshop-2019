@@ -478,7 +478,7 @@ $ chmod +x cpanm
 
 # cpanmの -l(エル)オプションで、指定したディレクトリ(extlib)に指定したモジュール(local::lib)を
 インストールする
-$ .cpanm -l ~/extlib local::lib
+$ ./cpanm -l ~/extlib local::lib
 
 # perlのモジュール検索パスを追加し(~/extlib/lib/perl5)、extlibにパスを通すための設定を表示
 # それをteeコマンドを利用して起動時のシェル設定ファイルにも書き込む
