@@ -956,14 +956,14 @@ ___
 ### ページの増やし方 Controller
 ここまで入力したら、ブラウザをリロード（再読み込み）してから以下のアドレスにアクセスしてみてください。
 
-- <a href="http://localhost:3000" target="_blank">`http://localhost:3000`</a>
-- <a href="http://localhost:3000/profile" target="_blank">`http://localhost:3000/profile`</a>
+- <a href="http://127.0.0.1:3000" target="_blank">`http://127.0.0.1:3000`</a>
+- <a href="http://127.0.0.1:3000/profile" target="_blank">`http://127.0.0.1:3000/profile`</a>
 
 同じページが表示されていれば成功です。
 
 また、ルーターを追加していない適当なアドレスを入力して、エラーが出ることを確認してみましょう。
 
-- <a href="http://localhost:3000/profile" target="_blank">`http://localhost:3000/hogehoge`</a>
+- <a href="http://127.0.0.1:3000/profile" target="_blank">`http://127.0.0.1:3000/hogehoge`</a>
 
 ___
 ## Mojolicious 入門
@@ -1006,16 +1006,16 @@ ___
 ### ページの増やし方 View
 ブラウザをリロード（再読み込み）してから以下のそれぞれのアドレスにアクセスしてみてください。
 
-- <a href="http://localhost:3000" target="_blank">`http://localhost:3000`</a>
-- <a href="http://localhost:3000/profile" target="_blank">`http://localhost:3000/profile`</a>
+- <a href="http://127.0.0.1:3000" target="_blank">`http://127.0.0.1:3000`</a>
+- <a href="http://127.0.0.1:3000/profile" target="_blank">`http://127.0.0.1:3000/profile`</a>
 
-`http://localhost:3000/profile` にアクセスした時に「プロフィール」と表示されていたら成功です。
+`http://127.0.0.1:3000/profile` にアクセスした時に「プロフィール」と表示されていたら成功です。
 
 これでページのアドレスごとに異なる内容を表示することができました。
 
 ___
 ## 練習問題
-先ほど作成した<a href="http://localhost:3000/profile" target="_blank">`http://localhost:3000/profile`</a>を充実させましょう。以下のページからコードをコピペして利用してもokです。
+先ほど作成した<a href="http://127.0.0.1:3000/profile" target="_blank">`http://127.0.0.1:3000/profile`</a>を充実させましょう。以下のページからコードをコピペして利用してもokです。
 
 <a href="https://github.com/sironekotoro/mojo_prof_2019/blob/559711cd91afe1fefc1f887f672f554f1c116489/mojo_prof.pl" target="_blank">[GitHub] mojo_prof.pl</a>
 
@@ -1307,7 +1307,7 @@ ___
 ### 入力フォームの作成
 追加したら保存します。
 
-ブラウザをリロード (あるいは<a href="http://localhost:3000" target="_blank">`http://localhost:3000`</a>)
+ブラウザをリロード (あるいは<a href="http://127.0.0.1:3000" target="_blank">`http://127.0.0.1:3000`</a>)
 にアクセス) してみましょう。
 
 入力欄が表示されていれば成功です。
@@ -1320,7 +1320,7 @@ ___
 画面上に変化がないように見えます・・・が、ブラウザのアドレスバーに注目してください。以下のようになっているはずです。
 
 ```
-http://localhost:3000/?body=hogehoge
+http://127.0.0.1:3000/?body=hogehoge
 ```
 
 他の文字を入れた時も、アドレスバーは入力された文字に応じて表示が変わります。
@@ -1438,7 +1438,7 @@ formタグの下に、以下を追加します。
 <p><%= $kakikomi %></p>
 ```
 
-ここまで出来たら、保存してからブラウザをリロード (あるいは<a href="http://localhost:3000" target="_blank">`http://localhost:3000`</a>にアクセス) してみます。
+ここまで出来たら、保存してからブラウザをリロード (あるいは<a href="http://127.0.0.1:3000" target="_blank">`http://127.0.0.1:3000`</a>にアクセス) してみます。
 
 フォームに文字を入力して、｢投稿する｣ボタンをクリックし、入力した文字がフォームの下に表示されることを確認します。
 
