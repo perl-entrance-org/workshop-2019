@@ -922,7 +922,7 @@ ___
 ### ページの増やし方
 つぎに、ページの増やし方です。新たにひな形を作って実践していきます。
 ```bash
-$ mojo generate lite_app profile.pl
+$ mojo generate lite_app mojo_prof.pl
 
 $ morbo mojo_prof.pl
 ```
@@ -947,7 +947,7 @@ get '/' => sub {
 # 以下の4行を追加
 get '/profile' => sub {             # get関数の最初の引数が
   my $c = shift;                    # /profile となっている
-  $c->render(template => 'profile');# ここを index から profile に変更する
+  $c->render(template => 'index');
 };
 ```
 
@@ -995,8 +995,8 @@ view の用意ができたので、コントローラー部の renderメソッ�
 };
 
 # 以下の4行を追加
-get '/profile' => sub {             # get関数の最初の引数が
-  my $c = shift;                    # /profile となっている
+get '/profile' => sub {
+  my $c = shift;
   $c->render(template => 'profile');# ここを index から profile に変更する
 };
 ```
