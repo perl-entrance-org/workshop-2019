@@ -122,7 +122,7 @@ MSYS2 is a software distro and building platform for Windows.
 At its core is an independent rewrite of MSYS, based on modern Cygwin (POSIX compatibility layer) and MinGW-w64 with the aim of better interoperability with native Windows software.
 It provides a bash shell, Autotools, revision control systems and the like for building native Windows applications using MinGW-w64 toolchains
 
-※公式サイトより
+<div align="right">[MSYS2 homepage](https://www.msys2.org/)</div>
 
 ___
 ## msys2とは?
@@ -142,7 +142,7 @@ ___
 ### msys2のライセンス
 MinGW、msysどちらのパッケージもフリーソフトウェアです。Win32APIを利用するためのヘッダファイルはパブリックドメインで提供されており、GNUツールの移植版はGPLである。MinGWの個々のGNUツール及びMSYSは、MinGWの公式サイトより入手可能である。
 
-※Wikipediaより
+<div align="right">[MinGW - Wikipedia](https://ja.wikipedia.org/wiki/MinGW)</div>
 
 ___
 ## msys2のインストール時の推奨環境
