@@ -141,7 +141,7 @@ ___
 - 次のスライドの`open`を使用します．
 
 ___
-## コマンド集(open) 
+## コマンド集(open)
 ### [macOSユーザ向け]
     $ open .
 
@@ -164,32 +164,34 @@ ___
 ___
 ## エディタ
 - コードを書く時に最も使う道具, それがエディタです.
-- プログラミングに特化した様々なエディタが開発されていますが, Perl入学式ではその中でもAtomを紹介します.
-    - 特にこだわりのない方は, 今回紹介するAtomを試してみましょう.
+- プログラミングに特化した様々なエディタが開発されていますが, Perl入学式ではその中でもVisual Studio Codeを紹介します.
+    - 特にこだわりのない方は, 今回紹介するVisual Studio Codeを試してみましょう.
     - もちろん, EmacsやVim,サクラエディタなど, 既に使い慣れているエディタがある方はそちらをお使いください.
 
 ___
-## Atom
-- [https://atom.io/](https://atom.io/)へアクセスし, ｢Download｣をクリックします.
+## Visual Studio Code
+- [Visual Studio Code - Code Editing. Redefined](https://code.visualstudio.com/)へアクセスし, ｢Download｣をクリックします.
 
 ___
-## Atom
+## Visual Studio Code
 
 ### Windows
-- ダウンロードした`AtomSetup-x64.exe`をダブルクリックすると, インストールが開始されます.
-- インストール後は, スタートメニューから「Atom」をダブルクリックすればAtomが起動します.
+- ダウンロードした`VSCodeUserSetup-**.exe`をダブルクリックすると, インストールが開始されます.
+    - ** としたところにはバージョン番号が入ります
+- インストール後は, スタートメニューから「Visual Studio Code」をダブルクリックすればVisual Studio Codeが起動します.
     - 初回は自動的に起動します.
+
 ___
-## Atom
+## Visual Studio Code
 
 ### macOS
-- ダウンロードした`atom-mac.zip`をダブルクリックすると, `atom.app`が生成されます.
-- これをダブルクリックすればAtomが起動します.
-    - ｢"Atom.app"はインターネットからダウンロードされたアプリケーションです｣という警告が出た場合, ｢開く｣をクリックします.
+- ダウンロードした`VSCode-darwin-stable.zip`をダブルクリックすると, `Visual Studio Code.app`が生成されます.
+- これをダブルクリックすればVisual Studio Codeが起動します.
+    - ｢"Visual Studio Code.app"はインターネットからダウンロードされたアプリケーションです｣という警告が出た場合, ｢開く｣をクリックします.
 
 ___
 ## 練習問題
-- Atomなど, 好きなエディタで`perl-entrance`ディレクトリに`profile.txt`というファイルを用意しましょう.
+- Visual Studio Codeなど, 好きなエディタで`perl-entrance`ディレクトリに`profile.txt`というファイルを用意しましょう.
     - ファイルの中には, 「使用したコマンド1つとその説明」,「今使用しているOS」,「使用しているエディタ」を書きます.
 - ターミナルを使って, `profile.txt`を`profile2.txt`という名前でコピーしよう.
 - コピー元の`profile.txt`をターミナルから削除しましょう.
