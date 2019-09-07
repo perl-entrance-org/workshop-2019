@@ -7,8 +7,11 @@ ___
 ## 諸注意
 - 会場について
     - 飲食・喫煙・トイレetc
+
 - 写真撮影について
-    - 写真撮影NGな方はお手数ですが申し出てください
+    - 写真撮影NGな方は、お手数ですが申し出てください
+
+    - 写真はPerl普及団体の [JPA ( Japan Perl Association )](https://japan.perlassociation.org/)への活動報告に利用します
 
 ___
 ## 本日の内容
