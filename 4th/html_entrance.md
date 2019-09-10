@@ -8,6 +8,7 @@ ___
 
 - <a href="https://www.google.com/intl/ja/chrome/" target="_blank">Chrome(Google)</a>
 - <a href="https://www.mozilla.org/ja/firefox/new/" target="_blank">Firefox(mozilla)</a>
+- <a href="https://www.microsoft.com/ja-jp/windows/microsoft-edge" target="_brank">Edge(Microsoft)</a>
 - <a href="https://support.microsoft.com/ja-jp/help/17621/internet-explorer-downloads" target="_brank">Internet Explorer(Microsoft)</a>
 - <a href="https://support.apple.com/ja-jp/safari" target="_blank">Safari(Apple)</a>
 
