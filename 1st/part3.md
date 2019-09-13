@@ -42,15 +42,15 @@ ___
 
 ___
 ## オンラインでのサポート
-- Perl入学式の公式ページ http://perl-entrance.org/
-- Twitterアカウント [@Perl_Entrance](https://twitter.com/Perl_Entrance)
+- <a href="http://perl-entrance.org/" target="_blank">Perl入学式の公式ページ</a>
+- <a href="https://twitter.com/Perl_Entrance">Twitterアカウント [@Perl_Entrance]</a>
     - 公式ページやTiwtterアカウントでは、開催日程などがアナウンスされます。
-- Twitterハッシュタグ [#Perl入学式](https://twitter.com/hashtag/Perl%E5%85%A5%E5%AD%A6%E5%BC%8F?src=hash)
+- <a href="https://twitter.com/hashtag/Perl%E5%85%A5%E5%AD%A6%E5%BC%8F?src=hash" target="_blank">Twitterハッシュタグ [#Perl入学式]</a>
     - 運営側がウォッチしているので、なにか疑問があればこれをつけて気軽に質問してみましょう。
-- [Slackチャンネル](https://docs.google.com/forms/d/e/1FAIpQLScbWyg-cgcqilW7-BpKagRm2ldBhvwRBNr2N5eg3LHOK13FGw/viewform)
+- <a href="https://docs.google.com/forms/d/e/1FAIpQLScbWyg-cgcqilW7-BpKagRm2ldBhvwRBNr2N5eg3LHOK13FGw/viewform" target="_blank">Slackチャンネル</a>
     - Slackというチャットツールを使って、サポーターや参加者とのチャットが出来ます。
     - こちらでも気軽に質問や雑談をしてみましょう。
-- [GitHubのPerl入学式アカウント](https://github.com/perl-entrance-org)
+- <a href="https://github.com/perl-entrance-org" target="_blank">GitHubのPerl入学式アカウント</a>
     - 講義で使われた資料、コードなどがあります。
 
 ---
@@ -67,7 +67,7 @@ ___
 
 ___
 ## Perlの特徴
-- [Wikipediaの記事](https://ja.wikipedia.org/wiki/Perl)から重要なものだけ引用します...
+- <a href="https://ja.wikipedia.org/wiki/Perl" target="_blank">Wikipediaの記事</a>から重要なものだけ引用します...
     - 強力な文字列処理。正規表現をサポート。
     - 日本語をはじめとして世界中の言語を処理可能。
     - 自由度の高い文法。簡潔にプログラムを記述できる。
@@ -183,15 +183,15 @@ ___
 - 最近は検索(ググる)ことで解決することも多いです。
     - ただそれだと体系的な勉強は出来ないので、より深く学びたいのであれば何らかの書籍を通読するのがオススメです。
 - ネットの情報は玉石混交、一方で書籍の場合は情報の陳腐化があり得ます。
-    - 最初は誰しも｢記号｣が分からないので、ググるにも手がかりが無い場合、ドキュメント(`perldoc -v` / [perldoc.jp](https://perldoc.jp/))を活用しましょう。
+    - 最初は誰しも｢記号｣が分からないので、ググるにも手がかりが無い場合、ドキュメント(`perldoc -v` / <a href="https://perldoc.jp/" target="_blank">perldoc.jp</a>)を活用しましょう。
 
 ___
 ## オススメの書籍
-- 「[プログラミングPerl](https://www.oreilly.co.jp/books/4873110963/)」(通称: ラクダ本)。プログラミング未経験の初心者にはハードルが高く、時期が来るまで買うのを待っても良いかも？
-- 「[初めてのPerl](https://www.oreilly.co.jp/books/9784873118246/)」(通称: リャマ本)。若干プログラミング初心者向け、オライリーの文体に慣れていないと多少厳しいかも。
-- 「[CPANモジュールガイド](https://www.wgn.co.jp/store/dat/3227/)」CPANモジュール（後述）のガイド本。Perlの可能性を知ることができる良書。
-- 「[雅なPerl](https://booth.pm/ja/items/260345)」2015年に第3版刊行。同人誌、とはいえ初心者向けという意味ではかなり秀逸な解説をしています。
-- 「[もっと自在にサーバを使い倒す 業務に役立つPerl](https://gihyo.jp/book/2012/978-4-7741-5025-3)」サーバーのログ加工を中心に、Perlの実用例を学べる本です。
+- 「<a href="https://www.oreilly.co.jp/books/4873110963/" target="_blank">プログラミングPerl</a>」(通称: ラクダ本)。プログラミング未経験の初心者にはハードルが高く、時期が来るまで買うのを待っても良いかも？
+- 「<a href="https://www.oreilly.co.jp/books/9784873118246/" target="_blank">初めてのPerl</a>」(通称: リャマ本)。若干プログラミング初心者向け、オライリーの文体に慣れていないと多少厳しいかも。
+- 「<a href="https://www.wgn.co.jp/store/dat/3227/" target="_blank">CPANモジュールガイド」CPANモジュール（後述）のガイド本。Perlの可能性を知ることができる良書。
+- 「<a href="https://booth.pm/ja/items/260345" target="_blank">雅なPerl</a>」2015年に第3版刊行。同人誌、とはいえ初心者向けという意味ではかなり秀逸な解説をしています。
+- 「<a href="https://gihyo.jp/book/2012/978-4-7741-5025-3" target="_blank">もっと自在にサーバを使い倒す 業務に役立つPerl</a>」サーバーのログ加工を中心に、Perlの実用例を学べる本です。
     - その他、様々な対象者や内容の書籍がたくさんありますが、割愛します。
 
 ---
@@ -253,7 +253,7 @@ ___
 $ perldoc -f print
 ```
 - `print`について調べる場合には、perldocコマンドを利用します。
-- 先に登場した[perldoc.jp](http://perldoc.jp/)でも確認が可能。
+- 先に登場した<a href="https://perldoc.jp/" target="_blank">perldoc.jp</a>でも確認が可能。
 
 ___
 ## perldocとドキュメント
@@ -261,7 +261,7 @@ ___
 $ perldoc Term::ANSIColor
 ```
 - モジュールについて調べる場合にも、perldocコマンドを利用します。
-- 先に登場した[perldoc.jp](http://perldoc.jp/)でも確認が可能。
+- 先に登場した<a href="https://perldoc.jp/" target="_blank">perldoc.jp</a>でも確認が可能。
 
 ___
 ## 練習問題 (1)
@@ -305,7 +305,7 @@ ___
 
 - これでみなさんもPerlMongerです。
 
-- 是非Perl入学式の[slack](https://docs.google.com/forms/d/e/1FAIpQLScbWyg-cgcqilW7-BpKagRm2ldBhvwRBNr2N5eg3LHOK13FGw/viewform)に参加して、 サポーターや参加者の皆さんと交流しましょう。
+- 是非Perl入学式の<a href="https://docs.google.com/forms/d/e/1FAIpQLScbWyg-cgcqilW7-BpKagRm2ldBhvwRBNr2N5eg3LHOK13FGw/viewform" target="_blank">slack</a>に参加して、 サポーターや参加者の皆さんと交流しましょう。
 
 - 不明点もslackで是非質問してください。
 
