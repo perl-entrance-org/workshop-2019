@@ -44,31 +44,31 @@ ___
 ## オンラインでのサポート
 - <a href="http://perl-entrance.org/" target="_blank">Perl入学式の公式ページ</a>
 - <a href="https://twitter.com/Perl_Entrance">Twitterアカウント [@Perl_Entrance]</a>
-    - 公式ページやTiwtterアカウントでは、開催日程などがアナウンスされます。
+    - 公式ページや<ruby>Tiwtter<rt>ツイッター</rt></ruby>アカウントでは、開催日程などがアナウンスされます。
 - <a href="https://twitter.com/hashtag/Perl%E5%85%A5%E5%AD%A6%E5%BC%8F?src=hash" target="_blank">Twitterハッシュタグ [#Perl入学式]</a>
     - 運営側がウォッチしているので、なにか疑問があればこれをつけて気軽に質問してみましょう。
 - <a href="https://docs.google.com/forms/d/e/1FAIpQLScbWyg-cgcqilW7-BpKagRm2ldBhvwRBNr2N5eg3LHOK13FGw/viewform" target="_blank">Slackチャンネル</a>
-    - Slackというチャットツールを使って、サポーターや参加者とのチャットが出来ます。
+    - <ruby>Slack<rt>スラック</rt></ruby>というチャットツールを使って、サポーターや参加者とのチャットが出来ます。
     - こちらでも気軽に質問や雑談をしてみましょう。
 - <a href="https://github.com/perl-entrance-org" target="_blank">GitHubのPerl入学式アカウント</a>
-    - 講義で使われた資料、コードなどがあります。
+    - <ruby>GitHub<rt>ギットハブ</rt></ruby>というコードの集積サイトに講義で使われた資料、コードなどがあります。
 
 ---
 # Perlという言語について
 
 ___
 ## Perlって何?
-- 1987年、Larry Wall(右写真)が開発したプログラミング言語です。
+- 1987年、<ruby>Larry Wall<rt>ラリー ウォール</rt></ruby>(右写真)が開発したプログラミング言語です。
 <img src="image/larry.jpg" align='right'>
-    - Ruby、Python、PHPと並ぶLL言語(Lightweight Language)と呼ばれるカテゴリのプログラミング言語の1つです。
+    - <ruby>Ruby<rt>ルビー</rt></ruby>、<ruby>Python<rt>パイソン</rt></ruby>、<ruby>PHP<rt>ピーエイチピー</rt></ruby>と並ぶ<ruby>LL<rt>エルエル</rt></ruby>言語(<ruby>Lightweight Language<rt>ライトウェイト ランゲージ</rt></ruby>)と呼ばれるカテゴリのプログラミング言語の1つです。
         - 後のRubyやPHPに影響を与えました。
-    - C言語やsed(せど)、awk(おーく)の影響を受けた動的型付け言語です。
+    - C言語や<ruby>sed<rt>セド</rt></ruby>、<ruby>awk<rt>オーク</rt></ruby>の影響を受けた動的型付け言語です。
     - ｢Perl｣は言語そのもの、｢perl｣はその処理系を示します。
 
 ___
 ## Perlの特徴
 - <a href="https://ja.wikipedia.org/wiki/Perl" target="_blank">Wikipediaの記事</a>から重要なものだけ引用します...
-    - 強力な文字列処理。正規表現をサポート。
+    - 強力な文字列処理。<ruby>正規表現<rt>せいきひょうげん</rt></ruby>をサポート。
     - 日本語をはじめとして世界中の言語を処理可能。
     - 自由度の高い文法。簡潔にプログラムを記述できる。
     - 高い後方互換性を持つ。
@@ -93,12 +93,12 @@ ___
 
 ___
 ## 豊富なモジュール
-- CPANと呼ばれるアーカイブに、全世界のPerl Mongerがモジュールを投稿しています。
-    - Perl Monger ... Perl使い、Perlを得意とするエンジニアのこと。RubyにおけるRubyist、PythonにおけるPythonistaと同義です。
+- <ruby>CPAN<rt>シーパン</rt></ruby>と呼ばれるアーカイブに、全世界のPerl <ruby>Monger<rt>モンガー</rt></ruby>がモジュールを投稿しています。
+    - Perl Monger ... Perl使い、Perlを得意とするエンジニアのこと。Rubyにおける<ruby>Rubyist<rt>ルビースト</rt></ruby>、Pythonにおける<ruby>Pythonista<rt>パイソニスタ</rt></ruby>と同義です。
     - 皆さんも今日からPerl Mongerです！
-- 例: Encode ... 文字列のエンコードを処理するモジュール。
+- 例: <ruby>Encode<rt>エンコード</rt></ruby> ... 文字列のエンコードを処理するモジュール。
 - 例: Net::Twitter ... TwitterのAPIを操作するモジュール。
-- 例: DBD::SQLite ... Perlから、SQLiteというデータベースを操作するモジュール。
+- 例: DBD::<ruby>SQLite<rt>エスキューライト</rt></ruby> ... Perlから、SQLiteというデータベースを操作するモジュール。
 
 ___
 ## Perl5 のバージョンの歴史
@@ -153,7 +153,7 @@ ___
 
 ___
 ## YAPC::Japan
-- YAPC ... Yet Another Perl Conference
+- <ruby>YAPC<rt>ヤプシー</rt></ruby> ... Yet Another Perl Conference
 - 日本の都市で年度内に2度行われる、日本最大規模のPerlの祭典です。
 - 2006年から2015年まで続いた YAPC::Asia の後継イベントです。
 - 2016年12月に札幌で行われた YAPC::Hokkaido を皮切りに, 大阪, 福岡, 沖縄, 東京で開催されています。
@@ -161,9 +161,9 @@ ___
 
 ___
 ## PerlとCGI
-- 一時期、｢PerlでWebサービスを作るならCGI｣という時代がありましたが、今はそうではありません。
-- 最近は、PSGI(Perl Web Server Gateway Interface)という仕様に対応したWAF(Web Application Framework)を使っての開発が増えています。
-    - 2019年現在、Perlの代表的かつ新規採用されやすいWAFとしては、MojoliciousやAmon2などがあります。
+- 一時期、｢PerlでWebサービスを作るなら<ruby>CGI<rt>シージーアイ</rt></ruby>｣という時代がありましたが、今はそうではありません。
+- 最近は、<ruby>PSGI<rt>ピーエスジーアイ</rt></ruby>(Perl Web Server Gateway Interface)という仕様に対応した<ruby>WAF<rt>ワフ</rt></ruby>(Web Application Framework)を使っての開発が増えています。
+    - 2019年現在、Perlの代表的かつ新規採用されやすいWAFとしては、<ruby>Mojolicious<rt>モジョリシャス</rt></ruby>や<ruby>Amon2<rt>アモンツー</rt></ruby>などがあります。
 - Perl入学式は｢モダンなPerlを教える｣という方針を取っていますので、CGIについては触れません。
 
 ---
@@ -183,7 +183,7 @@ ___
 - 最近は検索(ググる)ことで解決することも多いです。
     - ただそれだと体系的な勉強は出来ないので、より深く学びたいのであれば何らかの書籍を通読するのがオススメです。
 - ネットの情報は玉石混交、一方で書籍の場合は情報の陳腐化があり得ます。
-    - 最初は誰しも｢記号｣が分からないので、ググるにも手がかりが無い場合、ドキュメント(`perldoc -v` / <a href="https://perldoc.jp/" target="_blank">perldoc.jp</a>)を活用しましょう。
+    - 最初は誰しも｢記号｣が分からないので、ググるにも手がかりが無い場合、ドキュメント(<ruby>`perldoc -v`<rt>パールドック</rt></ruby> / <a href="https://perldoc.jp/" target="_blank">perldoc.jp</a>)を活用しましょう。
 
 ___
 ## オススメの書籍
@@ -208,7 +208,7 @@ ___
 ___
 ## Perlとモジュール
 - 複雑な処理などを肩代わりしてくれる外部プログラムである**モジュール**がPerlには豊富に用意されています。
-- Perlのモジュールは**CPAN**(シーパン)という場所に集められていて、誰もが自由に使うことができます。
+- Perlのモジュールは**CPAN**という場所に集められていて、誰もが自由に使うことができます。
 - モジュールには、コアモジュールとそうでないモジュールが存在します。
     - コアモジュールは、Perlをインストールすると標準で利用できるモジュールです。
     - そうでないモジュールは、別途`cpanm`などのコマンドを利用して、CPANからインストールする必要があります。
@@ -216,7 +216,7 @@ ___
 
 ___
 ## PerlとモジュールとCPANの世界
-- CPANには、ジョークのようなモジュールから、ウェブプログラミングを支援するためのモジュール、TwitterやFacebookなどにアクセスして情報を取得するためのモジュールなど、ありとあらゆるものがあります。
+- CPANには、ジョークのようなモジュールから、ウェブプログラミングを支援するためのモジュール、Twitterや<ruby>Facebook<rt>フェースブック</rt></ruby>などにアクセスして情報を取得するためのモジュールなど、ありとあらゆるものがあります。
 - あなたの趣味や仕事を助けてくれるモジュールがきっとあるはずです。CPANを検索して自分が必要な処理を肩代わりするモジュールを使うことができるレベルまで、まずは少しずつPerlを勉強していきましょう。
 
 ___
