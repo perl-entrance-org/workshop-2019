@@ -2,14 +2,13 @@
 
 ___
 ## CUI(CLI)
-- macOSもLinuxも、Windowsと同じくGUIで操作可能です。
+- macOSもLinuxも、Windowsと同じく<ruby>GUI<rt>ジーユーアイ</rt></ruby>で操作可能です。
 
-- ですが、プログラミングをする上でCUI(CLI)は避けられません。
+- ですが、プログラミングをする上で<ruby>CUI<rt>シーユーアイ</rt></ruby>(<ruby>CLI<rt>シーエルアイ</rt></ruby>)は避けられません。
     - CUI ... Character User Interface
+    - CLI ... Command Line Interface
     - 文字によって操作を行うインターフェイスのことを指します。
     - Windowsならば、コマンドプロンプトに該当します。
-
-<small>CUIは、CLI(Command Line Interface)とも呼ばれます。</small>
 
 ___
 ## CUI(CLI)
