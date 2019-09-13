@@ -9,7 +9,7 @@ ___
     - 文字によって操作を行うインターフェイスのことを指します。
     - Windowsならば、コマンドプロンプトに該当します。
 
-※CUIは、CLI(Command Line Interface)とも呼ばれます。
+<small>CUIは、CLI(Command Line Interface)とも呼ばれます。</small>
 
 ___
 ## CUI(CLI)
