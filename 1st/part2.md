@@ -52,9 +52,10 @@ ___
 ___
 ## コマンド集(ls)
 ### [両ユーザ向け]
-    $ ls
-    デスクトップ ダウンロード (以下略)
-
+```bash
+$ ls
+デスクトップ ダウンロード (以下略)
+```
 - `ls`は、現在居るディレクトリにあるファイルを表示します。
 - `ls -a`は、ファイルを**全て**表示します。
     - `.`(ドット)で始まる, 通常は見えない隠しファイルも表示します
@@ -62,29 +63,35 @@ ___
 ___
 ## コマンド集(pwd)
 ### [両ユーザ向け]
-    $ pwd
-    /home/username
+```bash
+$ pwd
+/home/username
+```
 
 - `pwd`は、現在居るディレクトリを表示します。
 
 ___
 ## コマンド集(mkdir)
 ### [両ユーザ向け]
-    $ mkdir sample
-    $ ls
-    sample デスクトップ ダウンロード (以下略)
+```bash
+$ mkdir sample
+$ ls
+sample デスクトップ ダウンロード (以下略)
+```
 
 - `mkdir DIRECTORY`は、`DIRECTORY`というディレクトリを作ります。
 
 ___
 ## コマンド集(cd)
 ### [両ユーザ向け]
-    $ cd sample
-    $ pwd
-    /home/username/sample
-    $ cd ..
-    $ pwd
-    /home/username
+```bash
+$ cd sample
+$ pwd
+/home/username/sample
+$ cd ..
+$ pwd
+/home/username
+```
 
 - `cd DIRECTORY`は、`DIRECTORY`に移動します。
     - 上のディレクトリは`..`で示します。
@@ -92,12 +99,14 @@ ___
 ___
 ## コマンド集(rm)
 ### [両ユーザ向け]
-    $ touch sample1 sample2
-    $ ls
-    sample1 sample2
-    $ rm sample1
-    $ ls
-    sample2
+```bash
+$ touch sample1 sample2
+$ ls
+sample1 sample2
+$ rm sample1
+$ ls
+sample2
+```
 
 - `rm [OPTION] FILENAME`は、`FILENAME`のファイルを削除します。
     - `target file`は半角スペースで区切ることで複数個指定することができます。
@@ -108,11 +117,13 @@ ___
 ___
 ## コマンド集(cp)
 ### [両ユーザ向け]
-    $ ls
-    sample2
-    $ cp sample2 sample1
-    $ ls
-    sample1 sample2
+```bash
+$ ls
+sample2
+$ cp sample2 sample1
+$ ls
+sample1 sample2
+```
 
 - `cp [OPTION] SOURCE DEST`は、`SOURCE`を`DEST`にコピーします。
 - ディレクトリをコピーするときは、`[OPTION]`として`-r`を指定し、`cp -r SOURCE DEST`でコピーしなければなりません。
@@ -120,11 +131,13 @@ ___
 ___
 ## コマンド集(mv)
 ### [両ユーザ向け]
-    $ ls
-    sample1 sample2
-    $ mv sample1 sample_text
-    $ ls
-    sample_text sample2
+```bash
+$ ls
+sample1 sample2
+$ mv sample1 sample_text
+$ ls
+sample_text sample2
+```
 
 - `mv [OPTION] SOURCE DEST`で、`SOURCE`を`DEST`に移動します。
     - ファイルやディレクトリの名前を変更する為にも使えます。
@@ -132,7 +145,9 @@ ___
 ___
 ## コマンド集(start)
 ### [Windowsユーザ向け]
-    $ start .
+```bash
+$ start .
+```
 
 - `start [DIRECTORY]`で、`DIRECTORY`をExplorerというファイルマネージャで開きます。
     - `start`は対象となるファイルの種類によって動作が変わります。
@@ -143,7 +158,9 @@ ___
 ___
 ## コマンド集(open)
 ### [macOSユーザ向け]
-    $ open .
+```bash
+$ open .
+```
 
 - `open [DIRECTORY]`で、`DIRECTORY`をFinderというファイルマネージャで開きます。
     - `open`は対象となるファイルの種類によって動作が変わります。
