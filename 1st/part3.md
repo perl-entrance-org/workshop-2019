@@ -227,8 +227,9 @@ ___
 
 ___
 ## Hello, world!
-    print "Hello, world!\n";
-
+```perl
+print "Hello, world!\n";
+```
 - エディタにこのようなプログラムを書いて、`hello.pl`という名前で保存しましょう。
     - Perlのスクリプトは`.pl`という拡張子で保存することが多いです。
 - `print`は、端末に文字を出力する命令です。
@@ -239,22 +240,26 @@ ___
 
 ___
 ## スクリプトの実行
-    $ perl hello.pl
-    Hello, world!
+```perl
+$ perl hello.pl
+Hello, world!
+```
 
 - `perl`の引数に、実行したいスクリプトファイル名を与えると、そのスクリプトを実行してくれます。
 
 ___
 ## perldocとドキュメント
-    $ perldoc -f print
-
+```bash
+$ perldoc -f print
+```
 - `print`について調べる場合には、perldocコマンドを利用します。
 - 先に登場した[perldoc.jp](http://perldoc.jp/)でも確認が可能。
 
 ___
 ## perldocとドキュメント
-    $ perldoc Term::ANSIColor
-
+```bash
+$ perldoc Term::ANSIColor
+```
 - モジュールについて調べる場合にも、perldocコマンドを利用します。
 - 先に登場した[perldoc.jp](http://perldoc.jp/)でも確認が可能。
 
@@ -277,10 +282,11 @@ ___
 
 ___
 ## おまじない
-    #!/usr/bin/env perl
-    use strict;
-    use warnings;
-
+```perl
+#!/usr/bin/env perl
+use strict;
+use warnings;
+```
 - おまじないとして、冒頭の3行を書くようにしよう
 - `use strict` -> 厳密な書式を定めたり、未定義の変数を警告するといった効果があります
 - `use warnings` -> 望ましくない記述を警告してくれる効果があります
