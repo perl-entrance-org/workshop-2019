@@ -43,7 +43,7 @@ ___
 
 ___
 ## Perlに最適なOSは?
-Perlを利用して「本格的に」<ruby>Web<rt>ウェブ</rt></ruby>アプリケーションなどのプログラミングにチャレンジする方は、｢Windows以外｣のOSを利用することを推奨します。
+Perlを利用して「本格的に」<ruby>Web<rt>ウェブ</rt></ruby>アプリケーションなどのプログラミングにチャレンジする方は、「Windows以外」のOSを利用することを推奨します。
 
 これは、以下の理由からです。
 - Windows特有のトラブルが多いこと
@@ -190,7 +190,7 @@ ___
 ### msys2のインストーラーを用意しましょう
 <a href="https://www.msys2.org/" target="_blank">https://www.msys2.org/</a>
 
-環境にあわせて、｢msys2-i686-YYYYMMDD.exe｣または「msys2-x86_64-YYYYMMDD.exe」を利用します。
+環境にあわせて、「msys2-i686-YYYYMMDD.exe」または「msys2-x86_64-YYYYMMDD.exe」を利用します。
 
 利用しているWindowsが64bitOSである場合は、x86_64をダウンロードしてください。32bitOSである場合は、i686をダウンロードします
 
