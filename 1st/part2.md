@@ -174,7 +174,7 @@ ___
 ___
 ## Visual Studio Code
 
-[Visual Studio Code - Code Editing. Redefined](https://code.visualstudio.com/)へアクセスし、｢Download｣をクリックします。
+<a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code - Code Editing. Redefined</a>へアクセスし、｢Download｣をクリックします。
 
 ___
 ## Visual Studio Code
