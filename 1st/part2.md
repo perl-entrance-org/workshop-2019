@@ -163,39 +163,53 @@ ___
 
 ___
 ## エディタ
-- コードを書く時に最も使う道具、それがエディタです。
-- プログラミングに特化した様々なエディタが開発されていますが、Perl入学式ではその中でもVisual Studio Codeを紹介します。
-    - 特にこだわりのない方は、今回紹介するVisual Studio Codeを試してみましょう。
-    - もちろん、EmacsやVim、サクラエディタなど、既に使い慣れているエディタがある方はそちらをお使いください。
+コードを書く時に最も使う道具、それがエディタです。
+
+プログラミングに特化した様々なエディタが開発されていますが、Perl入学式ではその中でもVisual Studio Codeを紹介します。
+
+特にこだわりのない方は、今回紹介するVisual Studio Codeを試してみましょう。
+
+もちろん、EmacsやVim、サクラエディタなど、既に使い慣れているエディタがある方はそちらをお使いください。
 
 ___
 ## Visual Studio Code
-- [Visual Studio Code - Code Editing. Redefined](https://code.visualstudio.com/)へアクセスし、｢Download｣をクリックします。
+
+[Visual Studio Code - Code Editing. Redefined](https://code.visualstudio.com/)へアクセスし、｢Download｣をクリックします。
 
 ___
 ## Visual Studio Code
 
 ### Windows
-- ダウンロードした`VSCodeUserSetup-**.exe`をダブルクリックすると、インストールが開始されます。
-    - ** としたところにはバージョン番号が入ります
-- インストール後は、スタートメニューから「Visual Studio Code」をダブルクリックすればVisual Studio Codeが起動します。
-    - 初回は自動的に起動します。
+ダウンロードした`VSCodeUserSetup-**.exe`をダブルクリックすると、インストールが開始されます。
+
+** としたところにはバージョン番号が入ります。
+
+インストール後は、スタートメニューから「Visual Studio Code」をダブルクリックすればVisual Studio Codeが起動します。
+
+インストール直後は自動的に起動します。
 
 ___
 ## Visual Studio Code
 
 ### macOS
-- ダウンロードした`VSCode-darwin-stable.zip`をダブルクリックすると、`Visual Studio Code.app`が生成されます。
-- これをダブルクリックすればVisual Studio Codeが起動します。
-    - ｢"Visual Studio Code.app"はインターネットからダウンロードされたアプリケーションです｣という警告が出た場合、｢開く｣をクリックします。
+ダウンロードした`VSCode-darwin-stable.zip`をダブルクリックすると、`Visual Studio Code.app`が生成されます。
+
+これをダブルクリックすればVisual Studio Codeが起動します。
+
+｢"Visual Studio Code.app"はインターネットからダウンロードされたアプリケーションです｣という警告が出た場合、｢開く｣をクリックします。
 
 ___
 ## 練習問題
-- Visual Studio Codeなど、好きなエディタで`perl-entrance`ディレクトリに`profile.txt`というファイルを用意しましょう。
-    - ファイルの中には、「使用したコマンド1つとその説明」、「今使用しているOS」、「使用しているエディタ」を書きます。
-- ターミナルを使って、`profile.txt`を`profile2.txt`という名前でコピーしよう。
-- コピー元の`profile.txt`をターミナルから削除しましょう。
-- コピーした`profile2.txt`をターミナルから`profile.txt`という名前に変更しましょう。
-    - ヒント: ｢エディタで保存したファイルがターミナルから見つからない!｣という場合、`pwd`コマンドで現在いるディレクトリを確認してみましょう。
-    - 大抵の場合、エディタからの保存先と違うディレクトリにいます。`cd`コマンドで移動しましょう。
-    - ファイル名の変更は、ファイルの移動と同じコマンドで可能です。
+1. Visual Studio Codeなど、好きなエディタで`perl-entrance`ディレクトリに`profile.txt`というファイルを用意しましょう。
+
+  ファイルの中には、「使用したコマンド1つとその説明」、「今使用しているOS」、「使用しているエディタ」を書きます。
+
+1. ターミナルを使って、`profile.txt`を`profile2.txt`という名前でコピーしよう。
+
+1. コピー元の`profile.txt`をターミナルから削除しましょう。
+
+1. コピーした`profile2.txt`をターミナルから`profile.txt`という名前に変更しましょう。
+
+- ヒント: ｢エディタで保存したファイルがターミナルから見つからない!｣という場合、`pwd`コマンドで現在いるディレクトリを確認してみましょう。
+- 大抵の場合、エディタからの保存先と違うディレクトリにいます。`cd`コマンドで移動しましょう。
+- ファイル名の変更は、ファイルの移動と同じコマンドで可能です。
