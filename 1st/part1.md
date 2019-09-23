@@ -139,22 +139,12 @@ msys2のデメリット
 
 ___
 ## msys2とは?
-
-MSYS2 is a software distro and building platform for Windows.
-
-At its core is an independent rewrite of MSYS, based on modern Cygwin (POSIX compatibility layer) and MinGW-w64 with the aim of better interoperability with native Windows software.
-It provides a bash shell, Autotools, revision control systems and the like for building native Windows applications using MinGW-w64 toolchains
-
-<small><a href="https://www.msys2.org/" target="_brank">MSYS2 homepage</a></small>
-
-___
-## msys2とは?
-
-### 意訳
 msys2はWindowsのためのソフトウェア配布かつ開発基盤です。
 
 コアはネイティブなWindowsソフトウェアとのより良い相互運用を目的として現代の<ruby>Cygwin<rt>シグウィン</rt></ruby>と<ruby>MinGW-w64<rt>ミンジーダブリュー</rt></ruby>をベースに独立して書き直されました。
 <ruby>Bash shell<rt>バッシュ シェル</rt></ruby>、<ruby>Autotools<rt>オートツールズ</rt></ruby>、バージョン管理システムそしてネイティブなWindowsアプリケーションを構築するためのMinGW-w64ツールチェインを提供します。
+
+<small>原文はこちら<a href="https://www.msys2.org/" target="_brank">MSYS2 homepage</a></small>
 
 - CygwinはUnix風環境を再現するためのツール群で、MinGWやMSYS2のベースになっている
 - MinGW（Minimalist <ruby>GNU<rt>グニュー</rt></ruby> for Windows）はGNUツールチェインのWindows移植版
@@ -167,10 +157,10 @@ MinGW、msysどちらのパッケージもフリーソフトウェアです。
 
 > Win32APIを利用するためのヘッダファイルはパブリックドメインで提供されており、GNUツールの移植版はGPLである。MinGWの個々のGNUツール及びMSYSは、MinGWの公式サイトより入手可能である。
 
-<small><a href="https://ja.wikipedia.org/wiki/MinGW" target="_blank">MinGW</a></small>
+<small><a href="https://ja.wikipedia.org/wiki/MinGW" target="_blank">MinGW - Wikipedia</a></small>
 
 ___
-## msys2のインストール時の推奨環境
+## msys2インストール時の推奨環境
 
 msys2でPerlの開発環境を構築する際、約1GBのストレージ容量を必要とします。
 
@@ -349,7 +339,7 @@ ___
 
 msys2を一度再起動しましょう
 
-1. 右上の×ボタンをおしてウィンドウを閉じます
+1. 右上の×ボタンを押してウィンドウを閉じます
 
 1. その後、再度msys2を起動してください
 
