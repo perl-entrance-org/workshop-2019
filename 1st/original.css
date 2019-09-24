@@ -76,7 +76,7 @@ body {
   font-style: italic; }
 
 .reveal ol, .reveal dl, .reveal ul {
-  display: inline-block;
+  /*display: inline-block;*/
   text-align: left;
   margin: 0 0 0 1em; }
 
@@ -179,13 +179,16 @@ body {
 
 .reveal small {
   display: inline-block;
-  font-size: 0.6em;
+  font-size: 0.8em;
   line-height: 1.2em;
   vertical-align: top; }
 
 .reveal small * {
   vertical-align: top; }
 
+.reveal small:before {
+  content:'※';
+}
 /*********************************************
  * LINKS
  *********************************************/
