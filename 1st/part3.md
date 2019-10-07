@@ -73,13 +73,13 @@ ___
 1987年、<ruby>Larry Wall<rt>ラリー ウォール</rt></ruby>(右写真)が開発したプログラミング言語です。
 <img src="image/larry.jpg" align='right'>
 
-<ruby>Ruby<rt>ルビー</rt></ruby>、<ruby>Python<rt>パイソン</rt></ruby>、<ruby>PHP<rt>ピーエイチピー</rt></ruby>と並ぶ<ruby>LL<rt>エルエル</rt></ruby>言語(<ruby>Lightweight Language<rt>ライトウェイト ランゲージ</rt></ruby>)と呼ばれるカテゴリのプログラミング言語の1つです。
+<ruby>Ruby<rt>ルビー</rt></ruby>、<ruby>Python<rt>パイソン</rt></ruby>、<ruby>PHP<rt>ピーエイチピー</rt></ruby>と並ぶ軽量言語(<ruby>Lightweight Language<rt>ライトウェイト ランゲージ</rt></ruby>)と呼ばれるカテゴリのプログラミング言語の1つです。
 
 ___
 ## Perlの登場
 PerlはC言語や<ruby>sed<rt>セド</rt></ruby>、<ruby>awk<rt>オーク</rt></ruby>の影響を受けた動的型付け言語です。
 
-<small>「Perl」は言語そのもの、「perl」はその処理系を示します。</small>
+<small>先頭大文字「Perl」は言語そのもの、先頭小文字「perl」はその処理系を示します。</small>
 
 Perlは後に開発されたRuby(1995年)やPHP(1995年)に影響を与えました。
 
@@ -157,13 +157,15 @@ ___
 
 ___
 ## Perl5 の安定板と開発版
-5.(偶数) が安定版. 5.(奇数) が開発版です。
+5.(偶数) が安定版、 5.(奇数) が開発版です。
 
 基本的に最新版の一つ手前の安定版までがサポート対象です。
 
 過去のバージョンのPerlが生き残っている現場も多いですが、今ならPerl 5.10 以降だけを考えれば良いです。
 
 Perl 5.10 以降から 5.30 まで、Perl初学者にとって大きな違いはあまりありません。
+
+また、5.(奇数) の開発版をあえてインストールする必要はありません。5.(偶数) の安定版をインストールしましょう。
 
 ___
 ## 余談: Perl6について
@@ -246,7 +248,7 @@ ___
 
 ネットの情報は玉石混交、一方で書籍の場合は情報の陳腐化があり、一長一短と言えます。
 
-最初は誰しも「記号」が分からないので、ググるにも手がかりが無い場合、ドキュメント(<ruby>`perldoc -v`<rt>パールドック</rt></ruby> / <a href="https://perldoc.jp/" target="_blank">perldoc.jp</a>)を活用しましょう。
+最初は誰しも「記号」が分からないので、ググるにも手がかりが無い場合、ドキュメント(<ruby>`perldoc`<rt>パールドック</rt></ruby> / <a href="https://perldoc.jp/" target="_blank">perldoc.jp</a>)を活用しましょう。
 
 ___
 ## オススメの書籍
