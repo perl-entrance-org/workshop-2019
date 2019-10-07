@@ -1,162 +1,208 @@
-
 # ターミナルとシェル入門
 
 ___
 ## CUI(CLI)
-- macOSもLinuxも, Windowsと同じくGUIで操作可能です.
-- ですが, プログラミングをする上でCUI(CLI)は避けられません.
-    - CUI ... Character User Interface
-    - 文字によって操作を行うインターフェイスのことを指します.
-    - Windowsならば, コマンドプロンプトに該当します.
+macOSもLinuxも、Windowsと同じく<ruby>GUI<rt>ジーユーアイ</rt></ruby>で操作可能です。
 
-※CUIは, CLI(Command Line Interface)とも呼ばれます.
+ですが、プログラミングをする上で<ruby>CUI<rt>シーユーアイ</rt></ruby> (<ruby>CLI<rt>シーエルアイ</rt></ruby>) は避けられません。
+
+- CUI ... Character User Interface
+- CLI ... Command Line Interface
+
+これらは文字によって操作を行うインターフェイスのことを指します。
+- Windowsならば、コマンドプロンプトに該当します。
+- Linux/macOSではターミナルに該当します。
 
 ___
 ## CUI(CLI)
-- 基本的なCUI(CLI)の操作を, 実際に操作しながら体験してみましょう.
-    - 一部コマンドはWindowsのみでしか利用できず, macOSのターミナルでは使えませんのでご了承下さい.
+実際にCUI(CLI)を操作して体験してみましょう。
 
 ___
 ## ターミナルとシェル
-- ターミナルを開くと, シェルを使った操作が出来るようになります.
-    - プログラムの起動や制御をCUI(CLI)で行うプログラムのことをシェルと呼びます.
+プログラムの起動や制御をCUI(CLI)で行うプログラムのことを、**シェル**と呼びます。
+
+ターミナルを開くと、シェルを使った操作が出来るようになります。
 
 ![シェル](image/shell.png)
 
 ___
 ## ターミナルの開き方(Windows)
+スタートメニューから「MSYS2 XXbit」を選択し、「MSYS2 MSYS」をクリックします。
 
-- スタートメニューから「MSYS2 XXbit」を選択し, 「MSYS2 MSYS」をクリックします.
-    - MSYS2は頻繁に起動するため, タスクバーへの追加やスタートメニューへのピン止めをおすすめします.
+<small>MSYS2は頻繁に起動するため、タスクバーへの追加やスタートメニューへのピン止めをおすすめします。</small>
 
 ![ターミナル](image/start-msys2-1.png)
-<br>
+
 △スタートメニューから開いたところ（Windows10）
 
 ___
 ## ターミナルの開き方(macOS)
+Launchpadなどから「ターミナル」を選択し、起動します。
 
-- Launchpadなどから｢ターミナル｣を選択し, 起動します.
-    - ターミナルは頻繁に起動するため, Dockへ追加しておくことをおすすめします.
+<small>ターミナルは頻繁に起動するため、Dockへ追加しておくことをおすすめします。</small>
 
 ![ターミナルのアイコン](image/terminal.png)
-<br>
+
 △ターミナルのアイコン
 
 ___
 ## シェルで使えるコマンド集
-- Perl入学式の中でもよく使うコマンドを紹介します.
-    - シェルには, これから紹介する以外にも様々なコマンドがあります.
-    - OSやシェルの種類によって使えるもの, 使えないものがありますが, 使いこなせば作業の負担を軽減することができるでしょう.
+Perl入学式の中でもよく使うコマンドを紹介します。
+
+シェルには、これから紹介する以外にも様々なコマンドがあります。
+
+OSやシェルの種類によって使えるもの、使えないものがありますが、使いこなせば作業の負担を軽減することができます。
+
+参考図書：<a href="https://system-admin-girl.com/" target="_blank">まんがでわかるLinux シス管系女子</a>
 
 ___
 ## コマンド集(ls)
 ### [両ユーザ向け]
-    $ ls
-    デスクトップ ダウンロード (以下略)
+```bash
+$ ls
+デスクトップ ダウンロード (以下略)
+```
+`ls`は、現在居るディレクトリにあるファイルを表示します。
 
-- `ls`は, 現在居るディレクトリにあるファイルを表示します.
-- `ls -a`は, ファイルを**全て**表示します.
-    - `.`(ドット)で始まる, 通常は見えない隠しファイルも表示します
+`ls -a`は、`.`(ドット)で始まる、通常は見えない隠しファイルも含め、すべて表示します。
+
+このように、コマンドに追加の命令をつけて動作を変えることができます。
+
+これを<ruby>引数<rt>ひきすう</rt></ruby>といいます。
 
 ___
 ## コマンド集(pwd)
 ### [両ユーザ向け]
-    $ pwd
-    /home/username
-
-- `pwd`は, 現在居るディレクトリを表示します.
+```bash
+$ pwd
+/home/username
+```
+`pwd`は、現在いるディレクトリの場所（パス）を表示します。
 
 ___
 ## コマンド集(mkdir)
 ### [両ユーザ向け]
-    $ mkdir sample
-    $ ls
-    sample デスクトップ ダウンロード (以下略)
-
-- `mkdir DIRECTORY`は, `DIRECTORY`というディレクトリを作ります.
+```bash
+$ mkdir sample
+$ ls
+sample デスクトップ ダウンロード (以下略)
+```
+`mkdir DIRECTORY`は、`DIRECTORY`というディレクトリを作ります。
 
 ___
 ## コマンド集(cd)
 ### [両ユーザ向け]
-    $ cd sample
-    $ pwd
-    /home/username/sample
-    $ cd ..
-    $ pwd
-    /home/username
+```bash
+$ cd sample
+$ pwd
+/home/username/sample
+$ cd ..
+$ pwd
+/home/username
+```
+`cd DIRECTORY`で、`DIRECTORY`に移動します。
 
-- `cd DIRECTORY`は, `DIRECTORY`に移動します.
-    - 上のディレクトリは`..`で示します.
+上の階層のディレクトリは`..`で表示されます。
 
 ___
 ## コマンド集(rm)
 ### [両ユーザ向け]
-    $ touch sample1 sample2
-    $ ls
-    sample1 sample2
-    $ rm sample1
-    $ ls
-    sample2
+```bash
+$ touch sample1 sample2
+$ ls
+sample1 sample2
+$ rm sample1
+$ ls
+sample2
+```
+`rm [OPTION] FILENAME`は、`FILENAME`のファイルを削除します。`FILENAME1 FILENAME2`のように半角スペースで区切ることで複数個指定することができます。
 
-- `rm [OPTION] FILENAME`は, `FILENAME`のファイルを削除します.
-    - `target file`は半角スペースで区切ることで複数個指定することができます.
-- ディレクトリを削除するときは, `[OPTION]`として`-r`を指定し, `rm -r DIR`で削除しなければなりません.
-    - `r`は再帰(recursion)を意味します.
-- ちなみに, `touch`はファイルが存在しないときに空のファイルを生成するコマンドです.
+ちなみに、`touch`はファイルが存在しないときに空のファイルを生成するコマンドです。
+
+___
+## コマンド集(rmdir)
+### [両ユーザ向け]
+```bash
+$ mkdir del_sample
+$ ls
+del_sample
+$ rmdir del_sample
+$ ls
+$
+```
+`rmdir DIRNAME`は、`DIRNAME`のディレクトリを削除します。ただしディレクトリは空である必要があります。
+
+ディレクトリの中身ごとを削除するときは、先に紹介した`rm -r DIRNAME`で削除します。
+
+`-r`というオプションは<ruby>recursive<rt>リカーシブ</rt></ruby>（再帰的）を意味しています。
 
 ___
 ## コマンド集(cp)
 ### [両ユーザ向け]
-    $ ls
-    sample2
-    $ cp sample2 sample1
-    $ ls
-    sample1 sample2
+```bash
+$ ls
+sample2
+$ cp sample2 sample1
+$ ls
+sample1 sample2
+```
+`cp [OPTION] SOURCE DEST`は、`SOURCE`を`DEST`にコピーします。
 
-- `cp [OPTION] SOURCE DEST`は, `SOURCE`を`DEST`にコピーします.
-- ディレクトリをコピーするときは, `[OPTION]`として`-r`を指定し, `cp -r SOURCE DEST`でコピーしなければなりません.
+ディレクトリをコピーするときは、`[OPTION]`として`-r`を指定し、`cp -r SOURCE DEST`でコピーしなければなりません。
 
 ___
 ## コマンド集(mv)
 ### [両ユーザ向け]
-    $ ls
-    sample1 sample2
-    $ mv sample1 sample_text
-    $ ls
-    sample_text sample2
+```bash
+$ ls
+sample1 sample2
+$ mv sample1 sample_text
+$ ls
+sample_text sample2
+```
+`mv [OPTION] SOURCE DEST`で、`SOURCE`を`DEST`に移動します。
 
-- `mv [OPTION] SOURCE DEST`で, `SOURCE`を`DEST`に移動します.
-    - ファイルやディレクトリの名前を変更する為にも使えます.
+ファイルやディレクトリの名前を変更する為にも使えます。
 
 ___
 ## コマンド集(start)
 ### [Windowsユーザ向け]
-    $ start .
+```bash
+$ start .
+```
+`start [DIRECTORY]`で、`DIRECTORY`をExplorerというファイルマネージャで開きます。
 
-- `start [DIRECTORY]`で, `DIRECTORY`をExplorerというファイルマネージャで開きます.
-    - `start`は対象となるファイルの種類によって動作が変わります.
-    - 例えばディレクトリが対象ならば上記のようにExplorerで表示, テキストならばテキストエディタで表示...  という動作をします.
-- macOSにはExplorerが搭載されていないので`start`は使えません．
-- 次のスライドの`open`を使用します．
+`start`は対象となるファイルの種類によって動作が変わります。
+
+例えばディレクトリが対象ならば上記のようにExplorerで表示、テキストならばテキストエディタで表示...  という動作をします。
 
 ___
 ## コマンド集(open)
 ### [macOSユーザ向け]
-    $ open .
+```bash
+$ open .
+```
 
-- `open [DIRECTORY]`で, `DIRECTORY`をFinderというファイルマネージャで開きます.
-    - `open`は対象となるファイルの種類によって動作が変わります.
-    - 例えばディレクトリが対象ならば上記のようにFinderで表示, テキストならばテキストエディタで表示...  という動作をします.
--  Windowsでは利用できません. `start`を使いましょう．
+`open [DIRECTORY]`で、`DIRECTORY`をFinderというファイルマネージャで開きます。
+
+`open`は対象となるファイルの種類によって動作が変わります。
+
+例えばディレクトリが対象ならば上記のようにFinderで表示、テキストならばテキストエディタで表示...  という動作をします。
 
 ___
 ## 練習問題
-- ホームディレクトリに`perl-entrance`というディレクトリを作ろう.
-    - ｢ホームディレクトリ｣とは, ユーザごとに用意された作業場所のようなものです.
-    - `cd`を押すと, 自動的にホームディレクトリに移動します.
-- 作った`perl-entrance`ディレクトリに移動しましょう.
-- カレントディレクトリ(`perl-entrance`)を, `start`もしくは`open`を使って, ファイルマネージャで開いてみましょう.
+1. **ホームディレクトリ**に`perl-entrance`というディレクトリを作りましょう。
+
+  ホームディレクトリとは、ユーザごとに用意された作業場所のようなものです。
+
+  `cd`とだけ入力してエンターキーを押すと、ホームディレクトリに移動します。
+
+2. 作った`perl-entrance`ディレクトリの中に移動しましょう。
+
+3. **カレントディレクトリ**のパスを`pwd`で表示し、その後に、`start`もしくは`open`を使って、ファイルマネージャで開いてみましょう。
+
+    現在いるディレクトリをカレントディレクトリと言います。
+
 
 ---
 # エディタ入門
