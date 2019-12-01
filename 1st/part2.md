@@ -112,11 +112,23 @@ $ pwd
 
 上の階層のディレクトリは`..`で表示されます。
 
+
+___
+## コマンド集(touch)
+### [両ユーザ向け]
+```bash
+$ touch sample1 sample2
+$ ls
+sample1 sample2
+```
+`touch`にはは2つの役割があります。`touch FILENAME` とした時・・・
+- FILENAME がすでに存在する場合には、ファイルの作成日時を現時刻に書き換える
+- FILENAME が存在しない場合には、空のファイルを生成する
+
 ___
 ## コマンド集(rm)
 ### [両ユーザ向け]
 ```bash
-$ touch sample1 sample2
 $ ls
 sample1 sample2
 $ rm sample1
@@ -126,8 +138,6 @@ sample2
 `rm [OPTION] FILENAME`は、`FILENAME`のファイルを削除します。`FILENAME1 FILENAME2`のように半角スペースで区切ることで複数個指定することができます。
 
 コマンド名は'remove'を短縮したものです。
-
-ちなみに、`touch`はファイルが存在しないときに空のファイルを生成するコマンドです。
 
 ___
 ## コマンド集(rmdir)
@@ -262,7 +272,7 @@ ___
 
 ___
 ## 練習問題
-1. Visual Studio Codeなど、好きなエディタで`perl-entrance`ディレクトリに`profile.txt`というファイルを用意しましょう。
+1. `perl-entrance`ディレクトリ内に`profile.txt`という空のファイルを用意して、Visual Studio Codeで編集します。
 
   ファイルの中には、「使用したコマンド1つとその説明」、「今使用しているOS」、「使用しているエディタ」を書いて保存します。
 
