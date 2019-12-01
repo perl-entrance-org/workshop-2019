@@ -271,6 +271,31 @@ ___
 「"Visual Studio Code.app"はインターネットからダウンロードされたアプリケーションです」という警告が出た場合、「開く」をクリックします。
 
 ___
+## Visual Studio Code
+
+### 日本語化
+メニューが英語でとっつきにくい場合には、日本語化することが可能です。
+
+1. ウィンドウ左上の View -> Command Palette から `Configure Display Language`と入力して候補を選択する。
+
+1. Install Addicional Languages を選択する。
+
+1. 左側のメニューから「日本語」を選択し、緑色の「Install」ボタンを押す。
+
+1. 一度Visual Studio Codeを閉じて、再度起動する。
+
+1. 英語表記に戻す場合には、1. から en を選択することで英語メニューになります。
+
+___
+## Visual Studio Code
+
+### ファイルを開く
+- 左上メニューの ファイル -> (Windows版)ファイルを開く(macOS)開く
+
+### ファイルを保存する
+- 左上メニューの ファイル -> 保存
+
+___
 ## 練習問題
 1. `perl-entrance`ディレクトリ内に`profile.txt`という空のファイルを用意して、Visual Studio Codeで編集します。
 
