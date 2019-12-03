@@ -121,8 +121,8 @@ $ touch sample1 sample2
 $ ls
 sample1 sample2
 ```
-`touch`にはは2つの役割があります。`touch FILENAME` とした時・・・
-- FILENAME がすでに存在する場合には、ファイルの作成日時を現時刻に書き換える
+`touch`には2つの役割があります。`touch FILENAME` とした時・・・
+- FILENAME がすでに存在する場合には、ファイルのアクセス日時と更新日時を現時刻に書き換える
 - FILENAME が存在しない場合には、空のファイルを生成する
 
 ___
