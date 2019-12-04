@@ -62,7 +62,9 @@ ___
 $ ls
 デスクトップ ダウンロード (以下略)
 ```
-`ls`は、現在居るディレクトリにあるファイルを表示します。
+`ls`は、現在いるディレクトリにあるファイルを表示します。
+
+コマンド名は'list segments'の頭文字を取ったものです。
 
 `ls -a`は、`.`(ドット)で始まる、通常は見えない隠しファイルも含め、すべて表示します。
 
@@ -79,6 +81,8 @@ $ pwd
 ```
 `pwd`は、現在いるディレクトリの場所（パス）を表示します。
 
+コマンド名は'print working directory'の頭文字を取ったものです。
+
 ___
 ## コマンド集(mkdir)
 ### [両ユーザ向け]
@@ -88,6 +92,8 @@ $ ls
 sample デスクトップ ダウンロード (以下略)
 ```
 `mkdir DIRECTORY`は、`DIRECTORY`というディレクトリを作ります。
+
+コマンド名は'make directory'を短縮したものです。
 
 ___
 ## コマンド集(cd)
@@ -102,13 +108,27 @@ $ pwd
 ```
 `cd DIRECTORY`で、`DIRECTORY`に移動します。
 
+コマンド名は'change directory'を短縮したものです。
+
 上の階層のディレクトリは`..`で表示されます。
+
+
+___
+## コマンド集(touch)
+### [両ユーザ向け]
+```bash
+$ touch sample1 sample2
+$ ls
+sample1 sample2
+```
+`touch`には2つの役割があります。`touch FILENAME` とした時・・・
+- FILENAME がすでに存在する場合には、ファイルのアクセス日時と更新日時を現時刻に書き換える
+- FILENAME が存在しない場合には、空のファイルを生成する
 
 ___
 ## コマンド集(rm)
 ### [両ユーザ向け]
 ```bash
-$ touch sample1 sample2
 $ ls
 sample1 sample2
 $ rm sample1
@@ -117,7 +137,7 @@ sample2
 ```
 `rm [OPTION] FILENAME`は、`FILENAME`のファイルを削除します。`FILENAME1 FILENAME2`のように半角スペースで区切ることで複数個指定することができます。
 
-ちなみに、`touch`はファイルが存在しないときに空のファイルを生成するコマンドです。
+コマンド名は'remove'を短縮したものです。
 
 ___
 ## コマンド集(rmdir)
@@ -132,9 +152,11 @@ $
 ```
 `rmdir DIRNAME`は、`DIRNAME`のディレクトリを削除します。ただしディレクトリは空である必要があります。
 
+コマンド名は'remove directory'を短縮したものです。
+
 ディレクトリの中身ごとを削除するときは、先に紹介した`rm -r DIRNAME`で削除します。
 
-`-r`というオプションは<ruby>recursive<rt>リカーシブ</rt></ruby>（再帰的）を意味しています。
+`-r`という引数は<ruby>recursive<rt>リカーシブ</rt></ruby>（再帰的）を意味しています。
 
 ___
 ## コマンド集(cp)
@@ -147,6 +169,8 @@ $ ls
 sample1 sample2
 ```
 `cp [OPTION] SOURCE DEST`は、`SOURCE`を`DEST`にコピーします。
+
+コマンド名は'copy'を短縮したものです。
 
 ディレクトリをコピーするときは、`[OPTION]`として`-r`を指定し、`cp -r SOURCE DEST`でコピーしなければなりません。
 
@@ -161,6 +185,8 @@ $ ls
 sample_text sample2
 ```
 `mv [OPTION] SOURCE DEST`で、`SOURCE`を`DEST`に移動します。
+
+コマンド名は'move'を短縮したものです。
 
 ファイルやディレクトリの名前を変更する為にも使えます。
 
@@ -245,8 +271,33 @@ ___
 「"Visual Studio Code.app"はインターネットからダウンロードされたアプリケーションです」という警告が出た場合、「開く」をクリックします。
 
 ___
+## Visual Studio Code
+
+### 日本語化
+メニューが英語でとっつきにくい場合には、日本語化することが可能です。
+
+1. ウィンドウ左上の View -> Command Palette から `Configure Display Language`と入力して候補を選択する。
+
+1. Install Addicional Languages を選択する。
+
+1. 左側のメニューから「日本語」を選択し、緑色の「Install」ボタンを押す。
+
+1. 一度Visual Studio Codeを閉じて、再度起動する。
+
+1. 英語表記に戻す場合には、1. から en を選択することで英語メニューになります。
+
+___
+## Visual Studio Code
+
+### ファイルを開く
+- 左上メニューの ファイル -> (Windows版)ファイルを開く(macOS)開く
+
+### ファイルを保存する
+- 左上メニューの ファイル -> 保存
+
+___
 ## 練習問題
-1. Visual Studio Codeなど、好きなエディタで`perl-entrance`ディレクトリに`profile.txt`というファイルを用意しましょう。
+1. `perl-entrance`ディレクトリ内に`profile.txt`という空のファイルを用意して、Visual Studio Codeで編集します。
 
   ファイルの中には、「使用したコマンド1つとその説明」、「今使用しているOS」、「使用しているエディタ」を書いて保存します。
 
