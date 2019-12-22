@@ -1462,14 +1462,14 @@ print "@sorted2" . "\n";    # 200, 40, 5, 3, 1
 ___
 ## 復習問題
 
-- [practice.md](./practice.md)
+- [practice.md](https://github.com/perl-entrance-org/workshop-2019/blob/master/2nd/practice.md)
   - 今回の内容を復習することができる問題集です。
   - ご不明な点があれば、気軽にスタッフまでお尋ねください。
 
 ___
 ## 練習問題の解答例
 
-- [2019-answer](./answer)
+- [2019-answer](https://github.com/perl-entrance-org/workshop-2019/tree/master/2nd/answer)
   - 各会場の講師が書いた、練習問題の解答例はこちらで公開しています。
   - ※講義終了後に随時追加していきます。
 
