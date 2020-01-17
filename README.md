@@ -21,8 +21,8 @@
 その他、以下の記事にインストール方法や使い方などが紹介されていますのでご参照ください。
 
 ### 参考記事
-- [一瞬でクールなスライドがつくれる「App::revealup」をリリースしました - ゆーすけべー日記](http://blog.yusuke.be/entry/2014/06/16/020621)
-- [YAPC::Asiaでも「ちらほら」使われた「App::revealup」の進捗](http://blog.yusuke.be/entry/2014/09/03/222600)
+- [一瞬でクールなスライドがつくれる「App::revealup」をリリースしました - ゆーすけべー日記](https://yusukebe.com/posts/2014/0616020621/)
+- [YAPC::Asiaでも「ちらほら」使われた「App::revealup」の進捗](https://yusukebe.com/posts/2014/0903222600/)
 
 ***
 
