@@ -1,0 +1,29 @@
+% layout 'default';
+% title 'FizzBuzz';
+
+<h1><a href="/"><%= title %></a></h1>
+<hr />
+
+% # XXX:
+% my $res = $self->stash('res');
+% my $num = defined $self->stash('num') ? $self->stash('num') : '';
+
+<form action="/" class="form-inline" method="POST">
+  <div class="form-group mb-2">
+    <input type="text" name="num" class="form-control"
+           value="<%= $num %>" placeholder="Input a number for FizzBuzz"/>
+  </div>
+  <div class="form-group mx-sm-2 mb-2">
+    <button type="submit" class="btn btn-primary">FizzBuzz</button>
+  </div>
+  <%= csrf_field %>
+</form>
+
+% if ( $res && $num ) {
+<div class="mt-2 mb-4">
+  <h2>RESULT:</h2>
+  <pre>
+    <code><%= $num %>: <%= $res %></code>
+  </pre>
+</div>
+% }
