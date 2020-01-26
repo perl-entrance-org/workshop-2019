@@ -398,6 +398,17 @@ ___
 - `$str !~ /ruby/`と書くことで, `$str`の中に｢ruby｣という文字列を含まないなら真, そうでないなら(含むなら)偽, になります.
 
 ___
+## パターンマッチ
+
+    my $str = 'perl ruby python';
+    my $pattern = 'perl';
+    if($str =~ /$pattern/) {
+        print "'$str'には'$pattern'が含まれます.\n";
+    }
+
+- このように, 正規表現として変数を利用することもできます.
+
+___
 ## 任意の1文字
     my $ans = 'y';
     if($ans =~ /[yY]/) {
@@ -569,17 +580,6 @@ ___
     - `PATTERN`を記述する為に, 正規表現を利用することができます.
 - `$str`に含まれる全ての`PATTERN`を置換したい場合, `s/PATTERN/REPLACE/g`と表記します.
     - 最後にオプションとして`g`を付けることで, 繰り返し評価･置換します.
-
-___
-## 変数の使用
-
-    my $str = 'perl ruby python';
-    my $pattern = 'perl';
-    if($str =~ /$pattern/) {
-        print "'$str'には'$pattern'が含まれます.\n";
-    }
-
-- このように, 正規表現として変数を利用することもできます.
 
 ___
 ## 練習問題
