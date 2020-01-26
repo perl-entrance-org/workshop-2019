@@ -367,7 +367,7 @@ ___
 
 ___
 ## パターンマッチ
-    my $str = 'papix loves perl!';
+    my $str = 'Larry loves perl!';
     if ($str =~ /perl/) {
         print "'$str'は'perl'を含みます.";
     }
@@ -378,7 +378,7 @@ ___
 ___
 ## パターンマッチ
 
-    my $str = 'papix loves perl!';
+    my $str = 'Larry loves perl!';
     if ($str eq 'perl') {
         print "'$str'は'perl'です.";
     }
@@ -390,7 +390,7 @@ ___
 
 ___
 ## パターンマッチ
-    my $str = 'papix loves perl!';
+    my $str = 'Larry loves perl!';
     if ($str !~ /ruby/) {
         print "'$str'は'ruby'を含みません.";
     }
@@ -756,9 +756,9 @@ ___
 
 ___
 # 練習問題 (3/3)
-- 文字列の先頭に`papix`がある場合, ｢Find papix!｣と表示する.
+- 文字列の先頭に`Larry`がある場合, ｢Find Larry!｣と表示する.
 - 文字列に`Hello`が含まれる場合, その後に続く単語`xxxx`を使って｢Hello! xxxx!｣と表示する.
-    - 例えば, 文字列に｢Hello papix｣が含まれる場合, ｢Hello! papix!｣と表示すればOKです.
+    - 例えば, 文字列に｢Hello Larry｣が含まれる場合, ｢Hello! Larry!｣と表示すればOKです.
 
 ---
 # 質問タイム
