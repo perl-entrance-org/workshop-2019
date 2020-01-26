@@ -546,7 +546,7 @@ ___
 ___
 ## 練習問題
 ```perl
-    my @words = (
+    my @sentences = (
         'alice loves meat!',
         'bob loves sushi!',
     );
