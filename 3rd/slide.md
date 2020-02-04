@@ -156,15 +156,15 @@ ___
 しかしハッシュであれば、値は添字の数値（順番）ではなく、名前（key）で対応づけられています。
 このため、ハッシュ内部の要素の格納順に影響を受けません。
 ```perl
-my %user = (
+my %hash = (
     lang  => 'Perl',
     birth => 1954,
     name  => 'Larry',
 );
 
-print "$user{name}\n";    # name が表示される  => "Larry"
-print "$user{birth}\n";   # birth が表示される => 1954
-print "$user{lang}\n";    # lang が表示される  => "Perl"
+print "$hash{name}\n";    # name が表示される  => "Larry"
+print "$hash{birth}\n";   # birth が表示される => 1954
+print "$hash{lang}\n";    # lang が表示される  => "Perl"
 ```
 
 ___
